@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.0">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -4460,17 +4460,35 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <package name="3PIN">
 <pad name="1" x="-2.54" y="0" drill="1" shape="square"/>
 <pad name="2" x="0" y="0" drill="1"/>
-<text x="-2.54" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-3.048" y="1.524" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.048" y="-2.794" size="1.27" layer="27">&gt;VALUE</text>
 <pad name="3" x="2.54" y="0" drill="1"/>
+<wire x1="-3.81" y1="1.27" x2="3.81" y2="1.27" width="0.127" layer="21"/>
+<wire x1="3.81" y1="1.27" x2="3.81" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-1.27" x2="-3.81" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-3.81" y1="-1.27" x2="-3.81" y2="1.27" width="0.127" layer="21"/>
 </package>
 <package name="4PIN">
 <pad name="1" x="-3.81" y="0" drill="1" shape="square"/>
 <pad name="2" x="-1.27" y="0" drill="1"/>
-<text x="-3.81" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.81" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-3.683" y="1.524" size="1.27" layer="25">&gt;NAME</text>
+<text x="-4.064" y="-2.794" size="1.27" layer="27">&gt;VALUE</text>
 <pad name="3" x="1.27" y="0" drill="1"/>
 <pad name="4" x="3.81" y="0" drill="1"/>
+<wire x1="-5.08" y1="1.27" x2="5.08" y2="1.27" width="0.127" layer="21"/>
+<wire x1="5.08" y1="1.27" x2="5.08" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="5.08" y1="-1.27" x2="-5.08" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-5.08" y1="-1.27" x2="-5.08" y2="1.27" width="0.127" layer="21"/>
+</package>
+<package name="2PIN">
+<pad name="1" x="-1.27" y="0" drill="1" shape="square"/>
+<pad name="2" x="1.27" y="0" drill="1"/>
+<text x="-2.54" y="1.524" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-2.794" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-2.54" y1="1.27" x2="-2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="-1.27" x2="2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
+<wire x1="2.54" y1="1.27" x2="-2.54" y2="1.27" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -4631,8 +4649,8 @@ with integrated thermistor</description>
 <connects>
 <connect gate="G$1" pin="+" pad="1 2"/>
 <connect gate="G$1" pin="-" pad="5 6"/>
-<connect gate="G$1" pin="BAL1" pad="3"/>
-<connect gate="G$1" pin="BAL2" pad="4"/>
+<connect gate="G$1" pin="BAL1" pad="4"/>
+<connect gate="G$1" pin="BAL2" pad="3"/>
 <connect gate="G$1" pin="BAL3" pad="7"/>
 <connect gate="G$1" pin="THERM1" pad="8"/>
 </connects>
@@ -4649,8 +4667,8 @@ with integrated thermistor</description>
 <devices>
 <device name="" package="TE-770966">
 <connects>
-<connect gate="G$1" pin="+" pad="1"/>
-<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="G$1" pin="+" pad="2"/>
+<connect gate="G$1" pin="-" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -4751,6 +4769,23 @@ with integrated thermistor</description>
 <connect gate="B" pin="P$1" pad="2"/>
 <connect gate="C" pin="P$1" pad="3"/>
 <connect gate="D" pin="P$1" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GEN-2PIN" prefix="J" uservalue="yes">
+<gates>
+<gate name="A" symbol="PIN" x="0" y="5.08" swaplevel="1"/>
+<gate name="B" symbol="PIN" x="0" y="-5.08" swaplevel="1"/>
+</gates>
+<devices>
+<device name="" package="2PIN">
+<connects>
+<connect gate="A" pin="P$1" pad="1"/>
+<connect gate="B" pin="P$1" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -5005,7 +5040,6 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX1737.pdf</description>
 <rectangle x1="1.34" y1="-3.475" x2="1.84" y2="-1.9" layer="29"/>
 <rectangle x1="1.975" y1="-3.475" x2="2.475" y2="-1.9" layer="29"/>
 <rectangle x1="2.61" y1="-3.475" x2="3.11" y2="-1.9" layer="29"/>
-<rectangle x1="3.245" y1="-3.475" x2="3.745" y2="-1.9" layer="29"/>
 <rectangle x1="3.24" y1="1.9" x2="3.74" y2="3.475" layer="29" rot="R180"/>
 <rectangle x1="2.605" y1="1.9" x2="3.105" y2="3.475" layer="29" rot="R180"/>
 <rectangle x1="1.97" y1="1.9" x2="2.47" y2="3.475" layer="29" rot="R180"/>
@@ -5023,11 +5057,16 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX1737.pdf</description>
 <smd name="25" x="-2.2225" y="2.69" dx="0.45" dy="1.5" layer="1" stop="no"/>
 <smd name="26" x="-2.8575" y="2.69" dx="0.45" dy="1.5" layer="1" stop="no"/>
 <smd name="27" x="-3.4925" y="2.69" dx="0.45" dy="1.5" layer="1" stop="no"/>
-<smd name="28" x="-4.1275" y="2.69" dx="0.45" dy="1.5" layer="1" stop="no"/>
 <rectangle x1="3.3425" y1="-3.1" x2="3.6425" y2="-1.8" layer="51" rot="R180"/>
 <rectangle x1="3.9775" y1="-3.1" x2="4.2775" y2="-1.8" layer="51" rot="R180"/>
 <rectangle x1="3.3425" y1="1.8" x2="3.6425" y2="3.1" layer="51"/>
 <rectangle x1="3.9775" y1="1.8" x2="4.2775" y2="3.1" layer="51"/>
+<smd name="28" x="-4.1275" y="2.69" dx="0.45" dy="1.5" layer="1" stop="no"/>
+<rectangle x1="-4.38" y1="1.9" x2="-3.88" y2="3.475" layer="29" rot="R180"/>
+<rectangle x1="3.875" y1="1.9" x2="4.375" y2="3.475" layer="29" rot="R180"/>
+<rectangle x1="3.245" y1="-3.475" x2="3.745" y2="-1.9" layer="29"/>
+<rectangle x1="3.88" y1="-3.475" x2="4.38" y2="-1.9" layer="29"/>
+<rectangle x1="-4.375" y1="-3.475" x2="-3.875" y2="-1.9" layer="29"/>
 </package>
 <package name="SOD323">
 <description>&lt;b&gt;Small Outline Diode&lt;/b&gt;</description>
@@ -5460,23 +5499,29 @@ package type TQ</description>
 <text x="-35.56" y="11.43" size="1.27" layer="25">&gt;NAME</text>
 <text x="-24.13" y="11.43" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="16PIN">
-<pad name="1" x="-19.05" y="0" drill="1" shape="square"/>
-<pad name="2" x="-16.51" y="0" drill="1"/>
-<pad name="3" x="-13.97" y="0" drill="1"/>
-<pad name="4" x="-11.43" y="0" drill="1"/>
-<pad name="5" x="-8.89" y="0" drill="1"/>
-<pad name="6" x="-6.35" y="0" drill="1"/>
-<pad name="7" x="-3.81" y="0" drill="1"/>
-<pad name="8" x="-1.27" y="0" drill="1"/>
-<pad name="9" x="1.27" y="0" drill="1"/>
-<pad name="10" x="3.81" y="0" drill="1"/>
-<pad name="11" x="6.35" y="0" drill="1"/>
-<pad name="12" x="8.89" y="0" drill="1"/>
-<pad name="13" x="11.43" y="0" drill="1"/>
-<pad name="14" x="13.97" y="0" drill="1"/>
-<pad name="15" x="16.51" y="0" drill="1"/>
-<pad name="16" x="19.05" y="0" drill="1"/>
+<package name="2X8PIN">
+<pad name="1" x="-8.89" y="1.27" drill="1" shape="square"/>
+<pad name="2" x="-8.89" y="-1.27" drill="1"/>
+<pad name="3" x="-6.35" y="1.27" drill="1"/>
+<pad name="4" x="-6.35" y="-1.27" drill="1"/>
+<pad name="5" x="-3.81" y="1.27" drill="1"/>
+<pad name="6" x="-3.81" y="-1.27" drill="1"/>
+<pad name="7" x="-1.27" y="1.27" drill="1"/>
+<pad name="8" x="-1.27" y="-1.27" drill="1"/>
+<pad name="9" x="1.27" y="1.27" drill="1"/>
+<pad name="10" x="1.27" y="-1.27" drill="1"/>
+<pad name="11" x="3.81" y="1.27" drill="1"/>
+<pad name="12" x="3.81" y="-1.27" drill="1"/>
+<pad name="13" x="6.35" y="1.27" drill="1"/>
+<pad name="14" x="6.35" y="-1.27" drill="1"/>
+<pad name="15" x="8.89" y="1.27" drill="1"/>
+<pad name="16" x="8.89" y="-1.27" drill="1"/>
+<text x="-9.271" y="3.048" size="1.27" layer="25">&gt;NAME</text>
+<text x="3.048" y="3.048" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-10.16" y1="2.54" x2="-10.16" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="-10.16" y1="-2.54" x2="10.16" y2="-2.54" width="0.127" layer="21"/>
+<wire x1="10.16" y1="-2.54" x2="10.16" y2="2.54" width="0.127" layer="21"/>
+<wire x1="10.16" y1="2.54" x2="-10.16" y2="2.54" width="0.127" layer="21"/>
 </package>
 <package name="MSOP8">
 <description>&lt;b&gt;Micro Small Outline Package&lt;/b&gt; Grid .65mm&lt;p&gt;</description>
@@ -5533,6 +5578,8 @@ package type TQ</description>
 <wire x1="0.8" y1="-1.27" x2="1.4" y2="-1.27" width="0.127" layer="21"/>
 <wire x1="1.1" y1="-1.57" x2="1.1" y2="-0.97" width="0.127" layer="21"/>
 <wire x1="1.1" y1="0.97" x2="1.1" y2="1.57" width="0.127" layer="21"/>
+<text x="-3.048" y="2.921" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.302" y="-4.191" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -6553,7 +6600,7 @@ up to 600W into PBTL Mono</description>
 <gate name="G$1" symbol="PIC18*4_K42" x="0" y="0"/>
 </gates>
 <devices>
-<device name="-I/PT" package="TQFP44">
+<device name="" package="TQFP44">
 <connects>
 <connect gate="G$1" pin="ICSPCLK/RB6" pad="16"/>
 <connect gate="G$1" pin="ICSPDAT/RB7" pad="17"/>
@@ -6630,7 +6677,7 @@ up to 600W into PBTL Mono</description>
 <technology name=""/>
 </technologies>
 </device>
-<device name="-CON" package="16PIN">
+<device name="-CON" package="2X8PIN">
 <connects>
 <connect gate="G$1" pin="!E" pad="6"/>
 <connect gate="G$1" pin="A" pad="15"/>
@@ -6754,8 +6801,12 @@ up to 600W into PBTL Mono</description>
 <package name="WIRE-2P-SIMPLE">
 <pad name="1" x="-1.27" y="0" drill="1" shape="square"/>
 <pad name="2" x="1.27" y="0" drill="1"/>
-<text x="-2.54" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<text x="-2.54" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-2.54" y="1.524" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-2.794" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-2.54" y1="1.27" x2="2.54" y2="1.27" width="0.127" layer="21"/>
+<wire x1="2.54" y1="1.27" x2="2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="2.54" y1="-1.27" x2="-2.54" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="-1.27" x2="-2.54" y2="1.27" width="0.127" layer="21"/>
 </package>
 <package name="PM5022">
 <smd name="1" x="-7.9" y="0" dx="3.1" dy="2.9" layer="1"/>
@@ -6885,6 +6936,17 @@ up to 600W into PBTL Mono</description>
 <pad name="A10" x="11.43" y="-3.81" drill="1"/>
 <pad name="B9" x="8.89" y="3.81" drill="1"/>
 <pad name="B10" x="11.43" y="3.81" drill="1"/>
+</package>
+<package name="WIRE-3P-SIMPLE">
+<pad name="1" x="-2.54" y="0" drill="1" shape="square"/>
+<pad name="2" x="0" y="0" drill="1"/>
+<text x="-3.175" y="1.524" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.429" y="-2.794" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="3" x="2.54" y="0" drill="1"/>
+<wire x1="-3.81" y1="1.27" x2="3.81" y2="1.27" width="0.127" layer="21"/>
+<wire x1="3.81" y1="1.27" x2="3.81" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-1.27" x2="-3.81" y2="-1.27" width="0.127" layer="21"/>
+<wire x1="-3.81" y1="-1.27" x2="-3.81" y2="1.27" width="0.127" layer="21"/>
 </package>
 </packages>
 <symbols>
@@ -7298,6 +7360,23 @@ up to 600W into PBTL Mono</description>
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="WIRED-POTENTIOMETER" prefix="RV" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="POT_US-" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="WIRE-3P-SIMPLE">
+<connects>
+<connect gate="G$1" pin="A" pad="1"/>
+<connect gate="G$1" pin="E" pad="3"/>
+<connect gate="G$1" pin="S" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -20887,11 +20966,11 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <parts>
 <part name="XBT100" library="BW-Connectors" deviceset="LI-ION-PACK-CONN" device="" value="4S4P Li-ion + 103AT"/>
 <part name="U300" library="BW-Active" deviceset="TPA3255" device=""/>
-<part name="XLS300" library="BW-Connectors" deviceset="SPEAKER-CONN" device="" value="SP-6/108PRO"/>
-<part name="XLS301" library="BW-Connectors" deviceset="SPEAKER-CONN" device="" value="DT-74/8"/>
-<part name="XLS302" library="BW-Connectors" deviceset="SPEAKER-CONN" device="" value="DT74/8"/>
+<part name="XLS300" library="BW-Connectors" deviceset="SPEAKER-CONN" device="" value="BASS"/>
+<part name="XLS301" library="BW-Connectors" deviceset="SPEAKER-CONN" device="" value="LEFT"/>
+<part name="XLS302" library="BW-Connectors" deviceset="SPEAKER-CONN" device="" value="RIGHT"/>
 <part name="H300" library="BW-PassiveMechanical" deviceset="ATS-CPX030030030-173-C2-R0" device="" override_package3d_urn="urn:adsk.eagle:package:12552342/2" override_package_urn="urn:adsk.eagle:footprint:12552343/1"/>
-<part name="FAN300" library="BW-PassiveMechanical" deviceset="WIRED-FAN" device="" value="HA30101V3"/>
+<part name="FAN300" library="BW-PassiveMechanical" deviceset="WIRED-FAN" device="" value="12V &lt;50mA"/>
 <part name="U301" library="BW-Active" deviceset="NCS20071" device=""/>
 <part name="RT300" library="BW-PassiveMechanical" deviceset="WIRED-THERMISTOR" device="" value="103AT"/>
 <part name="R300" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="510Ω"/>
@@ -20918,7 +20997,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="C106" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1µF"/>
 <part name="C105" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1µF"/>
 <part name="C107" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1µF"/>
-<part name="R108" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.5kΩ"/>
+<part name="R108" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.53kΩ"/>
 <part name="R109" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1MΩ"/>
 <part name="R111" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1MΩ"/>
 <part name="R110" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1kΩ"/>
@@ -21008,8 +21087,8 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="C212" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="47µF"/>
 <part name="C211" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1µF"/>
 <part name="C213" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10µF 35V"/>
-<part name="U203" library="BW-Active" deviceset="SOT23-5-LDO" device="" value="MIC5504-3.3YM5-TR"/>
-<part name="U204" library="BW-Active" deviceset="SOT23-5-LDO" device="" value="MIC5205-3.8YM5-TR"/>
+<part name="U203" library="BW-Active" deviceset="SOT23-5-LDO" device="" value="LDO-3.3V"/>
+<part name="U204" library="BW-Active" deviceset="SOT23-5-LDO" device="" value="LDO-3.8V"/>
 <part name="C215" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1µF"/>
 <part name="C217" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1µF"/>
 <part name="C216" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1µF"/>
@@ -21075,16 +21154,16 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="RV300" library="BW-PassiveMechanical" deviceset="TC33X-2" device="" value="20kΩ"/>
 <part name="R316" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
 <part name="R317" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
-<part name="C308" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
-<part name="C309" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
-<part name="C315" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
-<part name="C321" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
+<part name="C308" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10µF"/>
+<part name="C309" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10µF"/>
+<part name="C315" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10µF"/>
+<part name="C321" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10µF"/>
 <part name="C307" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
 <part name="C301" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
 <part name="C302" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
 <part name="C300" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
-<part name="C314" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF?"/>
-<part name="C320" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF?"/>
+<part name="C314" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
+<part name="C320" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
 <part name="F300" library="BW-PassiveMechanical" deviceset="MRF_FUSE" device="" value="2A"/>
 <part name="F301" library="BW-PassiveMechanical" deviceset="MRF_FUSE" device="" value="1A"/>
 <part name="F302" library="BW-PassiveMechanical" deviceset="MRF_FUSE" device="" value="1A"/>
@@ -21094,7 +21173,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="R216" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1.43kΩ"/>
 <part name="R215" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="44.2kΩ"/>
 <part name="R217" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="10mΩ"/>
-<part name="Q203" library="BW-Active" deviceset="SOT23-P-MOSFET" device="" value="DMP4065S-7"/>
+<part name="Q203" library="BW-Active" deviceset="SOT23-P-MOSFET" device="" value="DMP4065S"/>
 <part name="D202" library="BW-Active" deviceset="DO-214AA-SCHOTTKY" device="" value="SK44BL-TP"/>
 <part name="L202" library="BW-PassiveMechanical" deviceset="SRN1060" device="" value="10µH"/>
 <part name="C226" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1nF"/>
@@ -21113,10 +21192,10 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="C326" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1µF"/>
 <part name="C328" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1µF"/>
 <part name="C327" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1µF"/>
-<part name="C337" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1µF 100V"/>
-<part name="C338" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1µF 100V"/>
-<part name="C335" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1µF 100V"/>
-<part name="C334" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1µF 100V"/>
+<part name="C337" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1µF 100V .5"/>
+<part name="C338" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1µF 100V .5"/>
+<part name="C335" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1µF 100V .5"/>
+<part name="C334" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1µF 100V .5"/>
 <part name="C352" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E5-13" package3d_urn="urn:adsk.eagle:package:23375/1" value="470µF 80V"/>
 <part name="C353" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E5-13" package3d_urn="urn:adsk.eagle:package:23375/1" value="470µF 80V"/>
 <part name="C349" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1µF 100V"/>
@@ -21137,14 +21216,14 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="R334" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="3.3Ω"/>
 <part name="R337" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="3.3Ω"/>
 <part name="R336" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="3.3Ω"/>
-<part name="C344" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1nF 100V"/>
-<part name="C341" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1nF 100V"/>
-<part name="C347" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1nF 100V"/>
-<part name="C350" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="1nF 100V"/>
-<part name="C345" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nF"/>
-<part name="C342" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nF"/>
-<part name="C348" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nF"/>
-<part name="C351" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="10nF"/>
+<part name="C344" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1nF 100V"/>
+<part name="C341" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1nF 100V"/>
+<part name="C347" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1nF 100V"/>
+<part name="C350" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="1nF 100V"/>
+<part name="C345" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10nF"/>
+<part name="C342" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10nF"/>
+<part name="C348" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10nF"/>
+<part name="C351" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="10nF"/>
 <part name="C354" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
 <part name="C355" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF"/>
 <part name="R338" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
@@ -21152,9 +21231,9 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="R340" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
 <part name="R315" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.53kΩ"/>
 <part name="F100" library="BW-PassiveMechanical" deviceset="2410-FUSE" device="" value="15A"/>
-<part name="U400" library="BW-Active" deviceset="PIC18*4_K42" device="-I/PT" technology="LF"/>
+<part name="U400" library="BW-Active" deviceset="PIC18*4_K42" device="" technology="LF"/>
 <part name="XDS400" library="BW-Active" deviceset="HD44780_LCD" device="-CON"/>
-<part name="J400" library="BW-Connectors" deviceset="PINHD-1X8" device=""/>
+<part name="J400" library="BW-Connectors" deviceset="PINHD-1X8" device="" value="ICSP"/>
 <part name="R400" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330Ω"/>
 <part name="R401" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
 <part name="C402" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1µF"/>
@@ -21179,8 +21258,8 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="C405" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="15pF"/>
 <part name="C407" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="15pF"/>
 <part name="C406" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="15pF"/>
-<part name="U405" library="BW-Active" deviceset="LM2904" device=""/>
-<part name="U406" library="BW-Active" deviceset="NCS20071" device=""/>
+<part name="U305" library="BW-Active" deviceset="LM2904" device=""/>
+<part name="U306" library="BW-Active" deviceset="NCS20071" device=""/>
 <part name="J402" library="BW-Connectors" deviceset="GEN-3PIN" device="" value="AUX"/>
 <part name="D400" library="BW-Active" deviceset="SOT23-TVS" device="" value="D5V0L2B3SO"/>
 <part name="D103" library="BW-Active" deviceset="DO-219AB-ZENER" device="" value="SMF28A-M3"/>
@@ -21191,7 +21270,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="Q402" library="BW-Active" deviceset="SOT23-N-MOSFET" device="" value="NMOS"/>
 <part name="R404" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
 <part name="SW407" library="BW-PassiveMechanical" deviceset="WIRED-SWITCH-NO" device="" value="RESET"/>
-<part name="SW408" library="BW-PassiveMechanical" deviceset="WIRED-SWITCH-NO" device="" value="LCD_BL"/>
+<part name="SW408" library="BW-PassiveMechanical" deviceset="WIRED-SWITCH-NO" device="" value="LCDBL"/>
 <part name="RV303" library="BW-PassiveMechanical" deviceset="TC33X-2" device="" value="20kΩ"/>
 <part name="R341" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
 <part name="R342" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1kΩ"/>
@@ -21208,7 +21287,6 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="J403" library="BW-Connectors" deviceset="GEN-4PIN" device="" value="LED"/>
 <part name="R405" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
 <part name="SJ402" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="VBUS"/>
-<part name="SW409" library="BW-PassiveMechanical" deviceset="WIRED-SWITCH-NO" device="" value="LEDSW"/>
 <part name="Q403" library="BW-Active" deviceset="SOT23-N-MOSFET" device="" value="DMG2302UK"/>
 <part name="Q404" library="BW-Active" deviceset="SOT23-N-MOSFET" device="" value="DMG2302UK"/>
 <part name="Q405" library="BW-Active" deviceset="SOT23-N-MOSFET" device="" value="DMG2302UK"/>
@@ -21217,6 +21295,19 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <part name="Q406" library="BW-Active" deviceset="SOT23-N-MOSFET" device="" value="NMOS"/>
 <part name="Q407" library="BW-Active" deviceset="SOT23-N-MOSFET" device="" value="NMOS"/>
 <part name="F101" library="BW-PassiveMechanical" deviceset="2410-FUSE" device="" value="10A"/>
+<part name="RV401" library="BW-PassiveMechanical" deviceset="WIRED-POTENTIOMETER" device="" value="100kΩ"/>
+<part name="C228" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-EU" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="47µF"/>
+<part name="U402" library="BW-Active" deviceset="NCS20071" device=""/>
+<part name="R406" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10kΩ"/>
+<part name="R407" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1.69kΩ"/>
+<part name="C409" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1µF"/>
+<part name="R408" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="47Ω?"/>
+<part name="R409" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="47Ω?"/>
+<part name="C410" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1µF?"/>
+<part name="C411" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1µF?"/>
+<part name="J405" library="BW-Connectors" deviceset="GEN-2PIN" device="" value="USB1"/>
+<part name="J406" library="BW-Connectors" deviceset="GEN-2PIN" device="" value="USB2"/>
+<part name="SJ404" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="GND CUT"/>
 </parts>
 <sheets>
 <sheet>
@@ -22864,6 +22955,10 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <attribute name="NAME" x="123.063" y="-169.6974" size="1.778" layer="95"/>
 <attribute name="VALUE" x="123.063" y="-174.7774" size="1.778" layer="96"/>
 </instance>
+<instance part="C228" gate="G$1" x="134.62" y="-66.04" smashed="yes">
+<attribute name="NAME" x="135.763" y="-65.5574" size="1.778" layer="95"/>
+<attribute name="VALUE" x="135.763" y="-70.6374" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -23248,6 +23343,10 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <junction x="114.3" y="-101.6"/>
 <wire x1="22.86" y1="-101.6" x2="22.86" y2="-104.14" width="0.1524" layer="91"/>
 <label x="22.86" y="-106.68" size="1.778" layer="95"/>
+<pinref part="C228" gate="G$1" pin="-"/>
+<wire x1="134.62" y1="-71.12" x2="134.62" y2="-101.6" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-101.6" x2="124.46" y2="-101.6" width="0.1524" layer="91"/>
+<junction x="124.46" y="-101.6"/>
 </segment>
 <segment>
 <pinref part="L201" gate="G$1" pin="S1"/>
@@ -23264,9 +23363,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <wire x1="68.58" y1="-167.64" x2="68.58" y2="-187.96" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="-187.96" x2="91.44" y2="-187.96" width="0.1524" layer="91"/>
 <junction x="109.22" y="-187.96"/>
-<pinref part="C226" gate="G$1" pin="2"/>
 <wire x1="91.44" y1="-187.96" x2="109.22" y2="-187.96" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="-167.64" x2="91.44" y2="-187.96" width="0.1524" layer="91"/>
 <junction x="91.44" y="-187.96"/>
 <wire x1="91.44" y1="-187.96" x2="91.44" y2="-190.5" width="0.1524" layer="91"/>
 <label x="91.44" y="-193.04" size="1.778" layer="95"/>
@@ -23456,9 +23553,13 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <pinref part="R213" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="-45.72" x2="101.6" y2="-40.64" width="0.1524" layer="91"/>
 <junction x="101.6" y="-40.64"/>
-<label x="129.54" y="-40.64" size="1.778" layer="95"/>
-<wire x1="124.46" y1="-40.64" x2="129.54" y2="-40.64" width="0.1524" layer="91"/>
+<label x="142.24" y="-40.64" size="1.778" layer="95"/>
 <junction x="124.46" y="-40.64"/>
+<wire x1="124.46" y1="-40.64" x2="134.62" y2="-40.64" width="0.1524" layer="91"/>
+<pinref part="C228" gate="G$1" pin="+"/>
+<wire x1="134.62" y1="-40.64" x2="142.24" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-63.5" x2="134.62" y2="-40.64" width="0.1524" layer="91"/>
+<junction x="134.62" y="-40.64"/>
 </segment>
 </net>
 <net name="BUCK_RT" class="0">
@@ -23529,11 +23630,15 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <pinref part="R219" gate="G$1" pin="2"/>
 <wire x1="109.22" y1="-170.18" x2="109.22" y2="-172.72" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="-172.72" x2="109.22" y2="-175.26" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="-172.72" x2="60.96" y2="-172.72" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="-172.72" x2="91.44" y2="-172.72" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="-172.72" x2="60.96" y2="-172.72" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="-172.72" x2="60.96" y2="-157.48" width="0.1524" layer="91"/>
 <junction x="109.22" y="-172.72"/>
 <pinref part="U202" gate="G$1" pin="FB"/>
 <wire x1="60.96" y1="-157.48" x2="25.4" y2="-157.48" width="0.1524" layer="91"/>
+<pinref part="C226" gate="G$1" pin="2"/>
+<wire x1="91.44" y1="-167.64" x2="91.44" y2="-172.72" width="0.1524" layer="91"/>
+<junction x="91.44" y="-172.72"/>
 </segment>
 </net>
 </nets>
@@ -24055,15 +24160,15 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <attribute name="NAME" x="-163.83" y="64.9986" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-163.83" y="60.198" size="1.778" layer="96"/>
 </instance>
-<instance part="U405" gate="A" x="-312.42" y="73.66" smashed="yes">
+<instance part="U305" gate="A" x="-312.42" y="73.66" smashed="yes">
 <attribute name="NAME" x="-309.88" y="76.835" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-309.88" y="68.58" size="1.778" layer="96"/>
 </instance>
-<instance part="U405" gate="B" x="-276.86" y="119.38" smashed="yes">
+<instance part="U305" gate="B" x="-276.86" y="119.38" smashed="yes">
 <attribute name="NAME" x="-274.32" y="122.555" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-274.32" y="114.3" size="1.778" layer="96"/>
 </instance>
-<instance part="U406" gate="G$1" x="-195.58" y="119.38" smashed="yes">
+<instance part="U306" gate="G$1" x="-195.58" y="119.38" smashed="yes">
 <attribute name="NAME" x="-193.04" y="122.555" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-193.04" y="114.3" size="1.778" layer="96"/>
 </instance>
@@ -24309,7 +24414,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <segment>
 <wire x1="-312.42" y1="66.04" x2="-312.42" y2="63.5" width="0.1524" layer="91"/>
 <label x="-312.42" y="60.96" size="1.778" layer="95"/>
-<pinref part="U405" gate="A" pin="V-"/>
+<pinref part="U305" gate="A" pin="V-"/>
 </segment>
 <segment>
 <pinref part="R343" gate="G$1" pin="1"/>
@@ -24317,7 +24422,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <label x="-248.92" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U406" gate="G$1" pin="V-"/>
+<pinref part="U306" gate="G$1" pin="V-"/>
 <wire x1="-195.58" y1="111.76" x2="-195.58" y2="109.22" width="0.1524" layer="91"/>
 <label x="-195.58" y="106.68" size="1.778" layer="95"/>
 </segment>
@@ -24440,7 +24545,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <segment>
 <wire x1="-312.42" y1="81.28" x2="-312.42" y2="83.82" width="0.1524" layer="91"/>
 <label x="-312.42" y="83.82" size="1.778" layer="95"/>
-<pinref part="U405" gate="A" pin="V+"/>
+<pinref part="U305" gate="A" pin="V+"/>
 </segment>
 </net>
 <net name="AMP_FAN_GATE" class="0">
@@ -24526,10 +24631,10 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <segment>
 <wire x1="-320.04" y1="76.2" x2="-322.58" y2="76.2" width="0.1524" layer="91"/>
 <label x="-325.12" y="76.2" size="1.778" layer="95"/>
-<pinref part="U405" gate="A" pin="+IN"/>
+<pinref part="U305" gate="A" pin="+IN"/>
 </segment>
 <segment>
-<pinref part="U405" gate="B" pin="+IN"/>
+<pinref part="U305" gate="B" pin="+IN"/>
 <wire x1="-284.48" y1="121.92" x2="-287.02" y2="121.92" width="0.1524" layer="91"/>
 <label x="-289.56" y="121.92" size="1.778" layer="95"/>
 </segment>
@@ -25155,10 +25260,14 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <net name="AMP_OUT_D" class="0">
 <segment>
 <pinref part="L303" gate="G$1" pin="1"/>
-<wire x1="104.14" y1="15.24" x2="104.14" y2="0" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="15.24" x2="104.14" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="2.54" x2="104.14" y2="0" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="0" x2="106.68" y2="0" width="0.1524" layer="91"/>
 <pinref part="U300" gate="G$1" pin="OUT_D"/>
 <wire x1="78.74" y1="15.24" x2="104.14" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="C333" gate="G$1" pin="1"/>
+<wire x1="91.44" y1="2.54" x2="104.14" y2="2.54" width="0.1524" layer="91"/>
+<junction x="104.14" y="2.54"/>
 </segment>
 </net>
 <net name="AMP_BST_D" class="0">
@@ -25192,9 +25301,8 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <segment>
 <pinref part="U300" gate="G$1" pin="PVDD_CD"/>
 <wire x1="78.74" y1="20.32" x2="99.06" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="20.32" x2="99.06" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="20.32" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="C334" gate="G$1" pin="1"/>
-<wire x1="99.06" y1="2.54" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="-7.62" x2="99.06" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="99.06" y="-7.62"/>
 <pinref part="C335" gate="G$1" pin="1"/>
@@ -25223,9 +25331,6 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <wire x1="99.06" y1="38.1" x2="99.06" y2="76.2" width="0.1524" layer="91"/>
 <junction x="99.06" y="38.1"/>
 <label x="99.06" y="76.2" size="1.778" layer="95"/>
-<pinref part="C333" gate="G$1" pin="1"/>
-<wire x1="91.44" y1="2.54" x2="99.06" y2="2.54" width="0.1524" layer="91"/>
-<junction x="99.06" y="2.54"/>
 </segment>
 </net>
 <net name="AMP_D_FILT" class="0">
@@ -25406,7 +25511,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <wire x1="-317.5" y1="55.88" x2="-322.58" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="-322.58" y1="55.88" x2="-322.58" y2="71.12" width="0.1524" layer="91"/>
 <junction x="-322.58" y="71.12"/>
-<pinref part="U405" gate="A" pin="-IN"/>
+<pinref part="U305" gate="A" pin="-IN"/>
 </segment>
 </net>
 <net name="PA_BL_COUPLE" class="0">
@@ -25432,14 +25537,14 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <wire x1="-307.34" y1="55.88" x2="-302.26" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="-302.26" y1="55.88" x2="-302.26" y2="73.66" width="0.1524" layer="91"/>
 <junction x="-302.26" y="73.66"/>
-<pinref part="U405" gate="A" pin="OUT"/>
+<pinref part="U305" gate="A" pin="OUT"/>
 <pinref part="C356" gate="G$1" pin="2"/>
 <wire x1="-302.26" y1="91.44" x2="-302.26" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PA_AF_FB" class="0">
 <segment>
-<pinref part="U405" gate="B" pin="-IN"/>
+<pinref part="U305" gate="B" pin="-IN"/>
 <pinref part="R341" gate="G$1" pin="2"/>
 <wire x1="-284.48" y1="116.84" x2="-287.02" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="R342" gate="G$1" pin="1"/>
@@ -25460,7 +25565,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <segment>
 <pinref part="RV303" gate="G$1" pin="S"/>
 <wire x1="-264.16" y1="111.76" x2="-264.16" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="U405" gate="B" pin="OUT"/>
+<pinref part="U305" gate="B" pin="OUT"/>
 <wire x1="-264.16" y1="119.38" x2="-269.24" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="C357" gate="G$1" pin="2"/>
 <wire x1="-261.62" y1="119.38" x2="-264.16" y2="119.38" width="0.1524" layer="91"/>
@@ -25488,7 +25593,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 </net>
 <net name="3.3V" class="0">
 <segment>
-<pinref part="U406" gate="G$1" pin="V+"/>
+<pinref part="U306" gate="G$1" pin="V+"/>
 <wire x1="-195.58" y1="127" x2="-195.58" y2="129.54" width="0.1524" layer="91"/>
 <label x="-195.58" y="129.54" size="1.778" layer="95"/>
 </segment>
@@ -25514,7 +25619,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <pinref part="R346" gate="G$1" pin="2"/>
 <wire x1="-210.82" y1="106.68" x2="-205.74" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="-205.74" y1="106.68" x2="-205.74" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="U406" gate="G$1" pin="-IN"/>
+<pinref part="U306" gate="G$1" pin="-IN"/>
 <wire x1="-205.74" y1="116.84" x2="-203.2" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="R347" gate="G$1" pin="1"/>
 <wire x1="-200.66" y1="101.6" x2="-205.74" y2="101.6" width="0.1524" layer="91"/>
@@ -25527,7 +25632,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <pinref part="R345" gate="G$1" pin="2"/>
 <wire x1="-210.82" y1="119.38" x2="-205.74" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="-205.74" y1="119.38" x2="-205.74" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="U406" gate="G$1" pin="+IN"/>
+<pinref part="U306" gate="G$1" pin="+IN"/>
 <wire x1="-205.74" y1="121.92" x2="-203.2" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="R344" gate="G$1" pin="2"/>
 <wire x1="-210.82" y1="132.08" x2="-205.74" y2="132.08" width="0.1524" layer="91"/>
@@ -25540,7 +25645,7 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <pinref part="R347" gate="G$1" pin="2"/>
 <wire x1="-190.5" y1="101.6" x2="-177.8" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="-177.8" y1="101.6" x2="-177.8" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="U406" gate="G$1" pin="OUT"/>
+<pinref part="U306" gate="G$1" pin="OUT"/>
 <wire x1="-177.8" y1="119.38" x2="-187.96" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="R348" gate="G$1" pin="1"/>
 <wire x1="-175.26" y1="119.38" x2="-177.8" y2="119.38" width="0.1524" layer="91"/>
@@ -25563,6 +25668,8 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <sheet>
 <description>Digital</description>
 <plain>
+<text x="-116.84" y="5.08" size="1.778" layer="97">Shortcut between digital and low-power
+analog ground planes in case of issues</text>
 </plain>
 <instances>
 <instance part="A400" gate="G$1" x="20.32" y="53.34" smashed="yes">
@@ -25757,10 +25864,6 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <attribute name="NAME" x="218.44" y="96.52" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="224.79" y="96.52" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SW409" gate="G$1" x="162.56" y="27.94" smashed="yes" rot="R90">
-<attribute name="NAME" x="160.02" y="24.13" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="166.37" y="24.13" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="Q403" gate="G$1" x="50.8" y="-76.2" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="43.18" y="-82.55" size="1.778" layer="96" rot="MR90"/>
 <attribute name="NAME" x="40.64" y="-80.01" size="1.778" layer="95" rot="MR90"/>
@@ -25797,24 +25900,66 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <attribute name="VALUE" x="111.76" y="-82.55" size="1.778" layer="96" rot="MR270"/>
 <attribute name="NAME" x="109.22" y="-82.55" size="1.778" layer="95" rot="MR270"/>
 </instance>
+<instance part="RV401" gate="G$1" x="167.64" y="48.26" smashed="yes" rot="R270">
+<attribute name="NAME" x="165.1" y="53.34" size="1.778" layer="95"/>
+<attribute name="VALUE" x="165.1" y="50.8" size="1.778" layer="96"/>
+</instance>
+<instance part="U402" gate="G$1" x="269.24" y="30.48" smashed="yes" rot="R180">
+<attribute name="NAME" x="266.7" y="27.305" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="266.7" y="35.56" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R406" gate="G$1" x="294.64" y="27.94" smashed="yes">
+<attribute name="NAME" x="290.83" y="29.4386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="290.83" y="24.638" size="1.778" layer="96"/>
+</instance>
+<instance part="R407" gate="G$1" x="284.48" y="17.78" smashed="yes" rot="R90">
+<attribute name="NAME" x="282.9814" y="13.97" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="287.782" y="13.97" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C409" gate="G$1" x="185.42" y="76.2" smashed="yes" rot="R90">
+<attribute name="NAME" x="185.039" y="77.724" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="190.119" y="77.724" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R408" gate="G$1" x="-63.5" y="60.96" smashed="yes">
+<attribute name="NAME" x="-67.31" y="62.4586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-67.31" y="57.658" size="1.778" layer="96"/>
+</instance>
+<instance part="R409" gate="G$1" x="-63.5" y="45.72" smashed="yes">
+<attribute name="NAME" x="-67.31" y="47.2186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-67.31" y="42.418" size="1.778" layer="96"/>
+</instance>
+<instance part="C410" gate="G$1" x="-78.74" y="68.58" smashed="yes">
+<attribute name="NAME" x="-77.216" y="68.961" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-77.216" y="63.881" size="1.778" layer="96"/>
+</instance>
+<instance part="C411" gate="G$1" x="-78.74" y="40.64" smashed="yes">
+<attribute name="NAME" x="-77.216" y="41.021" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-77.216" y="35.941" size="1.778" layer="96"/>
+</instance>
+<instance part="J405" gate="A" x="-12.7" y="-63.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="-12.7" y="-58.42" size="1.27" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-11.176" y="-58.42" size="1.27" layer="96" rot="R90"/>
+</instance>
+<instance part="J405" gate="B" x="2.54" y="-63.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="2.54" y="-58.42" size="1.27" layer="95" rot="R90"/>
+<attribute name="VALUE" x="4.064" y="-58.42" size="1.27" layer="96" rot="R90"/>
+</instance>
+<instance part="J406" gate="A" x="-7.62" y="-63.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="-7.62" y="-58.42" size="1.27" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-6.096" y="-58.42" size="1.27" layer="96" rot="R90"/>
+</instance>
+<instance part="J406" gate="B" x="7.62" y="-63.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="7.62" y="-58.42" size="1.27" layer="95" rot="R90"/>
+<attribute name="VALUE" x="9.144" y="-58.42" size="1.27" layer="96" rot="R90"/>
+</instance>
+<instance part="SJ404" gate="1" x="-96.52" y="15.24" smashed="yes">
+<attribute name="NAME" x="-99.06" y="17.78" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-99.06" y="11.43" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="AUD_SRC_R" class="0">
-<segment>
-<pinref part="A400" gate="G$1" pin="SPKR"/>
-<wire x1="-5.08" y1="55.88" x2="-7.62" y2="55.88" width="0.1524" layer="91"/>
-<label x="-22.86" y="55.88" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="AUD_SRC_L" class="0">
-<segment>
-<pinref part="A400" gate="G$1" pin="SPKL"/>
-<wire x1="-5.08" y1="50.8" x2="-7.62" y2="50.8" width="0.1524" layer="91"/>
-<label x="-22.86" y="50.8" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="LCD_D0" class="0">
 <segment>
 <pinref part="XDS400" gate="G$1" pin="D0"/>
@@ -25968,6 +26113,21 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <wire x1="154.94" y1="-12.7" x2="147.32" y2="-12.7" width="0.1524" layer="91"/>
 <label x="142.24" y="-12.7" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="RV401" gate="G$1" pin="E"/>
+<wire x1="175.26" y1="48.26" x2="177.8" y2="48.26" width="0.1524" layer="91"/>
+<label x="177.8" y="48.26" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U402" gate="G$1" pin="V+"/>
+<wire x1="269.24" y1="22.86" x2="269.24" y2="20.32" width="0.1524" layer="91"/>
+<label x="269.24" y="17.78" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C409" gate="G$1" pin="1"/>
+<wire x1="182.88" y1="76.2" x2="180.34" y2="76.2" width="0.1524" layer="91"/>
+<label x="175.26" y="76.2" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -26004,21 +26164,6 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <pinref part="J400" gate="G$1" pin="3"/>
 <wire x1="180.34" y1="-96.52" x2="180.34" y2="-88.9" width="0.1524" layer="91"/>
 <label x="180.34" y="-88.9" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
-<pinref part="SW400" gate="D" pin="O"/>
-<wire x1="-20.32" y1="66.04" x2="-22.86" y2="66.04" width="0.1524" layer="91"/>
-<label x="-27.94" y="66.04" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="SW400" gate="C" pin="O"/>
-<wire x1="-40.64" y1="60.96" x2="-43.18" y2="60.96" width="0.1524" layer="91"/>
-<label x="-48.26" y="60.96" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="SW400" gate="E" pin="O"/>
-<wire x1="111.76" y1="53.34" x2="114.3" y2="53.34" width="0.1524" layer="91"/>
-<label x="114.3" y="53.34" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="A400" gate="G$1" pin="GND"/>
@@ -26132,11 +26277,6 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <label x="162.56" y="101.6" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SW409" gate="G$1" pin="2"/>
-<wire x1="162.56" y1="33.02" x2="162.56" y2="35.56" width="0.1524" layer="91"/>
-<label x="162.56" y="35.56" size="1.778" layer="95" rot="R90"/>
-</segment>
-<segment>
 <pinref part="Q403" gate="G$1" pin="S"/>
 <wire x1="48.26" y1="-81.28" x2="48.26" y2="-109.22" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="-109.22" x2="55.88" y2="-109.22" width="0.1524" layer="91"/>
@@ -26168,6 +26308,72 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <pinref part="U400" gate="G$1" pin="VSS"/>
 <wire x1="154.94" y1="-10.16" x2="147.32" y2="-10.16" width="0.1524" layer="91"/>
 <label x="142.24" y="-10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="RV401" gate="G$1" pin="A"/>
+<wire x1="160.02" y1="48.26" x2="157.48" y2="48.26" width="0.1524" layer="91"/>
+<label x="157.48" y="48.26" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="U402" gate="G$1" pin="V-"/>
+<wire x1="269.24" y1="38.1" x2="269.24" y2="40.64" width="0.1524" layer="91"/>
+<label x="269.24" y="40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R407" gate="G$1" pin="1"/>
+<wire x1="284.48" y1="12.7" x2="284.48" y2="10.16" width="0.1524" layer="91"/>
+<label x="284.48" y="7.62" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C409" gate="G$1" pin="2"/>
+<wire x1="193.04" y1="76.2" x2="190.5" y2="76.2" width="0.1524" layer="91"/>
+<label x="193.04" y="76.2" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C410" gate="G$1" pin="1"/>
+<wire x1="-78.74" y1="71.12" x2="-78.74" y2="73.66" width="0.1524" layer="91"/>
+<label x="-78.74" y="73.66" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C411" gate="G$1" pin="2"/>
+<wire x1="-78.74" y1="35.56" x2="-78.74" y2="33.02" width="0.1524" layer="91"/>
+<label x="-78.74" y="30.48" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="J405" gate="B" pin="P$1"/>
+<wire x1="2.54" y1="-68.58" x2="2.54" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="-71.12" x2="5.08" y2="-71.12" width="0.1524" layer="91"/>
+<pinref part="J406" gate="B" pin="P$1"/>
+<wire x1="5.08" y1="-71.12" x2="7.62" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="-71.12" x2="7.62" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="-71.12" x2="5.08" y2="-73.66" width="0.1524" layer="91"/>
+<junction x="5.08" y="-71.12"/>
+<label x="5.08" y="-76.2" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SW400" gate="C" pin="S"/>
+<wire x1="-40.64" y1="66.04" x2="-43.18" y2="66.04" width="0.1524" layer="91"/>
+<label x="-48.26" y="66.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SW400" gate="D" pin="S"/>
+<wire x1="-20.32" y1="71.12" x2="-22.86" y2="71.12" width="0.1524" layer="91"/>
+<label x="-27.94" y="71.12" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SW400" gate="E" pin="S"/>
+<wire x1="114.3" y1="48.26" x2="111.76" y2="48.26" width="0.1524" layer="91"/>
+<label x="114.3" y="48.26" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SJ404" gate="1" pin="1"/>
+<wire x1="-101.6" y1="15.24" x2="-104.14" y2="15.24" width="0.1524" layer="91"/>
+<label x="-109.22" y="15.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SJ404" gate="1" pin="2"/>
+<wire x1="-91.44" y1="15.24" x2="-88.9" y2="15.24" width="0.1524" layer="91"/>
+<label x="-88.9" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MCU_!MCLR!_FILTERED" class="0">
@@ -26217,6 +26423,17 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <wire x1="88.9" y1="-68.58" x2="88.9" y2="-71.12" width="0.1524" layer="91"/>
 <label x="88.9" y="-73.66" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="J405" gate="A" pin="P$1"/>
+<wire x1="-12.7" y1="-68.58" x2="-12.7" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="-71.12" x2="-10.16" y2="-71.12" width="0.1524" layer="91"/>
+<pinref part="J406" gate="A" pin="P$1"/>
+<wire x1="-10.16" y1="-71.12" x2="-7.62" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="-71.12" x2="-7.62" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="-71.12" x2="-10.16" y2="-73.66" width="0.1524" layer="91"/>
+<junction x="-10.16" y="-71.12"/>
+<label x="-10.16" y="-76.2" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="LCD_K" class="0">
 <segment>
@@ -26258,36 +26475,36 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <segment>
 <pinref part="U400" gate="G$1" pin="RB0"/>
 <wire x1="154.94" y1="-15.24" x2="152.4" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="SW400" gate="A" pin="O"/>
-<wire x1="152.4" y1="-15.24" x2="152.4" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="63.5" x2="137.16" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="-15.24" x2="152.4" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="SW400" gate="A" pin="S"/>
+<wire x1="137.16" y1="68.58" x2="152.4" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="MCU_UART_RX" class="0">
 <segment>
-<pinref part="SW400" gate="B" pin="O"/>
-<wire x1="137.16" y1="50.8" x2="149.86" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="U400" gate="G$1" pin="RB1"/>
-<wire x1="149.86" y1="50.8" x2="149.86" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="55.88" x2="149.86" y2="-17.78" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="-17.78" x2="154.94" y2="-17.78" width="0.1524" layer="91"/>
+<pinref part="SW400" gate="B" pin="S"/>
+<wire x1="137.16" y1="55.88" x2="149.86" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="FT_RXD" class="0">
 <segment>
-<pinref part="SW400" gate="B" pin="S"/>
-<wire x1="137.16" y1="55.88" x2="157.48" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="U401" gate="G$1" pin="RXD"/>
-<wire x1="157.48" y1="55.88" x2="157.48" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="50.8" x2="157.48" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="104.14" x2="170.18" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="SW400" gate="B" pin="O"/>
+<wire x1="157.48" y1="50.8" x2="137.16" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="FT_TXD" class="0">
 <segment>
 <pinref part="U401" gate="G$1" pin="TXD"/>
-<wire x1="170.18" y1="111.76" x2="152.4" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="SW400" gate="A" pin="S"/>
-<wire x1="152.4" y1="111.76" x2="152.4" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="68.58" x2="137.16" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="111.76" x2="154.94" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="111.76" x2="154.94" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="SW400" gate="A" pin="O"/>
+<wire x1="154.94" y1="63.5" x2="137.16" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="BM_HCI_TXD" class="0">
@@ -26629,13 +26846,13 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <wire x1="220.98" y1="106.68" x2="200.66" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="MCU_LED_SW" class="0">
+<net name="MCU_LED_POT" class="0">
 <segment>
 <pinref part="U400" gate="G$1" pin="RC6"/>
 <wire x1="170.18" y1="17.78" x2="170.18" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="170.18" y1="20.32" x2="162.56" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="SW409" gate="G$1" pin="1"/>
-<wire x1="162.56" y1="20.32" x2="162.56" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="20.32" x2="167.64" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="RV401" gate="G$1" pin="S"/>
+<wire x1="167.64" y1="43.18" x2="167.64" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED_G" class="0">
@@ -26726,6 +26943,81 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <wire x1="119.38" y1="-91.44" x2="109.22" y2="-91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="MCU_BAT_SENSE" class="0">
+<segment>
+<pinref part="U400" gate="G$1" pin="RD3"/>
+<wire x1="177.8" y1="17.78" x2="177.8" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="40.64" x2="195.58" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="40.64" x2="195.58" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="30.48" x2="259.08" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="U402" gate="G$1" pin="OUT"/>
+<wire x1="259.08" y1="30.48" x2="261.62" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="259.08" y1="30.48" x2="259.08" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="259.08" y1="45.72" x2="279.4" y2="45.72" width="0.1524" layer="91"/>
+<junction x="259.08" y="30.48"/>
+<wire x1="279.4" y1="45.72" x2="279.4" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="U402" gate="G$1" pin="-IN"/>
+<wire x1="279.4" y1="33.02" x2="276.86" y2="33.02" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="MCU_BAT_VDIV" class="0">
+<segment>
+<pinref part="U402" gate="G$1" pin="+IN"/>
+<pinref part="R406" gate="G$1" pin="1"/>
+<wire x1="276.86" y1="27.94" x2="284.48" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="R407" gate="G$1" pin="2"/>
+<wire x1="284.48" y1="27.94" x2="289.56" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="22.86" x2="284.48" y2="27.94" width="0.1524" layer="91"/>
+<junction x="284.48" y="27.94"/>
+</segment>
+</net>
+<net name="VBAT" class="0">
+<segment>
+<pinref part="R406" gate="G$1" pin="2"/>
+<wire x1="299.72" y1="27.94" x2="302.26" y2="27.94" width="0.1524" layer="91"/>
+<label x="302.26" y="27.94" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="AUD_SRC_R" class="0">
+<segment>
+<pinref part="R408" gate="G$1" pin="1"/>
+<wire x1="-68.58" y1="60.96" x2="-78.74" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="C410" gate="G$1" pin="2"/>
+<wire x1="-78.74" y1="60.96" x2="-83.82" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="63.5" x2="-78.74" y2="60.96" width="0.1524" layer="91"/>
+<junction x="-78.74" y="60.96"/>
+<label x="-99.06" y="60.96" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="AUD_SRC_L" class="0">
+<segment>
+<pinref part="R409" gate="G$1" pin="1"/>
+<wire x1="-68.58" y1="45.72" x2="-78.74" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="C411" gate="G$1" pin="1"/>
+<wire x1="-78.74" y1="45.72" x2="-83.82" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="43.18" x2="-78.74" y2="45.72" width="0.1524" layer="91"/>
+<junction x="-78.74" y="45.72"/>
+<label x="-99.06" y="45.72" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="BM_SPKR" class="0">
+<segment>
+<pinref part="R408" gate="G$1" pin="2"/>
+<wire x1="-58.42" y1="60.96" x2="-55.88" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="A400" gate="G$1" pin="SPKR"/>
+<wire x1="-55.88" y1="60.96" x2="-55.88" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-55.88" y1="55.88" x2="-5.08" y2="55.88" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="BM_SPKL" class="0">
+<segment>
+<pinref part="A400" gate="G$1" pin="SPKL"/>
+<wire x1="-5.08" y1="50.8" x2="-55.88" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="-55.88" y1="50.8" x2="-55.88" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="R409" gate="G$1" pin="2"/>
+<wire x1="-55.88" y1="45.72" x2="-58.42" y2="45.72" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -26735,6 +27027,10 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 </schematic>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
