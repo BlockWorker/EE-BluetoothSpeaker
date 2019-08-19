@@ -73,7 +73,7 @@
 <layer number="99" name="SpiceOrder" color="5" fill="1" visible="no" active="no"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyYmY1N2E4" projecturn="a.cGVyc29uYWw6dWUyYmY1N2E4IzIwMTkwODEwMjA3OTY0MjA2" f3durn="urn:adsk.wipprod:dm.lineage:htWdvn7_R6Oh7xc5foW3iw" pcbguid="a101c769-6937-47b7-9c27-f01bafa00281" lastpulledtime="" lastsyncedchangeguid="bef4da5e-8859-96a7-67da-e9efdff9a2d5"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyYmY1N2E4" projecturn="a.cGVyc29uYWw6dWUyYmY1N2E4IzIwMTkwODEwMjA3OTY0MjA2" f3durn="urn:adsk.wipprod:dm.lineage:htWdvn7_R6Oh7xc5foW3iw" pcbguid="a101c769-6937-47b7-9c27-f01bafa00281" lastpulledtime="" lastsyncedchangeguid="0dff3913-09a4-b26f-f6da-17c9799e7a2a"/>
 <plain>
 <wire x1="50.018" y1="37.77" x2="2.032" y2="37.77" width="0" layer="20"/>
 <wire x1="2.032" y1="37.77" x2="0" y2="35.738" width="0" layer="20" curve="90"/>
@@ -162,6 +162,7 @@
 Buttons</text>
 <text x="48.7934" y="17.5006" size="1.016" layer="22" font="vector" ratio="15" rot="MR90">©2019 BlockWorker
 blockworker.de</text>
+<text x="50.8" y="21.59" size="1.016" layer="21" font="vector" ratio="15" rot="R90">JLCJLCJLCJLC</text>
 </plain>
 <libraries>
 <library name="BW-Connectors">
@@ -1528,11 +1529,11 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </pass>
 </autorouter>
 <elements>
-<element name="J1" library="BW-Connectors" package="2PIN" value="MFB" x="12.065" y="34.671" smashed="yes" rot="MR180">
-<attribute name="VALUE" x="13.589" y="36.195" size="1.27" layer="28" font="vector" ratio="12" rot="MR0"/>
+<element name="J1" library="BW-Connectors" package="2PIN" value="VOL-" x="12.065" y="34.671" smashed="yes" rot="MR180">
+<attribute name="VALUE" x="14.097" y="36.195" size="1.27" layer="28" font="vector" ratio="12" rot="MR0"/>
 </element>
-<element name="J2" library="BW-Connectors" package="2PIN" value="VOL-" x="26.035" y="34.671" smashed="yes" rot="MR180">
-<attribute name="VALUE" x="28.067" y="36.195" size="1.27" layer="28" font="vector" ratio="12" rot="MR0"/>
+<element name="J2" library="BW-Connectors" package="2PIN" value="MFB" x="26.035" y="34.671" smashed="yes" rot="MR180">
+<attribute name="VALUE" x="27.559" y="36.195" size="1.27" layer="28" font="vector" ratio="12" rot="MR0"/>
 </element>
 <element name="J3" library="BW-Connectors" package="2PIN" value="VOL+" x="40.005" y="34.671" smashed="yes" rot="MR180">
 <attribute name="VALUE" x="42.037" y="36.195" size="1.27" layer="28" font="vector" ratio="12" rot="MR0"/>
@@ -1611,7 +1612,7 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </element>
 </elements>
 <signals>
-<signal name="MFB1">
+<signal name="VOL-1">
 <contactref element="J1" pad="1"/>
 <contactref element="SW1" pad="1" route="any" routetag="S.1"/>
 <contactref element="SW1" pad="2" route="any" routetag="S.1"/>
@@ -1619,21 +1620,21 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <wire x1="7.58" y1="28.408" x2="5.815" y2="28.408" width="0.2032" layer="1"/>
 <wire x1="10.795" y1="31.623" x2="7.58" y2="28.408" width="0.2032" layer="1"/>
 </signal>
-<signal name="MFB2">
+<signal name="VOL-2">
 <contactref element="J1" pad="2"/>
 <contactref element="SW1" pad="3" route="any" routetag="S.2"/>
 <contactref element="SW1" pad="4" route="any" routetag="S.2"/>
 <wire x1="13.335" y1="34.671" x2="13.335" y2="28.388" width="0.2032" layer="1"/>
 <wire x1="13.335" y1="28.388" x2="18.315" y2="23.408" width="0.2032" layer="1"/>
 </signal>
-<signal name="VOL-1">
+<signal name="MFB1">
 <contactref element="J2" pad="1"/>
 <contactref element="SW2" pad="1" route="any" routetag="S.1"/>
 <contactref element="SW2" pad="2" route="any" routetag="S.1"/>
 <wire x1="24.765" y1="34.671" x2="24.765" y2="33.388" width="0.2032" layer="1"/>
 <wire x1="24.765" y1="33.388" x2="23.535" y2="32.158" width="0.2032" layer="1"/>
 </signal>
-<signal name="VOL-2">
+<signal name="MFB2">
 <contactref element="J2" pad="2"/>
 <contactref element="SW2" pad="3" route="any" routetag="S.2"/>
 <contactref element="SW2" pad="4" route="any" routetag="S.2"/>
@@ -1700,20 +1701,26 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </signal>
 <signal name="LED_MFB_5">
 <contactref element="SJ1" pad="2"/>
-<contactref element="R1" pad="2"/>
-<wire x1="13.97" y1="26.416" x2="13.97" y2="28.636" width="0.2032" layer="16"/>
-<wire x1="13.97" y1="28.636" x2="14.163" y2="28.829" width="0.2032" layer="16"/>
+<contactref element="R2" pad="2"/>
+<wire x1="13.97" y1="26.416" x2="13.97" y2="27.5082" width="0.1524" layer="16"/>
+<wire x1="13.97" y1="27.5082" x2="14.1224" y2="27.6606" width="0.1524" layer="16"/>
+<wire x1="14.1224" y1="27.6606" x2="16.5862" y2="27.6606" width="0.1524" layer="16"/>
+<wire x1="23.7896" y1="27.879" x2="23.876" y2="27.879" width="0.1524" layer="16"/>
+<wire x1="16.5862" y1="27.6606" x2="17.0434" y2="27.2034" width="0.1524" layer="16"/>
+<wire x1="17.0434" y1="27.2034" x2="23.114" y2="27.2034" width="0.1524" layer="16"/>
+<wire x1="23.114" y1="27.2034" x2="23.7896" y2="27.879" width="0.1524" layer="16"/>
 </signal>
 <signal name="LED_MFB_6">
 <contactref element="SJ2" pad="2"/>
-<contactref element="SW1" pad="6"/>
-<wire x1="13.97" y1="24.003" x2="13.97" y2="22.6314" width="0.2032" layer="16"/>
-<wire x1="12.2466" y1="20.908" x2="8.165" y2="20.908" width="0.2032" layer="16"/>
-<wire x1="13.97" y1="22.6314" x2="12.2466" y2="20.908" width="0.2032" layer="16"/>
+<contactref element="SW2" pad="6"/>
+<via x="13.97" y="24.003" extent="1-16" drill="0.3"/>
+<wire x1="13.97" y1="24.003" x2="19.6088" y2="18.3642" width="0.1524" layer="1"/>
+<wire x1="31.035" y1="20.0114" x2="31.035" y2="22.008" width="0.1524" layer="1"/>
+<wire x1="19.6088" y1="18.3642" x2="29.3878" y2="18.3642" width="0.1524" layer="1"/>
+<wire x1="29.3878" y1="18.3642" x2="31.035" y2="20.0114" width="0.1524" layer="1"/>
 </signal>
 <signal name="LED_MAIN_5">
 <contactref element="SJ3" pad="2"/>
-<contactref element="R2" pad="2"/>
 <contactref element="R6" pad="2"/>
 <contactref element="R5" pad="2"/>
 <contactref element="R4" pad="2"/>
@@ -1731,18 +1738,20 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <wire x1="37.719" y1="13.782" x2="34.483" y2="13.782" width="0.2032" layer="16"/>
 <wire x1="33.594" y1="12.893" x2="29.21" y2="12.893" width="0.2032" layer="16"/>
 <wire x1="34.483" y1="13.782" x2="33.594" y2="12.893" width="0.2032" layer="16"/>
-<wire x1="23.876" y1="27.879" x2="23.876" y2="22.1742" width="0.2032" layer="16"/>
-<wire x1="23.876" y1="22.1742" x2="25.019" y2="21.0312" width="0.2032" layer="16"/>
-<wire x1="25.019" y1="21.0312" x2="25.019" y2="17.3736" width="0.2032" layer="16"/>
-<wire x1="25.019" y1="17.3736" x2="23.7236" y2="16.0782" width="0.2032" layer="16"/>
-<wire x1="42.799" y1="26.99" x2="42.799" y2="21.4122" width="0.2032" layer="16"/>
-<wire x1="39.5376" y1="13.782" x2="37.719" y2="13.782" width="0.2032" layer="16"/>
-<wire x1="42.799" y1="21.4122" x2="40.2082" y2="18.8214" width="0.2032" layer="16"/>
-<wire x1="40.2082" y1="18.8214" x2="40.2082" y2="14.4526" width="0.2032" layer="16"/>
-<wire x1="40.2082" y1="14.4526" x2="39.5376" y2="13.782" width="0.2032" layer="16"/>
+<wire x1="23.7236" y1="16.0782" x2="25.019" y2="17.3736" width="0.2032" layer="16"/>
+<contactref element="R1" pad="2"/>
+<wire x1="42.799" y1="26.99" x2="29.8298" y2="26.99" width="0.1524" layer="16"/>
+<wire x1="17.6784" y1="30.8102" x2="16.51" y2="31.9786" width="0.1524" layer="16"/>
+<wire x1="16.51" y1="31.9786" x2="15.3924" y2="31.9786" width="0.1524" layer="16"/>
+<wire x1="14.163" y1="30.7492" x2="14.163" y2="28.829" width="0.1524" layer="16"/>
+<wire x1="29.8298" y1="26.99" x2="26.0096" y2="30.8102" width="0.1524" layer="16"/>
+<wire x1="26.0096" y1="30.8102" x2="17.6784" y2="30.8102" width="0.1524" layer="16"/>
+<wire x1="15.3924" y1="31.9786" x2="14.163" y2="30.7492" width="0.1524" layer="16"/>
+<wire x1="25.019" y1="17.3736" x2="26.4922" y2="18.8468" width="0.1524" layer="16"/>
+<wire x1="26.4922" y1="23.6524" x2="29.8298" y2="26.99" width="0.1524" layer="16"/>
+<wire x1="26.4922" y1="18.8468" x2="26.4922" y2="23.6524" width="0.1524" layer="16"/>
 </signal>
 <signal name="LED_MAIN_6">
-<contactref element="SW2" pad="6"/>
 <contactref element="SJ4" pad="2"/>
 <contactref element="SW3" pad="6"/>
 <contactref element="SW4" pad="6"/>
@@ -1758,8 +1767,11 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <wire x1="45.005" y1="8.038" x2="45.005" y2="18.4188" width="0.2032" layer="1"/>
 <wire x1="42.5158" y1="20.908" x2="36.105" y2="20.908" width="0.2032" layer="1"/>
 <wire x1="45.005" y1="18.4188" x2="42.5158" y2="20.908" width="0.2032" layer="1"/>
-<wire x1="36.105" y1="20.908" x2="32.135" y2="20.908" width="0.2032" layer="16"/>
-<wire x1="32.135" y1="20.908" x2="31.035" y2="22.008" width="0.2032" layer="16"/>
+<contactref element="SW1" pad="6"/>
+<wire x1="36.105" y1="20.908" x2="33.1294" y2="17.9324" width="0.1524" layer="1"/>
+<wire x1="14.5758" y1="20.908" x2="8.165" y2="20.908" width="0.1524" layer="1"/>
+<wire x1="33.1294" y1="17.9324" x2="17.5514" y2="17.9324" width="0.1524" layer="1"/>
+<wire x1="17.5514" y1="17.9324" x2="14.5758" y2="20.908" width="0.1524" layer="1"/>
 </signal>
 <signal name="LED_MFB_GND">
 <contactref element="J7" pad="3"/>
@@ -1803,13 +1815,13 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <wire x1="10.7696" y1="19.4818" x2="15.621" y2="14.6304" width="0.2032" layer="16"/>
 <wire x1="15.621" y1="13.081" x2="15.621" y2="10.668" width="0.2032" layer="16"/>
 </signal>
-<signal name="LED_MFB_5R">
+<signal name="LED_VOL-_5R">
 <contactref element="R1" pad="1"/>
 <contactref element="SW1" pad="5"/>
 <wire x1="16.063" y1="28.829" x2="16.063" y2="30.81" width="0.2032" layer="16"/>
 <wire x1="16.063" y1="30.81" x2="15.965" y2="30.908" width="0.2032" layer="16"/>
 </signal>
-<signal name="LED_VOL-_5R">
+<signal name="LED_MFB_5R">
 <contactref element="R2" pad="1"/>
 <contactref element="SW2" pad="5"/>
 <wire x1="23.876" y1="29.779" x2="21.064" y2="29.779" width="0.2032" layer="16"/>

@@ -23964,17 +23964,17 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <attribute name="NAME" x="-49.657" y="-2.0574" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-49.657" y="-7.1374" size="1.778" layer="96"/>
 </instance>
-<instance part="C336" gate="G$1" x="124.46" y="-12.7" smashed="yes">
-<attribute name="NAME" x="125.603" y="-12.2174" size="1.778" layer="95"/>
-<attribute name="VALUE" x="125.603" y="-17.2974" size="1.778" layer="96"/>
+<instance part="C336" gate="G$1" x="129.54" y="-12.7" smashed="yes">
+<attribute name="NAME" x="130.683" y="-12.2174" size="1.778" layer="95"/>
+<attribute name="VALUE" x="130.683" y="-17.2974" size="1.778" layer="96"/>
 </instance>
 <instance part="C323" gate="G$1" x="-40.64" y="-2.54" smashed="yes">
 <attribute name="NAME" x="-39.116" y="-2.159" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-39.116" y="-7.239" size="1.778" layer="96"/>
 </instance>
-<instance part="C339" gate="G$1" x="165.1" y="-12.7" smashed="yes">
-<attribute name="NAME" x="166.243" y="-12.2174" size="1.778" layer="95"/>
-<attribute name="VALUE" x="166.243" y="-17.2974" size="1.778" layer="96"/>
+<instance part="C339" gate="G$1" x="175.26" y="-12.7" smashed="yes">
+<attribute name="NAME" x="176.403" y="-12.2174" size="1.778" layer="95"/>
+<attribute name="VALUE" x="176.403" y="-17.2974" size="1.778" layer="96"/>
 </instance>
 <instance part="C324" gate="G$1" x="-22.86" y="-2.54" smashed="yes">
 <attribute name="NAME" x="-21.336" y="-2.159" size="1.778" layer="95"/>
@@ -24008,17 +24008,17 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <attribute name="NAME" x="21.844" y="-2.159" size="1.778" layer="95"/>
 <attribute name="VALUE" x="21.844" y="-7.239" size="1.778" layer="96"/>
 </instance>
-<instance part="C337" gate="G$1" x="139.7" y="-12.7" smashed="yes">
-<attribute name="NAME" x="141.224" y="-12.319" size="1.778" layer="95"/>
-<attribute name="VALUE" x="141.224" y="-17.399" size="1.778" layer="96"/>
+<instance part="C337" gate="G$1" x="144.78" y="-12.7" smashed="yes">
+<attribute name="NAME" x="146.304" y="-12.319" size="1.778" layer="95"/>
+<attribute name="VALUE" x="146.304" y="-17.399" size="1.778" layer="96"/>
 </instance>
-<instance part="C338" gate="G$1" x="152.4" y="-12.7" smashed="yes">
-<attribute name="NAME" x="153.924" y="-12.319" size="1.778" layer="95"/>
-<attribute name="VALUE" x="153.924" y="-17.399" size="1.778" layer="96"/>
+<instance part="C338" gate="G$1" x="160.02" y="-12.7" smashed="yes">
+<attribute name="NAME" x="161.544" y="-12.319" size="1.778" layer="95"/>
+<attribute name="VALUE" x="161.544" y="-17.399" size="1.778" layer="96"/>
 </instance>
-<instance part="C335" gate="G$1" x="111.76" y="-12.7" smashed="yes">
-<attribute name="NAME" x="113.284" y="-12.319" size="1.778" layer="95"/>
-<attribute name="VALUE" x="113.284" y="-17.399" size="1.778" layer="96"/>
+<instance part="C335" gate="G$1" x="114.3" y="-12.7" smashed="yes">
+<attribute name="NAME" x="115.824" y="-12.319" size="1.778" layer="95"/>
+<attribute name="VALUE" x="115.824" y="-17.399" size="1.778" layer="96"/>
 </instance>
 <instance part="C334" gate="G$1" x="99.06" y="-12.7" smashed="yes">
 <attribute name="NAME" x="100.584" y="-12.319" size="1.778" layer="95"/>
@@ -24286,29 +24286,29 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <segment>
 <pinref part="C334" gate="G$1" pin="2"/>
 <wire x1="99.06" y1="-17.78" x2="99.06" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="-20.32" x2="111.76" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-20.32" x2="114.3" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="C339" gate="G$1" pin="-"/>
-<wire x1="111.76" y1="-20.32" x2="124.46" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="-20.32" x2="132.08" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="-20.32" x2="139.7" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="-20.32" x2="152.4" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="-20.32" x2="165.1" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="-20.32" x2="165.1" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="-20.32" x2="129.54" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="-20.32" x2="137.16" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="-20.32" x2="144.78" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="-20.32" x2="160.02" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="-20.32" x2="175.26" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="-20.32" x2="175.26" y2="-17.78" width="0.1524" layer="91"/>
 <pinref part="C335" gate="G$1" pin="2"/>
-<wire x1="111.76" y1="-17.78" x2="111.76" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="111.76" y="-20.32"/>
+<wire x1="114.3" y1="-17.78" x2="114.3" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="114.3" y="-20.32"/>
 <pinref part="C336" gate="G$1" pin="-"/>
-<wire x1="124.46" y1="-17.78" x2="124.46" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="124.46" y="-20.32"/>
+<wire x1="129.54" y1="-17.78" x2="129.54" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="129.54" y="-20.32"/>
 <pinref part="C337" gate="G$1" pin="2"/>
-<wire x1="139.7" y1="-17.78" x2="139.7" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="139.7" y="-20.32"/>
+<wire x1="144.78" y1="-17.78" x2="144.78" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="144.78" y="-20.32"/>
 <pinref part="C338" gate="G$1" pin="2"/>
-<wire x1="152.4" y1="-17.78" x2="152.4" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="152.4" y="-20.32"/>
-<wire x1="132.08" y1="-20.32" x2="132.08" y2="-22.86" width="0.1524" layer="91"/>
-<junction x="132.08" y="-20.32"/>
-<label x="132.08" y="-25.4" size="1.778" layer="95"/>
+<wire x1="160.02" y1="-17.78" x2="160.02" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="160.02" y="-20.32"/>
+<wire x1="137.16" y1="-20.32" x2="137.16" y2="-22.86" width="0.1524" layer="91"/>
+<junction x="137.16" y="-20.32"/>
+<label x="137.16" y="-25.4" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U300" gate="G$1" pin="M2"/>
@@ -25306,24 +25306,24 @@ Source: &lt;a href="http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_
 <wire x1="99.06" y1="-7.62" x2="99.06" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="99.06" y="-7.62"/>
 <pinref part="C335" gate="G$1" pin="1"/>
-<wire x1="111.76" y1="-7.62" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="-10.16" x2="111.76" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="-7.62" x2="99.06" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="-10.16" x2="114.3" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="C336" gate="G$1" pin="+"/>
-<wire x1="124.46" y1="-10.16" x2="124.46" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="-7.62" x2="111.76" y2="-7.62" width="0.1524" layer="91"/>
-<junction x="111.76" y="-7.62"/>
+<wire x1="129.54" y1="-10.16" x2="129.54" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="-7.62" x2="114.3" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="114.3" y="-7.62"/>
 <pinref part="C337" gate="G$1" pin="1"/>
 <pinref part="C339" gate="G$1" pin="+"/>
-<wire x1="165.1" y1="-10.16" x2="165.1" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="-7.62" x2="152.4" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="-10.16" x2="175.26" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="-7.62" x2="160.02" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="C338" gate="G$1" pin="1"/>
-<wire x1="152.4" y1="-10.16" x2="152.4" y2="-7.62" width="0.1524" layer="91"/>
-<junction x="152.4" y="-7.62"/>
-<wire x1="152.4" y1="-7.62" x2="139.7" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="-7.62" x2="139.7" y2="-10.16" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="-7.62" x2="139.7" y2="-7.62" width="0.1524" layer="91"/>
-<junction x="124.46" y="-7.62"/>
-<junction x="139.7" y="-7.62"/>
+<wire x1="160.02" y1="-10.16" x2="160.02" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="160.02" y="-7.62"/>
+<wire x1="160.02" y1="-7.62" x2="144.78" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="-7.62" x2="144.78" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="-7.62" x2="144.78" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="129.54" y="-7.62"/>
+<junction x="144.78" y="-7.62"/>
 <pinref part="U300" gate="G$1" pin="PVDD_AB"/>
 <wire x1="99.06" y1="20.32" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="38.1" x2="78.74" y2="38.1" width="0.1524" layer="91"/>
