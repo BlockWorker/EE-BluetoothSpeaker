@@ -1,388 +1,30 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"39330 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 39330: extern volatile unsigned char CCPR3H __attribute__((address(0x3F75)));
-[v _CCPR3H `Vuc ~T0 @X0 0 e@16245 ]
-"39310
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 39310: extern volatile unsigned char CCPR3L __attribute__((address(0x3F74)));
-[v _CCPR3L `Vuc ~T0 @X0 0 e@16244 ]
-"39572
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 39572: extern volatile unsigned char CCPR2H __attribute__((address(0x3F79)));
-[v _CCPR2H `Vuc ~T0 @X0 0 e@16249 ]
-"39552
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 39552: extern volatile unsigned char CCPR2L __attribute__((address(0x3F78)));
-[v _CCPR2L `Vuc ~T0 @X0 0 e@16248 ]
-"39088
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 39088: extern volatile unsigned char CCPR4H __attribute__((address(0x3F71)));
-[v _CCPR4H `Vuc ~T0 @X0 0 e@16241 ]
-"39068
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 39068: extern volatile unsigned char CCPR4L __attribute__((address(0x3F70)));
-[v _CCPR4L `Vuc ~T0 @X0 0 e@16240 ]
-"30694
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 30694: extern volatile unsigned char ADPCH __attribute__((address(0x3EF1)));
-[v _ADPCH `Vuc ~T0 @X0 0 e@16113 ]
-"31350
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31350:     struct {
-[s S1398 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1398 . GO . FM CS . CONT ON ]
-"31359
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31359:     struct {
-[s S1399 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1399 . ADGO . ADFM ADCS . ADCONT ADON ]
-"31368
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31368:     struct {
-[s S1400 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1400 . DONE . FM0 ]
-"31373
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31373:     struct {
-[s S1401 :1 `uc 1 ]
-[n S1401 . GO_NOT_DONE ]
-"31376
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31376:     struct {
-[s S1402 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1402 . GO_nDONE . ADFM0 ]
-"31381
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31381:     struct {
-[s S1403 :7 `uc 1 :1 `uc 1 ]
-[n S1403 . . ADCAL ]
-"31349
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31349: typedef union {
-[u S1397 `S1398 1 `S1399 1 `S1400 1 `S1401 1 `S1402 1 `S1403 1 ]
-[n S1397 . . . . . . . ]
-"31386
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31386: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x3EF8)));
-[v _ADCON0bits `VS1397 ~T0 @X0 0 e@16120 ]
-[v F15750 `(v ~T0 @X0 1 tf1`ul ]
+"46178 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46178:     struct {
+[s S2084 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2084 . RE0 RE1 RE2 RE3 ]
+"46184
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46184:     struct {
+[s S2085 :3 `uc 1 :1 `uc 1 ]
+[n S2085 . . CCP9E ]
+"46188
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46188:     struct {
+[s S2086 :3 `uc 1 :1 `uc 1 ]
+[n S2086 . . PC3E ]
+"46177
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46177: typedef union {
+[u S2083 `S2084 1 `S2085 1 `S2086 1 ]
+[n S2083 . . . . ]
+"46193
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46193: extern volatile PORTEbits_t PORTEbits __attribute__((address(0x3FCE)));
+[v _PORTEbits `VS2083 ~T0 @X0 0 e@16334 ]
+[v F15780 `(v ~T0 @X0 1 tf1`ul ]
 "187 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF15750 ~T0 @X0 0 e ]
+[v __delay `JF15780 ~T0 @X0 0 e ]
 [p i __delay ]
-"30574 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 30574: extern volatile unsigned char ADRESH __attribute__((address(0x3EF0)));
-[v _ADRESH `Vuc ~T0 @X0 0 e@16112 ]
-"30446
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 30446: extern volatile unsigned char ADRESL __attribute__((address(0x3EEF)));
-[v _ADRESL `Vuc ~T0 @X0 0 e@16111 ]
-"46030
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46030:     struct {
-[s S2078 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2078 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"46040
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46040:     struct {
-[s S2079 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2079 . . CCP2 PA1 ]
-"46045
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46045:     struct {
-[s S2080 :1 `uc 1 :1 `uc 1 ]
-[n S2080 . . PA2 ]
-"46029
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46029: typedef union {
-[u S2077 `S2078 1 `S2079 1 `S2080 1 ]
-[n S2077 . . . . ]
-"46050
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46050: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x3FCC)));
-[v _PORTCbits `VS2077 ~T0 @X0 0 e@16332 ]
-"46116
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46116:     struct {
-[s S2082 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2082 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"46115
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46115: typedef union {
-[u S2081 `S2082 1 ]
-[n S2081 . . ]
-"46127
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46127: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x3FCD)));
-[v _PORTDbits `VS2081 ~T0 @X0 0 e@16333 ]
-"113 F:\Programme\Microchip\xc8\v2.10\pic\include\c99\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"48 ./char_lcd.h
-[; ;./char_lcd.h: 48:     void lcd_set_data_addr(uint8_t addr);
-[v _lcd_set_data_addr `(v ~T0 @X0 0 ef1`uc ]
-"51
-[; ;./char_lcd.h: 51:     void lcd_print(char* string);
-[v _lcd_print `(v ~T0 @X0 0 ef1`*uc ]
-[p mainexit ]
-"45589 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45589: extern volatile unsigned char TRISA __attribute__((address(0x3FC2)));
-[v _TRISA `Vuc ~T0 @X0 0 e@16322 ]
-"45869
+"45869 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
 [; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45869: extern volatile unsigned char PORTA __attribute__((address(0x3FCA)));
 [v _PORTA `Vuc ~T0 @X0 0 e@16330 ]
-"8245
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8245: extern volatile unsigned char ANSELA __attribute__((address(0x3A40)));
-[v _ANSELA `Vuc ~T0 @X0 0 e@14912 ]
-"8307
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8307: extern volatile unsigned char WPUA __attribute__((address(0x3A41)));
-[v _WPUA `Vuc ~T0 @X0 0 e@14913 ]
-"8493
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8493: extern volatile unsigned char INLVLA __attribute__((address(0x3A44)));
-[v _INLVLA `Vuc ~T0 @X0 0 e@14916 ]
-"8431
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8431: extern volatile unsigned char SLRCONA __attribute__((address(0x3A43)));
-[v _SLRCONA `Vuc ~T0 @X0 0 e@14915 ]
-"8369
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8369: extern volatile unsigned char ODCONA __attribute__((address(0x3A42)));
-[v _ODCONA `Vuc ~T0 @X0 0 e@14914 ]
-"45651
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45651: extern volatile unsigned char TRISB __attribute__((address(0x3FC3)));
-[v _TRISB `Vuc ~T0 @X0 0 e@16323 ]
-"45953
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45953: extern volatile unsigned char PORTB __attribute__((address(0x3FCB)));
-[v _PORTB `Vuc ~T0 @X0 0 e@16331 ]
-"8741
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8741: extern volatile unsigned char ANSELB __attribute__((address(0x3A50)));
-[v _ANSELB `Vuc ~T0 @X0 0 e@14928 ]
-"8803
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8803: extern volatile unsigned char WPUB __attribute__((address(0x3A51)));
-[v _WPUB `Vuc ~T0 @X0 0 e@14929 ]
-"8989
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8989: extern volatile unsigned char INLVLB __attribute__((address(0x3A54)));
-[v _INLVLB `Vuc ~T0 @X0 0 e@14932 ]
-"8927
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8927: extern volatile unsigned char SLRCONB __attribute__((address(0x3A53)));
-[v _SLRCONB `Vuc ~T0 @X0 0 e@14931 ]
-"8865
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8865: extern volatile unsigned char ODCONB __attribute__((address(0x3A52)));
-[v _ODCONB `Vuc ~T0 @X0 0 e@14930 ]
-"45713
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45713: extern volatile unsigned char TRISC __attribute__((address(0x3FC4)));
-[v _TRISC `Vuc ~T0 @X0 0 e@16324 ]
-"46024
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46024: extern volatile unsigned char PORTC __attribute__((address(0x3FCC)));
-[v _PORTC `Vuc ~T0 @X0 0 e@16332 ]
-"9453
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 9453: extern volatile unsigned char ANSELC __attribute__((address(0x3A60)));
-[v _ANSELC `Vuc ~T0 @X0 0 e@14944 ]
-"9515
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 9515: extern volatile unsigned char WPUC __attribute__((address(0x3A61)));
-[v _WPUC `Vuc ~T0 @X0 0 e@14945 ]
-"9701
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 9701: extern volatile unsigned char INLVLC __attribute__((address(0x3A64)));
-[v _INLVLC `Vuc ~T0 @X0 0 e@14948 ]
-"9639
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 9639: extern volatile unsigned char SLRCONC __attribute__((address(0x3A63)));
-[v _SLRCONC `Vuc ~T0 @X0 0 e@14947 ]
-"9577
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 9577: extern volatile unsigned char ODCONC __attribute__((address(0x3A62)));
-[v _ODCONC `Vuc ~T0 @X0 0 e@14946 ]
-"45775
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45775: extern volatile unsigned char TRISD __attribute__((address(0x3FC5)));
-[v _TRISD `Vuc ~T0 @X0 0 e@16325 ]
-"46110
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46110: extern volatile unsigned char PORTD __attribute__((address(0x3FCD)));
-[v _PORTD `Vuc ~T0 @X0 0 e@16333 ]
-"10165
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10165: extern volatile unsigned char ANSELD __attribute__((address(0x3A70)));
-[v _ANSELD `Vuc ~T0 @X0 0 e@14960 ]
-"10227
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10227: extern volatile unsigned char WPUD __attribute__((address(0x3A71)));
-[v _WPUD `Vuc ~T0 @X0 0 e@14961 ]
-"10413
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10413: extern volatile unsigned char INLVLD __attribute__((address(0x3A74)));
-[v _INLVLD `Vuc ~T0 @X0 0 e@14964 ]
-"10351
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10351: extern volatile unsigned char SLRCOND __attribute__((address(0x3A73)));
-[v _SLRCOND `Vuc ~T0 @X0 0 e@14963 ]
-"10289
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10289: extern volatile unsigned char ODCOND __attribute__((address(0x3A72)));
-[v _ODCOND `Vuc ~T0 @X0 0 e@14962 ]
-"45837
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45837: extern volatile unsigned char TRISE __attribute__((address(0x3FC6)));
-[v _TRISE `Vuc ~T0 @X0 0 e@16326 ]
-"46172
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 46172: extern volatile unsigned char PORTE __attribute__((address(0x3FCE)));
-[v _PORTE `Vuc ~T0 @X0 0 e@16334 ]
-"10691
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10691: extern volatile unsigned char ANSELE __attribute__((address(0x3A80)));
-[v _ANSELE `Vuc ~T0 @X0 0 e@14976 ]
-"10723
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10723: extern volatile unsigned char WPUE __attribute__((address(0x3A81)));
-[v _WPUE `Vuc ~T0 @X0 0 e@14977 ]
-"10825
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10825: extern volatile unsigned char INLVLE __attribute__((address(0x3A84)));
-[v _INLVLE `Vuc ~T0 @X0 0 e@14980 ]
-"10793
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10793: extern volatile unsigned char SLRCONE __attribute__((address(0x3A83)));
-[v _SLRCONE `Vuc ~T0 @X0 0 e@14979 ]
-"10761
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 10761: extern volatile unsigned char ODCONE __attribute__((address(0x3A82)));
-[v _ODCONE `Vuc ~T0 @X0 0 e@14978 ]
-"4686
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 4686: extern volatile unsigned char PMD0 __attribute__((address(0x39C0)));
-[v _PMD0 `Vuc ~T0 @X0 0 e@14784 ]
-"4763
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 4763: extern volatile unsigned char PMD1 __attribute__((address(0x39C1)));
-[v _PMD1 `Vuc ~T0 @X0 0 e@14785 ]
-"4833
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 4833: extern volatile unsigned char PMD2 __attribute__((address(0x39C2)));
-[v _PMD2 `Vuc ~T0 @X0 0 e@14786 ]
-"4878
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 4878: extern volatile unsigned char PMD3 __attribute__((address(0x39C3)));
-[v _PMD3 `Vuc ~T0 @X0 0 e@14787 ]
-"4940
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 4940: extern volatile unsigned char PMD4 __attribute__((address(0x39C4)));
-[v _PMD4 `Vuc ~T0 @X0 0 e@14788 ]
-"4973
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 4973: extern volatile unsigned char PMD5 __attribute__((address(0x39C5)));
-[v _PMD5 `Vuc ~T0 @X0 0 e@14789 ]
-"5018
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 5018: extern volatile unsigned char PMD6 __attribute__((address(0x39C6)));
-[v _PMD6 `Vuc ~T0 @X0 0 e@14790 ]
-"5068
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 5068: extern volatile unsigned char PMD7 __attribute__((address(0x39C7)));
-[v _PMD7 `Vuc ~T0 @X0 0 e@14791 ]
-"31344
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31344: extern volatile unsigned char ADCON0 __attribute__((address(0x3EF8)));
-[v _ADCON0 `Vuc ~T0 @X0 0 e@16120 ]
-"31471
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31471: extern volatile unsigned char ADCON1 __attribute__((address(0x3EF9)));
-[v _ADCON1 `Vuc ~T0 @X0 0 e@16121 ]
-"31546
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31546: extern volatile unsigned char ADCON2 __attribute__((address(0x3EFA)));
-[v _ADCON2 `Vuc ~T0 @X0 0 e@16122 ]
-"31724
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31724: extern volatile unsigned char ADCON3 __attribute__((address(0x3EFB)));
-[v _ADCON3 `Vuc ~T0 @X0 0 e@16123 ]
-"32153
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 32153: extern volatile unsigned char ADCLK __attribute__((address(0x3EFF)));
-[v _ADCLK `Vuc ~T0 @X0 0 e@16127 ]
-"31979
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 31979: extern volatile unsigned char ADREF __attribute__((address(0x3EFD)));
-[v _ADREF `Vuc ~T0 @X0 0 e@16125 ]
-"7645
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 7645: extern volatile unsigned char RC7PPS __attribute__((address(0x3A17)));
-[v _RC7PPS `Vuc ~T0 @X0 0 e@14871 ]
-"7895
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 7895: extern volatile unsigned char RD4PPS __attribute__((address(0x3A1C)));
-[v _RD4PPS `Vuc ~T0 @X0 0 e@14876 ]
-"7945
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 7945: extern volatile unsigned char RD5PPS __attribute__((address(0x3A1D)));
-[v _RD5PPS `Vuc ~T0 @X0 0 e@14877 ]
-"7995
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 7995: extern volatile unsigned char RD6PPS __attribute__((address(0x3A1E)));
-[v _RD6PPS `Vuc ~T0 @X0 0 e@14878 ]
-"8045
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 8045: extern volatile unsigned char RD7PPS __attribute__((address(0x3A1F)));
-[v _RD7PPS `Vuc ~T0 @X0 0 e@14879 ]
-"37689
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 37689: extern volatile unsigned char CCPTMRS0 __attribute__((address(0x3F5E)));
-[v _CCPTMRS0 `Vuc ~T0 @X0 0 e@16222 ]
-"39592
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 39592: extern volatile unsigned char CCP2CON __attribute__((address(0x3F7A)));
-[v _CCP2CON `Vuc ~T0 @X0 0 e@16250 ]
-"39350
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 39350: extern volatile unsigned char CCP3CON __attribute__((address(0x3F76)));
-[v _CCP3CON `Vuc ~T0 @X0 0 e@16246 ]
-"39108
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 39108: extern volatile unsigned char CCP4CON __attribute__((address(0x3F72)));
-[v _CCP4CON `Vuc ~T0 @X0 0 e@16242 ]
-"38706
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 38706: extern volatile unsigned char PWM6CON __attribute__((address(0x3F6A)));
-[v _PWM6CON `Vuc ~T0 @X0 0 e@16234 ]
-"38108
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 38108: extern volatile unsigned char PWM8CON __attribute__((address(0x3F62)));
-[v _PWM8CON `Vuc ~T0 @X0 0 e@16226 ]
-"43019
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 43019: extern volatile unsigned char T2PR __attribute__((address(0x3FAB)));
-[v _T2PR `Vuc ~T0 @X0 0 e@16299 ]
-"43336
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 43336: extern volatile unsigned char T2CLK __attribute__((address(0x3FAE)));
-[v _T2CLK `Vuc ~T0 @X0 0 e@16302 ]
-"43057
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 43057: extern volatile unsigned char T2CON __attribute__((address(0x3FAC)));
-[v _T2CON `Vuc ~T0 @X0 0 e@16300 ]
-"38536
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 38536: extern volatile unsigned char PWM6DCH __attribute__((address(0x3F69)));
-[v _PWM6DCH `Vuc ~T0 @X0 0 e@16233 ]
-"38470
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 38470: extern volatile unsigned char PWM6DCL __attribute__((address(0x3F68)));
-[v _PWM6DCL `Vuc ~T0 @X0 0 e@16232 ]
-"37938
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 37938: extern volatile unsigned char PWM8DCH __attribute__((address(0x3F61)));
-[v _PWM8DCH `Vuc ~T0 @X0 0 e@16225 ]
-"37872
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 37872: extern volatile unsigned char PWM8DCL __attribute__((address(0x3F60)));
-[v _PWM8DCL `Vuc ~T0 @X0 0 e@16224 ]
-"45959
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45959:     struct {
-[s S2075 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2075 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"45969
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45969:     struct {
-[s S2076 :3 `uc 1 :1 `uc 1 ]
-[n S2076 . . CCP2_PA2 ]
-"45958
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45958: typedef union {
-[u S2074 `S2075 1 `S2076 1 ]
-[n S2074 . . . ]
-"45974
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45974: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x3FCB)));
-[v _PORTBbits `VS2074 ~T0 @X0 0 e@16331 ]
-"44 ./char_lcd.h
-[; ;./char_lcd.h: 44:     void lcd_init(_Bool inc, _Bool shift, _Bool cursor, _Bool cursorblink, _Bool on);
-[v _lcd_init `(v ~T0 @X0 0 ef5`a`a`a`a`a ]
-"13 main.c
-[p x FEXTOSC = OFF ]
-"14
-[p x RSTOSC = HFINTOSC_64MHZ ]
-"17
-[p x CLKOUTEN = OFF ]
-"18
-[p x PR1WAY = OFF ]
-"19
-[p x CSWEN = ON ]
-"20
-[p x FCMEN = ON ]
-"23
-[p x MCLRE = EXTMCLR ]
-"24
-[p x PWRTS = PWRT_OFF ]
-"25
-[p x MVECEN = ON ]
-"26
-[p x IVT1WAY = OFF ]
-"27
-[p x LPBOREN = OFF ]
-"28
-[p x BOREN = SBORDIS ]
-"31
-[p x BORV = VBOR_190 ]
-"32
-[p x ZCD = OFF ]
-"33
-[p x PPS1WAY = OFF ]
-"34
-[p x STVREN = ON ]
-"35
-[p x DEBUG = OFF ]
-"36
-[p x XINST = OFF ]
-"39
-[p x WDTCPS = WDTCPS_31 ]
-"40
-[p x WDTE = OFF ]
-"43
-[p x WDTCWS = WDTCWS_7 ]
-"44
-[p x WDTCCS = SC ]
-"47
-[p x BBSIZE = BBSIZE_512 ]
-"48
-[p x BBEN = OFF ]
-"49
-[p x SAFEN = OFF ]
-"50
-[p x WRTAPP = OFF ]
-"53
-[p x WRTB = OFF ]
-"54
-[p x WRTC = OFF ]
-"55
-[p x WRTD = OFF ]
-"56
-[p x WRTSAF = OFF ]
-"57
-[p x LVP = ON ]
-"60
-[p x CP = OFF ]
 "250 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
 [; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2579,515 +2221,219 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47677
 [; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 47677: __asm("TOSU equ 03FFFh");
 [; <" TOSU equ 03FFFh ;# ">
-"87 main.c
-[; ;main.c: 87: uint8_t ledBrightness = 255;
-[v _ledBrightness `uc ~T0 @X0 1 e ]
-[i _ledBrightness
--> -> 255 `i `uc
-]
-"89
-[; ;main.c: 89: void setLED(uint32_t r, uint32_t g, uint32_t b) {
-[v _setLED `(v ~T0 @X0 1 ef3`ul`ul`ul ]
+"3 char_lcd.c
+[; ;char_lcd.c: 3: void lcd_write(_Bool rs, uint8_t data, _Bool longdelay) {
+[v _lcd_write `(v ~T0 @X0 1 ef3`a`uc`a ]
 {
-[e :U _setLED ]
-[v _r `ul ~T0 @X0 1 r1 ]
-[v _g `ul ~T0 @X0 1 r2 ]
-[v _b `ul ~T0 @X0 1 r3 ]
+[e :U _lcd_write ]
+[v _rs `a ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+[v _longdelay `a ~T0 @X0 1 r3 ]
 [f ]
-"90
-[; ;main.c: 90:     uint32_t sr = r * ledBrightness / 255;
-[v _sr `ul ~T0 @X0 1 a ]
-[e = _sr / * _r -> _ledBrightness `ul -> -> -> 255 `i `l `ul ]
-"91
-[; ;main.c: 91:     uint32_t sg = g * ledBrightness / 255;
-[v _sg `ul ~T0 @X0 1 a ]
-[e = _sg / * _g -> _ledBrightness `ul -> -> -> 255 `i `l `ul ]
-"92
-[; ;main.c: 92:     uint32_t sb = b * ledBrightness / 255;
-[v _sb `ul ~T0 @X0 1 a ]
-[e = _sb / * _b -> _ledBrightness `ul -> -> -> 255 `i `l `ul ]
-"94
-[; ;main.c: 94:     CCPR3H = (sr < 4095 ? sr : 4095) >> 8;
-[e = _CCPR3H -> >> ? < _sr -> -> -> 4095 `i `l `ul : _sr -> -> -> 4095 `i `l `ul -> 8 `i `uc ]
-"95
-[; ;main.c: 95:     CCPR3L = (sr < 4095 ? sr : 4095) & 0xff;
-[e = _CCPR3L -> & ? < _sr -> -> -> 4095 `i `l `ul : _sr -> -> -> 4095 `i `l `ul -> -> -> 255 `i `l `ul `uc ]
-"96
-[; ;main.c: 96:     CCPR2H = (sg < 4095 ? sg : 4095) >> 8;
-[e = _CCPR2H -> >> ? < _sg -> -> -> 4095 `i `l `ul : _sg -> -> -> 4095 `i `l `ul -> 8 `i `uc ]
-"97
-[; ;main.c: 97:     CCPR2L = (sg < 4095 ? sg : 4095) & 0xff;
-[e = _CCPR2L -> & ? < _sg -> -> -> 4095 `i `l `ul : _sg -> -> -> 4095 `i `l `ul -> -> -> 255 `i `l `ul `uc ]
-"98
-[; ;main.c: 98:     CCPR4H = (sb < 4095 ? sb : 4095) >> 8;
-[e = _CCPR4H -> >> ? < _sb -> -> -> 4095 `i `l `ul : _sb -> -> -> 4095 `i `l `ul -> 8 `i `uc ]
-"99
-[; ;main.c: 99:     CCPR4L = (sb < 4095 ? sb : 4095) & 0xff;
-[e = _CCPR4L -> & ? < _sb -> -> -> 4095 `i `l `ul : _sb -> -> -> 4095 `i `l `ul -> -> -> 255 `i `l `ul `uc ]
-"100
-[; ;main.c: 100: }
-[e :UE 2197 ]
-}
-"102
-[; ;main.c: 102: void main_loop() {
-[v _main_loop `(v ~T0 @X0 1 ef ]
-{
-[e :U _main_loop ]
-[f ]
-"103
-[; ;main.c: 103:     static uint32_t counter = 0;
-[v F16559 `ul ~T0 @X0 1 s counter ]
-[i F16559
--> -> -> 0 `i `l `ul
-]
-"104
-[; ;main.c: 104:     static uint32_t sum = 0;
-[v F16560 `ul ~T0 @X0 1 s sum ]
-[i F16560
--> -> -> 0 `i `l `ul
-]
-"105
-[; ;main.c: 105:     static uint16_t last[10];
-[v F16561 `us ~T0 @X0 -> 10 `i s last ]
-"106
-[; ;main.c: 106:     static uint32_t lastSum;
-[v F16562 `ul ~T0 @X0 1 s lastSum ]
-"107
-[; ;main.c: 107:     static int16_t pos = 0;
-[v F16563 `s ~T0 @X0 1 s pos ]
-[i F16563
--> -> 0 `i `s
-]
-"109
-[; ;main.c: 109:     ADPCH = 0b010101;
-[e = _ADPCH -> -> 21 `i `uc ]
-"110
-[; ;main.c: 110:     ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"111
-[; ;main.c: 111:     while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
-[e $U 2199  ]
-[e :U 2200 ]
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-[e :U 2199 ]
-[e $ != -> . . _ADCON0bits 0 0 `i -> 0 `i 2200  ]
-[e :U 2201 ]
-"112
-[; ;main.c: 112:     int16_t res = ((ADRESH << 8) | ADRESL) - 1522;
-[v _res `s ~T0 @X0 1 a ]
-[e = _res -> - | << -> _ADRESH `i -> 8 `i -> _ADRESL `i -> 1522 `i `s ]
-"113
-[; ;main.c: 113:     sum += res < 0 ? -res : res;
-[e =+ F16560 -> -> ? < -> _res `i -> 0 `i : -U -> _res `i -> _res `i `l `ul ]
-"115
-[; ;main.c: 115:     if (counter % 50 == 50 - 1) {
-[e $ ! == % F16559 -> -> -> 50 `i `l `ul -> -> - -> 50 `i -> 1 `i `l `ul 2202  ]
-{
-"116
-[; ;main.c: 116:         int32_t sample = sum / 50;
-[v _sample `l ~T0 @X0 1 a ]
-[e = _sample -> / F16560 -> -> -> 50 `i `l `ul `l ]
-"117
-[; ;main.c: 117:         sample -= 23;
-[e =- _sample -> -> 23 `i `l ]
-"118
-[; ;main.c: 118:         if (sample < 0) sample = 0;
-[e $ ! < _sample -> -> 0 `i `l 2203  ]
-[e = _sample -> -> 0 `i `l ]
-[e :U 2203 ]
-"120
-[; ;main.c: 120:         uint16_t lastAvg = lastSum / 10 / 2;
-[v _lastAvg `us ~T0 @X0 1 a ]
-[e = _lastAvg -> / / F16562 -> -> -> 10 `i `l `ul -> -> -> 2 `i `l `ul `us ]
-"123
-[; ;main.c: 123:         pos = (pos > (sample - lastAvg) * 300 ? pos : (sample - lastAvg) * 300);
-[e = F16563 -> ? > -> F16563 `l * - _sample -> _lastAvg `l -> -> 300 `i `l : -> F16563 `l * - _sample -> _lastAvg `l -> -> 300 `i `l `s ]
-"125
-[; ;main.c: 125:         setLED(pos, 2048 - (pos < 2048 ? pos : 2048), 2048 - (pos < 2048 ? pos : 2048));
-[e ( _setLED (3 , , -> -> F16563 `l `ul -> -> - -> 2048 `i ? < -> F16563 `i -> 2048 `i : -> F16563 `i -> 2048 `i `l `ul -> -> - -> 2048 `i ? < -> F16563 `i -> 2048 `i : -> F16563 `i -> 2048 `i `l `ul ]
-"127
-[; ;main.c: 127:         pos = (pos - (pos / 70 + 1) > 0 ? pos - (pos / 70 + 1) : 0);
-[e = F16563 -> ? > - -> F16563 `i + / -> F16563 `i -> 70 `i -> 1 `i -> 0 `i : - -> F16563 `i + / -> F16563 `i -> 70 `i -> 1 `i -> 0 `i `s ]
-"129
-[; ;main.c: 129:         sum = 0;
-[e = F16560 -> -> -> 0 `i `l `ul ]
-"131
-[; ;main.c: 131:         lastSum -= last[(counter / 50) % 10];
-[e =- F16562 -> *U + &U F16561 * -> % / F16559 -> -> -> 50 `i `l `ul -> -> -> 10 `i `l `ul `ux -> -> # *U &U F16561 `ui `ux `ul ]
-"132
-[; ;main.c: 132:         lastSum += sample;
-[e =+ F16562 -> _sample `ul ]
-"133
-[; ;main.c: 133:         last[(counter / 50) % 10] = sample;
-[e = *U + &U F16561 * -> % / F16559 -> -> -> 50 `i `l `ul -> -> -> 10 `i `l `ul `ux -> -> # *U &U F16561 `ui `ux -> _sample `us ]
-"134
-[; ;main.c: 134:     }
-}
-[e :U 2202 ]
-"136
-[; ;main.c: 136:     if (counter % 1000 == 999) {
-[e $ ! == % F16559 -> -> -> 1000 `i `l `ul -> -> -> 999 `i `l `ul 2204  ]
-{
-"137
-[; ;main.c: 137:         PORTCbits.RC0 = !PORTCbits.RC1;
-[e = . . _PORTCbits 0 0 -> -> ! != -> . . _PORTCbits 0 1 `i -> 0 `i `i `uc ]
-"139
-[; ;main.c: 139:         ADPCH = 0b010110;
-[e = _ADPCH -> -> 22 `i `uc ]
-"140
-[; ;main.c: 140:         ADCON0bits.FM = 0;
-[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
-"141
-[; ;main.c: 141:         ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"142
-[; ;main.c: 142:         while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
-[e $U 2205  ]
-[e :U 2206 ]
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-[e :U 2205 ]
-[e $ != -> . . _ADCON0bits 0 0 `i -> 0 `i 2206  ]
-[e :U 2207 ]
-"143
-[; ;main.c: 143:         ledBrightness = ADRESH;
-[e = _ledBrightness _ADRESH ]
-"144
-[; ;main.c: 144:         ADCON0bits.FM = 1;
-[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
-"145
-[; ;main.c: 145:     }
-}
-[e :U 2204 ]
-"147
-[; ;main.c: 147:     if (++counter >= 100000) {
-[e $ ! >= =+ F16559 -> -> -> 1 `i `l `ul -> -> 100000 `l `ul 2208  ]
-{
-"148
-[; ;main.c: 148:         ADPCH = 0b011011;
-[e = _ADPCH -> -> 27 `i `uc ]
-"149
-[; ;main.c: 149:         ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"150
-[; ;main.c: 150:         while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
-[e $U 2209  ]
-[e :U 2210 ]
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-[e :U 2209 ]
-[e $ != -> . . _ADCON0bits 0 0 `i -> 0 `i 2210  ]
-[e :U 2211 ]
-"151
-[; ;main.c: 151:         float bat_percent = (((ADRESH << 8) | ADRESL) - 2082.0f) / (3014.0f - 2082.0f) * 100.0f;
-[v _bat_percent `f ~T0 @X0 1 a ]
-[e = _bat_percent * / - -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `f -> .2082.0 `f - -> .3014.0 `f -> .2082.0 `f -> .100.0 `f ]
-"153
-[; ;main.c: 153:         char batmsg[16];
-[v _batmsg `uc ~T0 @X0 -> 16 `i a ]
-"154
-[; ;main.c: 154:         if (!PORTDbits.RD2) sprintf(batmsg, "Chg fault: %3.0f%%", bat_percent);
-[e $ ! ! != -> . . _PORTDbits 0 2 `i -> 0 `i 2212  ]
-[e ( _sprintf (1 , (. , &U _batmsg :s 1C -> _bat_percent `d ]
-[e $U 2213  ]
-"155
-[; ;main.c: 155:         else if (!PORTDbits.RD1) sprintf(batmsg, "Full Chg: %3.0f%%", bat_percent);
-[e :U 2212 ]
-[e $ ! ! != -> . . _PORTDbits 0 1 `i -> 0 `i 2214  ]
-[e ( _sprintf (1 , (. , &U _batmsg :s 2C -> _bat_percent `d ]
-[e $U 2215  ]
-"156
-[; ;main.c: 156:         else if (!PORTDbits.RD0) sprintf(batmsg, "Fast Chg: %3.0f%%", bat_percent);
-[e :U 2214 ]
-[e $ ! ! != -> . . _PORTDbits 0 0 `i -> 0 `i 2216  ]
-[e ( _sprintf (1 , (. , &U _batmsg :s 3C -> _bat_percent `d ]
-[e $U 2217  ]
-"157
-[; ;main.c: 157:         else sprintf(batmsg, "Battery: %3.0f%%", bat_percent);
-[e :U 2216 ]
-[e ( _sprintf (1 , (. , &U _batmsg :s 4C -> _bat_percent `d ]
-[e :U 2217 ]
-[e :U 2215 ]
-[e :U 2213 ]
-"158
-[; ;main.c: 158:         lcd_set_data_addr(0);
-[e ( _lcd_set_data_addr (1 -> -> 0 `i `uc ]
-"159
-[; ;main.c: 159:         lcd_print(batmsg);
-[e ( _lcd_print (1 &U _batmsg ]
-"161
-[; ;main.c: 161:         counter = 0;
-[e = F16559 -> -> -> 0 `i `l `ul ]
-"162
-[; ;main.c: 162:     }
-}
-[e :U 2208 ]
-"164
-[; ;main.c: 164:     __asm("clrwdt");
-[; <" clrwdt ;# ">
-"165
-[; ;main.c: 165:     _delay((unsigned long)((10)*(64000000/4000000.0)));
+"4
+[; ;char_lcd.c: 4:     PORTEbits.RE2 = 1;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
+"5
+[; ;char_lcd.c: 5:     PORTEbits.RE1 = 0;
+[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
+"6
+[; ;char_lcd.c: 6:     PORTEbits.RE0 = rs;
+[e = . . _PORTEbits 0 0 -> _rs `uc ]
+"7
+[; ;char_lcd.c: 7:     _delay((unsigned long)((10)*(64000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-"166
-[; ;main.c: 166: }
+"8
+[; ;char_lcd.c: 8:     PORTA = data;
+[e = _PORTA _data ]
+"9
+[; ;char_lcd.c: 9:     _delay((unsigned long)((10)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"10
+[; ;char_lcd.c: 10:     PORTEbits.RE2 = 0;
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+"11
+[; ;char_lcd.c: 11:     _delay((unsigned long)((10)*(64000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+"12
+[; ;char_lcd.c: 12:     PORTEbits.RE2 = 1;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
+"13
+[; ;char_lcd.c: 13:     if (longdelay) _delay((unsigned long)((2)*(64000000/4000.0)));
+[e $ ! != -> _longdelay `i -> 0 `i 2196  ]
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
+[e $U 2197  ]
+"14
+[; ;char_lcd.c: 14:     else _delay((unsigned long)((50)*(64000000/4000000.0)));
+[e :U 2196 ]
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
+[e :U 2197 ]
+"15
+[; ;char_lcd.c: 15: }
+[e :UE 2195 ]
+}
+"17
+[; ;char_lcd.c: 17: void lcd_init(_Bool inc, _Bool shift, _Bool cursor, _Bool cursorblink, _Bool on) {
+[v _lcd_init `(v ~T0 @X0 1 ef5`a`a`a`a`a ]
+{
+[e :U _lcd_init ]
+[v _inc `a ~T0 @X0 1 r1 ]
+[v _shift `a ~T0 @X0 1 r2 ]
+[v _cursor `a ~T0 @X0 1 r3 ]
+[v _cursorblink `a ~T0 @X0 1 r4 ]
+[v _on `a ~T0 @X0 1 r5 ]
+[f ]
+"18
+[; ;char_lcd.c: 18:     lcd_write(0, 0b00110011, 0);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 51 `i `uc -> -> 0 `i `a ]
+"19
+[; ;char_lcd.c: 19:     lcd_write(0, 0b00110011, 0);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 51 `i `uc -> -> 0 `i `a ]
+"20
+[; ;char_lcd.c: 20:     lcd_write(0, 0b00110011, 0);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 51 `i `uc -> -> 0 `i `a ]
+"21
+[; ;char_lcd.c: 21:     lcd_write(0, 0b00000100 | (inc << 1) | shift, 0);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> | | -> 4 `i << -> _inc `i -> 1 `i -> _shift `i `uc -> -> 0 `i `a ]
+"22
+[; ;char_lcd.c: 22:     lcd_write(0, 0b00001000 | (on << 2) | (cursor << 1) | cursorblink , 0);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> | | | -> 8 `i << -> _on `i -> 2 `i << -> _cursor `i -> 1 `i -> _cursorblink `i `uc -> -> 0 `i `a ]
+"23
+[; ;char_lcd.c: 23:     lcd_write(0, 0b00000001, 1);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 1 `i `uc -> -> 1 `i `a ]
+"24
+[; ;char_lcd.c: 24: }
 [e :UE 2198 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"168
-[; ;main.c: 168: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+"26
+[; ;char_lcd.c: 26: void lcd_clear() {
+[v _lcd_clear `(v ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _lcd_clear ]
 [f ]
-"169
-[; ;main.c: 169:     TRISA = 0b00000000;
-[e = _TRISA -> -> 0 `i `uc ]
-"170
-[; ;main.c: 170:     PORTA = 0b00000000;
-[e = _PORTA -> -> 0 `i `uc ]
-"171
-[; ;main.c: 171:     ANSELA = 0b00000000;
-[e = _ANSELA -> -> 0 `i `uc ]
-"172
-[; ;main.c: 172:     WPUA = 0b00000000;
-[e = _WPUA -> -> 0 `i `uc ]
-"173
-[; ;main.c: 173:     INLVLA = 0b11111111;
-[e = _INLVLA -> -> 255 `i `uc ]
-"174
-[; ;main.c: 174:     SLRCONA = 0b11111111;
-[e = _SLRCONA -> -> 255 `i `uc ]
-"175
-[; ;main.c: 175:     ODCONA = 0b00000000;
-[e = _ODCONA -> -> 0 `i `uc ]
-"177
-[; ;main.c: 177:     TRISB = 0b11001100;
-[e = _TRISB -> -> 204 `i `uc ]
-"178
-[; ;main.c: 178:     PORTB = 0b00010000;
-[e = _PORTB -> -> 16 `i `uc ]
-"179
-[; ;main.c: 179:     ANSELB = 0b00000000;
-[e = _ANSELB -> -> 0 `i `uc ]
-"180
-[; ;main.c: 180:     WPUB = 0b11000000;
-[e = _WPUB -> -> 192 `i `uc ]
-"181
-[; ;main.c: 181:     INLVLB = 0b11111111;
-[e = _INLVLB -> -> 255 `i `uc ]
-"182
-[; ;main.c: 182:     SLRCONB = 0b11111111;
-[e = _SLRCONB -> -> 255 `i `uc ]
-"183
-[; ;main.c: 183:     ODCONB = 0b00000000;
-[e = _ODCONB -> -> 0 `i `uc ]
-"185
-[; ;main.c: 185:     TRISC = 0b01101110;
-[e = _TRISC -> -> 110 `i `uc ]
-"186
-[; ;main.c: 186:     PORTC = 0b00000000;
-[e = _PORTC -> -> 0 `i `uc ]
-"187
-[; ;main.c: 187:     ANSELC = 0b01100000;
-[e = _ANSELC -> -> 96 `i `uc ]
-"188
-[; ;main.c: 188:     WPUC = 0b00001110;
-[e = _WPUC -> -> 14 `i `uc ]
-"189
-[; ;main.c: 189:     INLVLC = 0b11111111;
-[e = _INLVLC -> -> 255 `i `uc ]
-"190
-[; ;main.c: 190:     SLRCONC = 0b11111111;
-[e = _SLRCONC -> -> 255 `i `uc ]
-"191
-[; ;main.c: 191:     ODCONC = 0b00000000;
-[e = _ODCONC -> -> 0 `i `uc ]
-"193
-[; ;main.c: 193:     TRISD = 0b00001111;
-[e = _TRISD -> -> 15 `i `uc ]
-"194
-[; ;main.c: 194:     PORTD = 0b00000000;
-[e = _PORTD -> -> 0 `i `uc ]
-"195
-[; ;main.c: 195:     ANSELD = 0b00001000;
-[e = _ANSELD -> -> 8 `i `uc ]
-"196
-[; ;main.c: 196:     WPUD = 0b00000111;
-[e = _WPUD -> -> 7 `i `uc ]
-"197
-[; ;main.c: 197:     INLVLD = 0b11111111;
-[e = _INLVLD -> -> 255 `i `uc ]
-"198
-[; ;main.c: 198:     SLRCOND = 0b11111111;
-[e = _SLRCOND -> -> 255 `i `uc ]
-"199
-[; ;main.c: 199:     ODCOND = 0b00000000;
-[e = _ODCOND -> -> 0 `i `uc ]
-"201
-[; ;main.c: 201:     TRISE = 0b11111000;
-[e = _TRISE -> -> 248 `i `uc ]
-"202
-[; ;main.c: 202:     PORTE = 0b00000100;
-[e = _PORTE -> -> 4 `i `uc ]
-"203
-[; ;main.c: 203:     ANSELE = 0b11110000;
-[e = _ANSELE -> -> 240 `i `uc ]
-"204
-[; ;main.c: 204:     WPUE = 0b00001000;
-[e = _WPUE -> -> 8 `i `uc ]
-"205
-[; ;main.c: 205:     INLVLE = 0b11111111;
-[e = _INLVLE -> -> 255 `i `uc ]
-"206
-[; ;main.c: 206:     SLRCONE = 0b11111111;
-[e = _SLRCONE -> -> 255 `i `uc ]
-"207
-[; ;main.c: 207:     ODCONE = 0b00000000;
-[e = _ODCONE -> -> 0 `i `uc ]
-"209
-[; ;main.c: 209:     PMD0 = 0b01111111;
-[e = _PMD0 -> -> 127 `i `uc ]
-"210
-[; ;main.c: 210:     PMD1 = 0b11111011;
-[e = _PMD1 -> -> 251 `i `uc ]
-"211
-[; ;main.c: 211:     PMD2 = 0b01000111;
-[e = _PMD2 -> -> 71 `i `uc ]
-"212
-[; ;main.c: 212:     PMD3 = 0b01010001;
-[e = _PMD3 -> -> 81 `i `uc ]
-"213
-[; ;main.c: 213:     PMD4 = 0b11100000;
-[e = _PMD4 -> -> 224 `i `uc ]
-"214
-[; ;main.c: 214:     PMD5 = 0b00110111;
-[e = _PMD5 -> -> 55 `i `uc ]
-"215
-[; ;main.c: 215:     PMD6 = 0b00111111;
-[e = _PMD6 -> -> 63 `i `uc ]
-"216
-[; ;main.c: 216:     PMD7 = 0b00000011;
-[e = _PMD7 -> -> 3 `i `uc ]
-"218
-[; ;main.c: 218:     ADCON0 = 0b10000100;
-[e = _ADCON0 -> -> 132 `i `uc ]
-"219
-[; ;main.c: 219:     ADCON1 = 0b00000000;
-[e = _ADCON1 -> -> 0 `i `uc ]
-"220
-[; ;main.c: 220:     ADCON2 = 0b00000000;
-[e = _ADCON2 -> -> 0 `i `uc ]
-"221
-[; ;main.c: 221:     ADCON3 = 0b00000000;
-[e = _ADCON3 -> -> 0 `i `uc ]
-"222
-[; ;main.c: 222:     ADCLK = 0b00011111;
-[e = _ADCLK -> -> 31 `i `uc ]
-"223
-[; ;main.c: 223:     ADREF = 0b00000000;
-[e = _ADREF -> -> 0 `i `uc ]
-"225
-[; ;main.c: 225:     RC7PPS = 0b001010;
-[e = _RC7PPS -> -> 10 `i `uc ]
-"226
-[; ;main.c: 226:     RD4PPS = 0b001011;
-[e = _RD4PPS -> -> 11 `i `uc ]
-"227
-[; ;main.c: 227:     RD5PPS = 0b001100;
-[e = _RD5PPS -> -> 12 `i `uc ]
-"228
-[; ;main.c: 228:     RD6PPS = 0b001110;
-[e = _RD6PPS -> -> 14 `i `uc ]
-"229
-[; ;main.c: 229:     RD7PPS = 0b010000;
-[e = _RD7PPS -> -> 16 `i `uc ]
-"231
-[; ;main.c: 231:     CCPTMRS0 = 0b01010101;
-[e = _CCPTMRS0 -> -> 85 `i `uc ]
-"232
-[; ;main.c: 232:     CCP2CON = 0b10001111;
-[e = _CCP2CON -> -> 143 `i `uc ]
-"233
-[; ;main.c: 233:     CCP3CON = 0b10001111;
-[e = _CCP3CON -> -> 143 `i `uc ]
-"234
-[; ;main.c: 234:     CCP4CON = 0b10001111;
-[e = _CCP4CON -> -> 143 `i `uc ]
-"235
-[; ;main.c: 235:     PWM6CON = 0b10000000;
-[e = _PWM6CON -> -> 128 `i `uc ]
-"236
-[; ;main.c: 236:     PWM8CON = 0b10000000;
-[e = _PWM8CON -> -> 128 `i `uc ]
-"238
-[; ;main.c: 238:     T2PR = 255;
-[e = _T2PR -> -> 255 `i `uc ]
-"239
-[; ;main.c: 239:     T2CLK = 0b0001;
-[e = _T2CLK -> -> 1 `i `uc ]
-"240
-[; ;main.c: 240:     T2CON = 0b10010000;
-[e = _T2CON -> -> 144 `i `uc ]
-"242
-[; ;main.c: 242:     CCPR2L = 0;
-[e = _CCPR2L -> -> 0 `i `uc ]
-"243
-[; ;main.c: 243:     CCPR2H = 0;
-[e = _CCPR2H -> -> 0 `i `uc ]
-"244
-[; ;main.c: 244:     CCPR3L = 0;
-[e = _CCPR3L -> -> 0 `i `uc ]
-"245
-[; ;main.c: 245:     CCPR3H = 0;
-[e = _CCPR3H -> -> 0 `i `uc ]
-"246
-[; ;main.c: 246:     CCPR4L = 0;
-[e = _CCPR4L -> -> 0 `i `uc ]
-"247
-[; ;main.c: 247:     CCPR4H = 0;
-[e = _CCPR4H -> -> 0 `i `uc ]
-"248
-[; ;main.c: 248:     PWM6DCH = 255;
-[e = _PWM6DCH -> -> 255 `i `uc ]
-"249
-[; ;main.c: 249:     PWM6DCL = 255;
-[e = _PWM6DCL -> -> 255 `i `uc ]
-"250
-[; ;main.c: 250:     PWM8DCH = 255;
-[e = _PWM8DCH -> -> 255 `i `uc ]
-"251
-[; ;main.c: 251:     PWM8DCL = 255;
-[e = _PWM8DCL -> -> 255 `i `uc ]
-"253
-[; ;main.c: 253:     PORTBbits.RB4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
-"254
-[; ;main.c: 254:     _delay((unsigned long)((50)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"255
-[; ;main.c: 255:     PORTBbits.RB4 = 1;
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
-"257
-[; ;main.c: 257:     _delay((unsigned long)((50)*(64000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-"258
-[; ;main.c: 258:     lcd_init(1, 0, 0, 0, 1);
-[e ( _lcd_init (4 , , , , -> -> 1 `i `a -> -> 0 `i `a -> -> 0 `i `a -> -> 0 `i `a -> -> 1 `i `a ]
-"259
-[; ;main.c: 259:     lcd_print("Hello World!");
-[e ( _lcd_print (1 :s 5C ]
-"261
-[; ;main.c: 261:     while (1) main_loop();
-[e :U 2220 ]
-[e ( _main_loop ..  ]
-[e :U 2219 ]
-[e $U 2220  ]
-[e :U 2221 ]
-"262
-[; ;main.c: 262: }
-[e :UE 2218 ]
+"27
+[; ;char_lcd.c: 27:     lcd_write(0, 0b00000001, 1);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 1 `i `uc -> -> 1 `i `a ]
+"28
+[; ;char_lcd.c: 28: }
+[e :UE 2199 ]
 }
-[p f _sprintf 9543680 ]
-[a 4C 66 97 116 116 101 114 121 58 32 37 51 46 48 102 37 37 0 ]
-[a 1C 67 104 103 32 102 97 117 108 116 58 32 37 51 46 48 102 37 37 0 ]
-[a 3C 70 97 115 116 32 67 104 103 58 32 37 51 46 48 102 37 37 0 ]
-[a 2C 70 117 108 108 32 67 104 103 58 32 37 51 46 48 102 37 37 0 ]
-[a 5C 72 101 108 108 111 32 87 111 114 108 100 33 0 ]
+"30
+[; ;char_lcd.c: 30: void lcd_home() {
+[v _lcd_home `(v ~T0 @X0 1 ef ]
+{
+[e :U _lcd_home ]
+[f ]
+"31
+[; ;char_lcd.c: 31:     lcd_write(0, 0b00000010, 1);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 2 `i `uc -> -> 1 `i `a ]
+"32
+[; ;char_lcd.c: 32: }
+[e :UE 2200 ]
+}
+"34
+[; ;char_lcd.c: 34: void lcd_set_char_addr(uint8_t addr) {
+[v _lcd_set_char_addr `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _lcd_set_char_addr ]
+[v _addr `uc ~T0 @X0 1 r1 ]
+[f ]
+"35
+[; ;char_lcd.c: 35:     lcd_write(0, 0b01000000 | (addr & 0b00111111), 0);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> | -> 64 `i & -> _addr `i -> 63 `i `uc -> -> 0 `i `a ]
+"36
+[; ;char_lcd.c: 36: }
+[e :UE 2201 ]
+}
+"38
+[; ;char_lcd.c: 38: void lcd_set_data_addr(uint8_t addr) {
+[v _lcd_set_data_addr `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _lcd_set_data_addr ]
+[v _addr `uc ~T0 @X0 1 r1 ]
+[f ]
+"39
+[; ;char_lcd.c: 39:     lcd_write(0, 0b10000000 | (addr & 0b01111111), 0);
+[e ( _lcd_write (3 , , -> -> 0 `i `a -> | -> 128 `i & -> _addr `i -> 127 `i `uc -> -> 0 `i `a ]
+"40
+[; ;char_lcd.c: 40: }
+[e :UE 2202 ]
+}
+"42
+[; ;char_lcd.c: 42: void lcd_write_byte(uint8_t data) {
+[v _lcd_write_byte `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _lcd_write_byte ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"43
+[; ;char_lcd.c: 43:     lcd_write(1, data, 0);
+[e ( _lcd_write (3 , , -> -> 1 `i `a _data -> -> 0 `i `a ]
+"44
+[; ;char_lcd.c: 44: }
+[e :UE 2203 ]
+}
+"46
+[; ;char_lcd.c: 46: void lcd_write_data(uint8_t* data, uint8_t offset, uint8_t length) {
+[v _lcd_write_data `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
+{
+[e :U _lcd_write_data ]
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _offset `uc ~T0 @X0 1 r2 ]
+[v _length `uc ~T0 @X0 1 r3 ]
+[f ]
+"47
+[; ;char_lcd.c: 47:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"48
+[; ;char_lcd.c: 48:     for (i = 0; i < length; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 2208  ]
+[e :U 2205 ]
+{
+"49
+[; ;char_lcd.c: 49:         lcd_write(1, data[i + offset], 0);
+[e ( _lcd_write (3 , , -> -> 1 `i `a *U + _data * -> + -> _i `i -> _offset `i `x -> -> # *U _data `i `x -> -> 0 `i `a ]
+"50
+[; ;char_lcd.c: 50:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 2208 ]
+[e $ < -> _i `i -> _length `i 2205  ]
+[e :U 2206 ]
+}
+"51
+[; ;char_lcd.c: 51: }
+[e :UE 2204 ]
+}
+"53
+[; ;char_lcd.c: 53: void lcd_print(char* string) {
+[v _lcd_print `(v ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _lcd_print ]
+[v _string `*uc ~T0 @X0 1 r1 ]
+[f ]
+"54
+[; ;char_lcd.c: 54:     uint8_t i = 0;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"55
+[; ;char_lcd.c: 55:     while (string[i] != 0 && i < 255) {
+[e $U 2210  ]
+[e :U 2211 ]
+{
+"56
+[; ;char_lcd.c: 56:         lcd_write(1, string[i++], 0);
+[e ( _lcd_write (3 , , -> -> 1 `i `a -> *U + _string * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U _string `ui `ux `uc -> -> 0 `i `a ]
+"57
+[; ;char_lcd.c: 57:     }
+}
+[e :U 2210 ]
+"55
+[; ;char_lcd.c: 55:     while (string[i] != 0 && i < 255) {
+[e $ && != -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `i -> 0 `i < -> _i `i -> 255 `i 2211  ]
+[e :U 2212 ]
+"58
+[; ;char_lcd.c: 58: }
+[e :UE 2209 ]
+}

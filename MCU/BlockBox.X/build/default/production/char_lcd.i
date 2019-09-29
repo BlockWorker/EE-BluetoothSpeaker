@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "char_lcd.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,57 +6,118 @@
 # 1 "<built-in>" 2
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 13 "main.c"
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINTOSC_64MHZ
+# 1 "char_lcd.c" 2
+# 1 "./char_lcd.h" 1
+# 36 "./char_lcd.h"
+# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 
 
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
+
+# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
 
 
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_OFF
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = SBORDIS
 
 
-#pragma config BORV = VBOR_190
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = OFF
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-#pragma config XINST = OFF
+typedef short int16_t;
 
 
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
 
 
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
+typedef __int24 int24_t;
 
 
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
 
 
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
+typedef long int32_t;
 
 
-#pragma config CP = OFF
-# 69 "main.c"
+
+
+
+typedef long long int64_t;
+# 188 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 139 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 139 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+# 36 "./char_lcd.h" 2
+
+# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
+# 37 "./char_lcd.h" 2
+
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -70,17 +131,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-
+# 10 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 3
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\features.h" 1 3
 # 10 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 3
@@ -89,10 +140,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 122 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 168 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 204 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 21 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -26596,98 +26643,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 69 "main.c" 2
-
-# 1 "./char_lcd.h" 1
-# 36 "./char_lcd.h"
-# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-# 173 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 139 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
-# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 139 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 36 "./char_lcd.h" 2
-
-# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 37 "./char_lcd.h" 2
-
+# 38 "./char_lcd.h" 2
 
 
 
@@ -26702,695 +26658,62 @@ typedef uint32_t uint_fast32_t;
     void lcd_write_byte(uint8_t data);
     void lcd_write_data(uint8_t* data, uint8_t offset, uint8_t length);
     void lcd_print(char* string);
-# 70 "main.c" 2
+# 1 "char_lcd.c" 2
 
-# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
-# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
-
-
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 71 "main.c" 2
-
-# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 1 3
-# 15 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 3
-# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 33 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef float float_t;
-
-
-
-
-typedef double double_t;
-# 15 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 2 3
-# 42 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 3
-int __fpclassifyf(float);
-
-
-
-
-
-
-
-int __signbitf(float);
-# 59 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 3
-double acos(double);
-float acosf(float);
-long double acosl(long double);
-
-
-
-double acosh(double);
-float acoshf(float);
-long double acoshl(long double);
-
-
-
-double asin(double);
-float asinf(float);
-long double asinl(long double);
-
-
-
-double asinh(double);
-float asinhf(float);
-long double asinhl(long double);
-
-
-
-double atan(double);
-float atanf(float);
-long double atanl(long double);
-
-
-
-double atan2(double, double);
-float atan2f(float, float);
-long double atan2l(long double, long double);
-
-
-
-double atanh(double);
-float atanhf(float);
-long double atanhl(long double);
-
-
-
-double cbrt(double);
-float cbrtf(float);
-long double cbrtl(long double);
-
-
-
-double ceil(double);
-float ceilf(float);
-long double ceill(long double);
-
-
-
-double copysign(double, double);
-float copysignf(float, float);
-long double copysignl(long double, long double);
-
-
-
-double cos(double);
-float cosf(float);
-long double cosl(long double);
-
-
-
-double cosh(double);
-float coshf(float);
-long double coshl(long double);
-
-
-
-double erf(double);
-float erff(float);
-long double erfl(long double);
-
-
-
-double erfc(double);
-float erfcf(float);
-long double erfcl(long double);
-
-
-
-double exp(double);
-float expf(float);
-long double expl(long double);
-
-
-
-double exp2(double);
-float exp2f(float);
-long double exp2l(long double);
-
-
-
-double expm1(double);
-float expm1f(float);
-long double expm1l(long double);
-
-
-
-double fabs(double);
-float fabsf(float);
-long double fabsl(long double);
-
-
-
-double fdim(double, double);
-float fdimf(float, float);
-long double fdiml(long double, long double);
-
-
-
-double floor(double);
-float floorf(float);
-long double floorl(long double);
-
-
-
-double fma(double, double, double);
-float fmaf(float, float, float);
-long double fmal(long double, long double, long double);
-
-
-
-double fmax(double, double);
-float fmaxf(float, float);
-long double fmaxl(long double, long double);
-
-
-
-double fmin(double, double);
-float fminf(float, float);
-long double fminl(long double, long double);
-
-
-
-double fmod(double, double);
-float fmodf(float, float);
-long double fmodl(long double, long double);
-
-
-
-double frexp(double, int *);
-float frexpf(float, int *);
-long double frexpl(long double, int *);
-
-
-
-double hypot(double, double);
-float hypotf(float, float);
-long double hypotl(long double, long double);
-
-
-
-int ilogb(double);
-int ilogbf(float);
-int ilogbl(long double);
-
-
-
-double ldexp(double, int);
-float ldexpf(float, int);
-long double ldexpl(long double, int);
-
-
-
-double lgamma(double);
-float lgammaf(float);
-long double lgammal(long double);
-
-
-
-long long llrint(double);
-long long llrintf(float);
-long long llrintl(long double);
-
-
-
-long long llround(double);
-long long llroundf(float);
-long long llroundl(long double);
-
-
-
-double log(double);
-float logf(float);
-long double logl(long double);
-
-
-
-double log10(double);
-float log10f(float);
-long double log10l(long double);
-
-
-
-double log1p(double);
-float log1pf(float);
-long double log1pl(long double);
-
-
-
-double log2(double);
-float log2f(float);
-long double log2l(long double);
-
-
-
-double logb(double);
-float logbf(float);
-long double logbl(long double);
-
-
-
-long lrint(double);
-long lrintf(float);
-long lrintl(long double);
-
-
-
-long lround(double);
-long lroundf(float);
-long lroundl(long double);
-
-
-
-double modf(double, double *);
-float modff(float, float *);
-long double modfl(long double, long double *);
-
-
-
-double nan(const char *);
-float nanf(const char *);
-long double nanl(const char *);
-
-
-
-double nearbyint(double);
-float nearbyintf(float);
-long double nearbyintl(long double);
-
-
-
-double nextafter(double, double);
-float nextafterf(float, float);
-long double nextafterl(long double, long double);
-
-
-
-double nexttoward(double, long double);
-float nexttowardf(float, long double);
-long double nexttowardl(long double, long double);
-
-
-
-
-double pow(double, double);
-__attribute__((nonreentrant)) float powf(float, float);
-long double powl(long double, long double);
-
-
-
-double remainder(double, double);
-float remainderf(float, float);
-long double remainderl(long double, long double);
-
-
-
-double remquo(double, double, int *);
-float remquof(float, float, int *);
-long double remquol(long double, long double, int *);
-
-
-
-double rint(double);
-float rintf(float);
-long double rintl(long double);
-
-
-
-double round(double);
-float roundf(float);
-long double roundl(long double);
-
-
-
-double scalbln(double, long);
-float scalblnf(float, long);
-long double scalblnl(long double, long);
-
-
-
-double scalbn(double, int);
-float scalbnf(float, int);
-long double scalbnl(long double, int);
-
-
-
-double sin(double);
-float sinf(float);
-long double sinl(long double);
-
-
-
-double sinh(double);
-float sinhf(float);
-long double sinhl(long double);
-
-
-
-double sqrt(double);
-float sqrtf(float);
-long double sqrtl(long double);
-
-
-
-double tan(double);
-float tanf(float);
-long double tanl(long double);
-
-
-
-double tanh(double);
-float tanhf(float);
-long double tanhl(long double);
-
-
-
-double tgamma(double);
-float tgammaf(float);
-long double tgammal(long double);
-
-
-
-double trunc(double);
-float truncf(float);
-long double truncl(long double);
-# 423 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 3
-extern int signgam;
-
-double j0(double);
-double j1(double);
-double jn(int, double);
-
-double y0(double);
-double y1(double);
-double yn(int, double);
-# 72 "main.c" 2
-# 87 "main.c"
-uint8_t ledBrightness = 255;
-
-void setLED(uint32_t r, uint32_t g, uint32_t b) {
-    uint32_t sr = r * ledBrightness / 255;
-    uint32_t sg = g * ledBrightness / 255;
-    uint32_t sb = b * ledBrightness / 255;
-
-    CCPR3H = (sr < 4095 ? sr : 4095) >> 8;
-    CCPR3L = (sr < 4095 ? sr : 4095) & 0xff;
-    CCPR2H = (sg < 4095 ? sg : 4095) >> 8;
-    CCPR2L = (sg < 4095 ? sg : 4095) & 0xff;
-    CCPR4H = (sb < 4095 ? sb : 4095) >> 8;
-    CCPR4L = (sb < 4095 ? sb : 4095) & 0xff;
-}
-
-void main_loop() {
-    static uint32_t counter = 0;
-    static uint32_t sum = 0;
-    static uint16_t last[10];
-    static uint32_t lastSum;
-    static int16_t pos = 0;
-
-    ADPCH = 0b010101;
-    ADCON0bits.GO = 1;
-    while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
-    int16_t res = ((ADRESH << 8) | ADRESL) - 1522;
-    sum += res < 0 ? -res : res;
-
-    if (counter % 50 == 50 - 1) {
-        int32_t sample = sum / 50;
-        sample -= 23;
-        if (sample < 0) sample = 0;
-
-        uint16_t lastAvg = lastSum / 10 / 2;
-
-
-        pos = (pos > (sample - lastAvg) * 300 ? pos : (sample - lastAvg) * 300);
-
-        setLED(pos, 2048 - (pos < 2048 ? pos : 2048), 2048 - (pos < 2048 ? pos : 2048));
-
-        pos = (pos - (pos / 70 + 1) > 0 ? pos - (pos / 70 + 1) : 0);
-
-        sum = 0;
-
-        lastSum -= last[(counter / 50) % 10];
-        lastSum += sample;
-        last[(counter / 50) % 10] = sample;
-    }
-
-    if (counter % 1000 == 999) {
-        PORTCbits.RC0 = !PORTCbits.RC1;
-
-        ADPCH = 0b010110;
-        ADCON0bits.FM = 0;
-        ADCON0bits.GO = 1;
-        while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
-        ledBrightness = ADRESH;
-        ADCON0bits.FM = 1;
-    }
-
-    if (++counter >= 100000) {
-        ADPCH = 0b011011;
-        ADCON0bits.GO = 1;
-        while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
-        float bat_percent = (((ADRESH << 8) | ADRESL) - 2082.0f) / (3014.0f - 2082.0f) * 100.0f;
-
-        char batmsg[16];
-        if (!PORTDbits.RD2) sprintf(batmsg, "Chg fault: %3.0f%%", bat_percent);
-        else if (!PORTDbits.RD1) sprintf(batmsg, "Full Chg: %3.0f%%", bat_percent);
-        else if (!PORTDbits.RD0) sprintf(batmsg, "Fast Chg: %3.0f%%", bat_percent);
-        else sprintf(batmsg, "Battery: %3.0f%%", bat_percent);
-        lcd_set_data_addr(0);
-        lcd_print(batmsg);
-
-        counter = 0;
-    }
-
-    __asm("clrwdt");
+void lcd_write(_Bool rs, uint8_t data, _Bool longdelay) {
+    PORTEbits.RE2 = 1;
+    PORTEbits.RE1 = 0;
+    PORTEbits.RE0 = rs;
     _delay((unsigned long)((10)*(64000000/4000000.0)));
+    PORTA = data;
+    _delay((unsigned long)((10)*(64000000/4000000.0)));
+    PORTEbits.RE2 = 0;
+    _delay((unsigned long)((10)*(64000000/4000000.0)));
+    PORTEbits.RE2 = 1;
+    if (longdelay) _delay((unsigned long)((2)*(64000000/4000.0)));
+    else _delay((unsigned long)((50)*(64000000/4000000.0)));
 }
 
-void main(void) {
-    TRISA = 0b00000000;
-    PORTA = 0b00000000;
-    ANSELA = 0b00000000;
-    WPUA = 0b00000000;
-    INLVLA = 0b11111111;
-    SLRCONA = 0b11111111;
-    ODCONA = 0b00000000;
+void lcd_init(_Bool inc, _Bool shift, _Bool cursor, _Bool cursorblink, _Bool on) {
+    lcd_write(0, 0b00110011, 0);
+    lcd_write(0, 0b00110011, 0);
+    lcd_write(0, 0b00110011, 0);
+    lcd_write(0, 0b00000100 | (inc << 1) | shift, 0);
+    lcd_write(0, 0b00001000 | (on << 2) | (cursor << 1) | cursorblink , 0);
+    lcd_write(0, 0b00000001, 1);
+}
 
-    TRISB = 0b11001100;
-    PORTB = 0b00010000;
-    ANSELB = 0b00000000;
-    WPUB = 0b11000000;
-    INLVLB = 0b11111111;
-    SLRCONB = 0b11111111;
-    ODCONB = 0b00000000;
+void lcd_clear() {
+    lcd_write(0, 0b00000001, 1);
+}
 
-    TRISC = 0b01101110;
-    PORTC = 0b00000000;
-    ANSELC = 0b01100000;
-    WPUC = 0b00001110;
-    INLVLC = 0b11111111;
-    SLRCONC = 0b11111111;
-    ODCONC = 0b00000000;
+void lcd_home() {
+    lcd_write(0, 0b00000010, 1);
+}
 
-    TRISD = 0b00001111;
-    PORTD = 0b00000000;
-    ANSELD = 0b00001000;
-    WPUD = 0b00000111;
-    INLVLD = 0b11111111;
-    SLRCOND = 0b11111111;
-    ODCOND = 0b00000000;
+void lcd_set_char_addr(uint8_t addr) {
+    lcd_write(0, 0b01000000 | (addr & 0b00111111), 0);
+}
 
-    TRISE = 0b11111000;
-    PORTE = 0b00000100;
-    ANSELE = 0b11110000;
-    WPUE = 0b00001000;
-    INLVLE = 0b11111111;
-    SLRCONE = 0b11111111;
-    ODCONE = 0b00000000;
+void lcd_set_data_addr(uint8_t addr) {
+    lcd_write(0, 0b10000000 | (addr & 0b01111111), 0);
+}
 
-    PMD0 = 0b01111111;
-    PMD1 = 0b11111011;
-    PMD2 = 0b01000111;
-    PMD3 = 0b01010001;
-    PMD4 = 0b11100000;
-    PMD5 = 0b00110111;
-    PMD6 = 0b00111111;
-    PMD7 = 0b00000011;
+void lcd_write_byte(uint8_t data) {
+    lcd_write(1, data, 0);
+}
 
-    ADCON0 = 0b10000100;
-    ADCON1 = 0b00000000;
-    ADCON2 = 0b00000000;
-    ADCON3 = 0b00000000;
-    ADCLK = 0b00011111;
-    ADREF = 0b00000000;
+void lcd_write_data(uint8_t* data, uint8_t offset, uint8_t length) {
+    uint8_t i;
+    for (i = 0; i < length; i++) {
+        lcd_write(1, data[i + offset], 0);
+    }
+}
 
-    RC7PPS = 0b001010;
-    RD4PPS = 0b001011;
-    RD5PPS = 0b001100;
-    RD6PPS = 0b001110;
-    RD7PPS = 0b010000;
-
-    CCPTMRS0 = 0b01010101;
-    CCP2CON = 0b10001111;
-    CCP3CON = 0b10001111;
-    CCP4CON = 0b10001111;
-    PWM6CON = 0b10000000;
-    PWM8CON = 0b10000000;
-
-    T2PR = 255;
-    T2CLK = 0b0001;
-    T2CON = 0b10010000;
-
-    CCPR2L = 0;
-    CCPR2H = 0;
-    CCPR3L = 0;
-    CCPR3H = 0;
-    CCPR4L = 0;
-    CCPR4H = 0;
-    PWM6DCH = 255;
-    PWM6DCL = 255;
-    PWM8DCH = 255;
-    PWM8DCL = 255;
-
-    PORTBbits.RB4 = 0;
-    _delay((unsigned long)((50)*(64000000/4000.0)));
-    PORTBbits.RB4 = 1;
-
-    _delay((unsigned long)((50)*(64000000/4000.0)));
-    lcd_init(1, 0, 0, 0, 1);
-    lcd_print("Hello World!");
-
-    while (1) main_loop();
+void lcd_print(char* string) {
+    uint8_t i = 0;
+    while (string[i] != 0 && i < 255) {
+        lcd_write(1, string[i++], 0);
+    }
 }
