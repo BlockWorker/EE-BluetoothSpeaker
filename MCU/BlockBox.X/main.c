@@ -68,6 +68,7 @@
 
 #include <xc.h>
 #include "char_lcd.h"
+#include "uart.h"
 #include <stdio.h>
 #include <math.h>
 
@@ -75,62 +76,126 @@
 #define min(x, y) (x < y ? x : y)
 #define max(x, y) (x > y ? x : y)
 
-#define BAT_FULL_VALUE 3014.0f
-#define BAT_EMPTY_VALUE 2082.0f
-#define SOUND_CENTER 1522
-#define SOUND_NOISE_FLOOR 23
-#define SOUND_AMPLIFY 300
-#define SOUND_LAST_LEN 10
+#define BAT_FULL_VALUE 2996.0f
+#define BAT_EMPTY_VALUE 2090.0f
+#define SOUND_CENTER 1545
+#define SOUND_NOISE_FLOOR 9
+#define SOUND_LAST_LEN 20
 #define SOUND_SAMPLE_LEN 50
-#define LOG_MULT 5864.55534f
 
-uint8_t ledBrightness = 255;
+const uint8_t volCheckCmd[3] = { 0x16, 0x00, 0x04 };
+const uint8_t stateCheckCmd[2] = { 0x0D, 0x00 };
+const uint16_t soundAmplify[16] = { 0, 0, 0, 700, 550, 450, 300, 200, 120, 75, 50, 35, 25, 15, 10, 7 };
 
-void setLED(uint32_t r, uint32_t g, uint32_t b) {
-    uint32_t sr = r * ledBrightness / 255;
-    uint32_t sg = g * ledBrightness / 255;
-    uint32_t sb = b * ledBrightness / 255;
+float bat_percent = 100.0f;
+int32_t ledBrightness = 64;
+
+void updateButtonLight(int32_t step) {
+    if (!on) {
+        PWM6DCH = 0;
+        PWM6DCL = 0;
+        PWM8DCH = 255;
+        PWM8DCL = 255;
+    } else if (pairing) {
+        PWM6DCH = 255;
+        PWM6DCL = 255;
+        int32_t dch = 0;
+        if (step % 4096 < 2048) dch = (step % 2048) / 8;
+        else dch = (2048 - step % 2048) / 8;
+        PWM8DCH = dch;
+        PWM8DCL = 255;
+    } else {
+        PWM6DCH = 255;
+        PWM6DCL = 255;
+        PWM8DCH = 255;
+        PWM8DCL = 255;
+    }
+}
+
+void setLED(int32_t mod, int32_t step) {
+    uint16_t trueMod = clamp(mod, 0, 4095);
+    int32_t r = trueMod;
+    int32_t g = 2047 - trueMod / 2;
+    int32_t b = 2047 - trueMod / 2;
     
-    CCPR3H = min(sr, 4095) >> 8;
-    CCPR3L = min(sr, 4095) & 0xff;
-    CCPR2H = min(sg, 4095) >> 8;
-    CCPR2L = min(sg, 4095) & 0xff;
-    CCPR4H = min(sb, 4095) >> 8;
-    CCPR4L = min(sb, 4095) & 0xff;
+    int32_t shift;
+    if (step < 25000) shift = step / 50;
+    else if (step < 75000) shift = (50000 - step) / 50;
+    else shift = (step - 100000) / 50;
+    g = clamp(g + shift - 500, 0, 4095);
+    b = clamp(b - shift - 500, 0, 4095);
+    
+    int32_t sr, sg, sb;
+    if (on) {
+        sr = r * ledBrightness / 300;
+        if (sr < 0) sr = 0;
+        else if (sr > 4095) sr = 4095;
+        sg = g * ledBrightness / 300;
+        if (sg < 0) sg = 0;
+        else if (sg > 4095) sr = 4095;
+        sb = b * ledBrightness / 300;
+        if (sb < 0) sb = 0;
+        else if (sb > 4095) sr = 4095;
+    } else {
+        sr = 0;
+        sg = 0;
+        sb = 0;
+    }
+        
+    if (pairing && step % 10000 < 1000) {
+        sr = 0;
+        sg = 0;
+        sb = 4095;
+    } else if (bat_percent < 5.0f && step % 10000 >= 5000 && step % 10000 < 6000) {
+        sr = 4095;
+        sg = 0;
+        sb = 0;
+    }
+    
+    CCPR3H = sr >> 8;
+    CCPR3L = sr & 0xff;
+    CCPR2H = sg >> 8;
+    CCPR2L = sg & 0xff;
+    CCPR4H = sb >> 8;
+    CCPR4L = sb & 0xff;
 }
 
 void main_loop() {
     static uint32_t counter = 0;
     static uint32_t sum = 0;
     static uint16_t last[SOUND_LAST_LEN];
-    static uint32_t lastSum;
+    static uint32_t lastSum = 0;
     static int16_t pos = 0;
     
     ADPCH = 0b010101; //analog input: C5
     ADCON0bits.GO = 1;
     while (ADCON0bits.GO) __delay_us(1);
     int16_t res = ((ADRESH << 8) | ADRESL) - SOUND_CENTER;
-    sum += res < 0 ? -res : res;
+    int16_t absRes = res < 0 ? -res : res;
+    sum += absRes;
     
     if (counter % SOUND_SAMPLE_LEN == SOUND_SAMPLE_LEN - 1) {
-        int32_t sample = sum / SOUND_SAMPLE_LEN;
+        int32_t sample = sum * 2 / SOUND_SAMPLE_LEN;
         sample -= SOUND_NOISE_FLOOR;
         if (sample < 0) sample = 0;
         
-        uint16_t lastAvg = lastSum / SOUND_LAST_LEN / 2;
+        uint32_t lastAvg = lastSum / SOUND_LAST_LEN;
+        int32_t rel = (sample - lastAvg) * soundAmplify[volume_level];
         
-        //uint32_t rel = max(0, sample / lastAvg - 1) * SOUND_AMPLIFY;
-        pos = max(pos, (sample - lastAvg) * SOUND_AMPLIFY);
+        //only inc pos when streaming, change is large enough and LED is dim enough at low volume levels
+        if (streaming && (volume_level >= 4 || ledBrightness <= 24) && rel > 2000) pos = min(4095, max(pos, rel));
         
-        setLED(pos, 2048 - min(pos, 2048), 2048 - min(pos, 2048));
+        setLED(pos, counter);
         
-        pos = max(pos - (pos / 70 + 1), 0);
+        pos = max(pos - (pos / 100 + 1), 0);
         
         sum = 0;
         
         lastSum -= last[(counter / SOUND_SAMPLE_LEN) % SOUND_LAST_LEN];
         lastSum += sample;
         last[(counter / SOUND_SAMPLE_LEN) % SOUND_LAST_LEN] = sample;
+        
+        updateButtonLight(counter);
     }
     
     if (counter % 1000 == 999) {
@@ -140,26 +205,51 @@ void main_loop() {
         ADCON0bits.FM = 0; //left justify
         ADCON0bits.GO = 1;
         while (ADCON0bits.GO) __delay_us(1);
-        ledBrightness = ADRESH;
+        ledBrightness = ADRESH / 4;
         ADCON0bits.FM = 1; //right justify
+        
+        /*lcd_set_data_addr(0x40);
+        char amplifystr[5];
+        sprintf(amplifystr, "%4u", ledBrightness);
+        lcd_print(amplifystr);*/
+    }
+    
+    if (counter % 10000 == 9999) {
+        uart_send(volCheckCmd, 3);
+        
+        lcd_set_data_addr(0x40);
+        if (pairing) lcd_print("Pairing         ");
+        else if (connected) lcd_print("Connected       ");
+        else if (on) lcd_print("Not connected   ");
+        else lcd_print("Off             ");
+    } else if (counter % 10000 == 4999) {
+        uart_send(stateCheckCmd, 2);
     }
     
     if (++counter >= 100000) {
         ADPCH = 0b011011; //analog input: D3
         ADCON0bits.GO = 1;
         while (ADCON0bits.GO) __delay_us(1);
-        float bat_percent = (((ADRESH << 8) | ADRESL) - BAT_EMPTY_VALUE) / (BAT_FULL_VALUE - BAT_EMPTY_VALUE) * 100.0f;
-        //if (bat_percent > 100f) bat_percent = 100f;
-        char batmsg[16];
-        if (!PORTDbits.RD2) sprintf(batmsg, "Chg fault: %3.0f%%", bat_percent);
-        else if (!PORTDbits.RD1) sprintf(batmsg, "Full Chg: %3.0f%%", bat_percent);
-        else if (!PORTDbits.RD0) sprintf(batmsg, "Fast Chg: %3.0f%%", bat_percent);
-        else sprintf(batmsg, "Battery: %3.0f%%", bat_percent);
+        uint16_t batlvl = ((ADRESH << 8) | ADRESL);
+        char batmsg[17];
+        if (batlvl < BAT_EMPTY_VALUE - 100) {
+            bat_percent = 100.0f;
+            sprintf(batmsg, "No Battery      ");
+        } else {
+            bat_percent = (batlvl - BAT_EMPTY_VALUE) / (BAT_FULL_VALUE - BAT_EMPTY_VALUE) * 100.0f;
+            bat_percent = clamp(bat_percent, 0.0f, 100.0f);
+            if (!PORTDbits.RD2) sprintf(batmsg, "Chg fault: %3.0f%% ", bat_percent);
+            else if (!PORTDbits.RD1) sprintf(batmsg, "Full Chg: %3.0f%%  ", bat_percent);
+            else if (!PORTDbits.RD0) sprintf(batmsg, "Fast Chg: %3.0f%%  ", bat_percent);
+            else sprintf(batmsg, "Battery: %3.0f%%   ", bat_percent);
+        }
         lcd_set_data_addr(0);
         lcd_print(batmsg);
 
         counter = 0;
     }
+    
+    uart_tasks();
     
     asm("clrwdt");
     __delay_us(10);
@@ -174,7 +264,7 @@ void main(void) {
     SLRCONA = 0b11111111;
     ODCONA = 0b00000000;
     
-    TRISB = 0b11001100;
+    TRISB = 0b11001110;
     PORTB = 0b00010000;
     ANSELB = 0b00000000;
     WPUB = 0b11000000;
@@ -211,9 +301,9 @@ void main(void) {
     PMD2 = 0b01000111;
     PMD3 = 0b01010001;
     PMD4 = 0b11100000;
-    PMD5 = 0b00110111;
+    PMD5 = 0b00100111;
     PMD6 = 0b00111111;
-    PMD7 = 0b00000011;
+    PMD7 = 0b00000000;
     
     ADCON0 = 0b10000100;
     ADCON1 = 0b00000000;
@@ -245,18 +335,20 @@ void main(void) {
     CCPR3H = 0;
     CCPR4L = 0;
     CCPR4H = 0;
-    PWM6DCH = 255;
-    PWM6DCL = 255;
+    PWM6DCH = 0;
+    PWM6DCL = 0;
     PWM8DCH = 255;
     PWM8DCL = 255;
     
-    PORTBbits.RB4 = 0; //reset BM62
+    LATB4 = 0; //reset BM62
     __delay_ms(50);
-    PORTBbits.RB4 = 1;
+    LATB4 = 1;
     
     __delay_ms(50); //wait a bit longer before LCD init to allow LCD controller to boot up
     lcd_init(true, false, false, false, true);
     lcd_print("Hello World!");
+    
+    uart_init();
     
     while (1) main_loop();
 }

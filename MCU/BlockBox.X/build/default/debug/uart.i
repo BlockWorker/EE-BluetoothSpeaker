@@ -1,4 +1,4 @@
-# 1 "char_lcd.c"
+# 1 "uart.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "char_lcd.c" 2
-# 1 "./char_lcd.h" 1
-# 36 "./char_lcd.h"
+# 1 "uart.c" 2
+# 1 "./uart.h" 1
+# 36 "./uart.h"
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -113,10 +113,10 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 36 "./char_lcd.h" 2
+# 36 "./uart.h" 2
 
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 37 "./char_lcd.h" 2
+# 37 "./uart.h" 2
 
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
@@ -26643,78 +26643,209 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 38 "./char_lcd.h" 2
+# 38 "./uart.h" 2
 
 
 
 
 
 
-    void lcd_init(_Bool inc, _Bool shift, _Bool cursor, _Bool cursorblink, _Bool on);
-    void lcd_clear();
-    void lcd_home();
-    void lcd_set_char_addr(uint8_t addr);
-    void lcd_set_data_addr(uint8_t addr);
-    void lcd_write_byte(uint8_t data);
-    void lcd_write_data(uint8_t* data, uint8_t offset, uint8_t length);
-    void lcd_print(char* string);
-# 1 "char_lcd.c" 2
+    uint8_t volume_level = 0;
+    _Bool pairing = 0;
+    _Bool streaming = 0;
+
+    void uart_init();
+    void uart_tasks();
+    void uart_send(uint8_t* buf, uint8_t len);
+# 1 "uart.c" 2
+
+# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
+# 25 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
+# 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 2 3
 
 
-void lcd_write(_Bool rs, uint8_t data, _Bool longdelay) {
-    LATE2 = 1;
-    LATE1 = 0;
-    LATE0 = rs;
-    _delay((unsigned long)((10)*(64000000/4000000.0)));
-    PORTA = data;
-    _delay((unsigned long)((10)*(64000000/4000000.0)));
-    LATE2 = 0;
-    _delay((unsigned long)((10)*(64000000/4000000.0)));
-    LATE2 = 1;
-    if (longdelay) _delay((unsigned long)((2)*(64000000/4000.0)));
-    else _delay((unsigned long)((50)*(64000000/4000000.0)));
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 2 "uart.c" 2
+# 11 "uart.c"
+uint8_t ackCmd[2] = { 0x14, 0x00 };
+
+uint8_t rxBuf[256] __attribute__((address(0x0100)));
+uint8_t txBuf[256] __attribute__((address(0x0200)));
+
+void uart_init() {
+    DMA1CON1 = 0b01000000;
+    DMA1SSZH = 0x00;
+    DMA1SSZL = 0x01;
+    DMA1SSAU = 0x00;
+    DMA1SSAH = 0x3d;
+    DMA1SSAL = 0xe8;
+    DMA1DSZH = 0x01;
+    DMA1DSZL = 0x00;
+    DMA1DSAH = 0x01;
+    DMA1DSAL = 0x00;
+    DMA1SIRQ = 0x1b;
+    DMA1AIRQ = 0x1d;
+    DMA1CON0 = 0b11000100;
+
+    DMA2CON1 = 0b00000011;
+    DMA2SSZH = 0x00;
+    DMA2SSZL = 0x01;
+    DMA2SSAU = 0x00;
+    DMA2SSAH = 0x02;
+    DMA2SSAL = 0x00;
+    DMA2DSZH = 0x00;
+    DMA2DSZL = 0x01;
+    DMA2DSAH = 0x3d;
+    DMA2DSAL = 0xea;
+    DMA2SIRQ = 0x1c;
+    DMA2AIRQ = 0x1d;
+    DMA2CON0 = 0b00000100;
+
+    PRLOCK = 0x55;
+    PRLOCK = 0xAA;
+    PRLOCKbits.PRLOCKED = 1;
+
+    U1BRGH = 0;
+    U1BRGL = 34;
+    U1RXPPS = 0b001001;
+    U1CON0 = 0b00110000;
+    U1CON1 = 0b10000000;
+    U1CON2 = 0b00001000;
+    RB0PPS = 0b010011;
 }
 
-void lcd_init(_Bool inc, _Bool shift, _Bool cursor, _Bool cursorblink, _Bool on) {
-    lcd_write(0, 0b00110011, 0);
-    lcd_write(0, 0b00110011, 0);
-    lcd_write(0, 0b00110011, 0);
-    lcd_write(0, 0b00111011, 0);
-    lcd_write(0, 0b00000100 | (inc << 1) | shift, 0);
-    lcd_write(0, 0b00001000 | (on << 2) | (cursor << 1) | cursorblink , 0);
-    lcd_write(0, 0b00000001, 1);
+void handle_message(uint8_t* message, uint8_t len) {
+    if (message[0] == 0x17 && message[2] == 0x04 && len == 4) {
+        volume_level = message[3] & 0x0f;
+    } else if (message[0] == 0x1E && len == 8) {
+        pairing = message[1] == 0x01;
+        streaming = message[6];
+    }
+
+    ackCmd[1] = message[0];
+    uart_send(ackCmd, 2);
 }
 
-void lcd_clear() {
-    lcd_write(0, 0b00000001, 1);
+void transmitChecksum() {
+    while (!U1TXIF);
+    U1TXB = -(U1TXCHK - 0xaa);
+    DMA2SCNTIF = 0;
 }
 
-void lcd_home() {
-    lcd_write(0, 0b00000010, 1);
-}
+void uart_tasks() {
+    static uint8_t rxPos = 0;
 
-void lcd_set_char_addr(uint8_t addr) {
-    lcd_write(0, 0b01000000 | (addr & 0b00111111), 0);
-}
+    if (DMA2SCNTIF) transmitChecksum();
 
-void lcd_set_data_addr(uint8_t addr) {
-    lcd_write(0, 0b10000000 | (addr & 0b01111111), 0);
-}
-
-void lcd_write_byte(uint8_t data) {
-    lcd_write(1, data, 0);
-}
-
-void lcd_write_data(uint8_t* data, uint8_t offset, uint8_t length) {
+    if (DMA1DPTRL == rxPos) return;
+    uint8_t rxLen = DMA1DPTRL - rxPos;
     uint8_t i;
-    for (i = 0; i < length; i++) {
-        lcd_write(1, data[i + offset], 0);
+    _Bool zeroByte = 0;
+    uint8_t msgLen = 0;
+    uint8_t checksum = 0;
+    uint8_t message[256];
+    uint8_t msgOffset = 0;
+    uint8_t rawMsgOffset = 0;
+    for (i = 0; i < rxLen; i++) {
+        uint8_t bytePos = i - msgOffset;
+        uint8_t intPos = rxPos + i;
+        uint8_t val = rxBuf[intPos];
+        uint8_t posInRawMsg = bytePos - (3 + zeroByte);
+        if (bytePos == zeroByte) {
+            if (val == 0x00 && !zeroByte) {
+                zeroByte = 1;
+            } else if (val != 0xaa) {
+                msgOffset = intPos + 1;
+                zeroByte = 0;
+            }
+        } else if (bytePos == 1 + zeroByte) {
+            checksum += val;
+        } else if (bytePos == 2 + zeroByte) {
+            msgLen = val;
+            checksum += val;
+            if (msgLen == 0) {
+                msgOffset = intPos + 1;
+                zeroByte = 0;
+                checksum = 0;
+            }
+        } else if (posInRawMsg < msgLen) {
+            message[rawMsgOffset + posInRawMsg] = val;
+            checksum += val;
+        } else if (posInRawMsg == msgLen) {
+            checksum += val;
+            if (checksum == 0x00) {
+                handle_message(message + rawMsgOffset, msgLen);
+            }
+            msgOffset = intPos + 1;
+            zeroByte = 0;
+            rawMsgOffset += msgLen;
+            checksum = 0;
+        }
     }
+    rxPos = msgOffset;
 }
 
-void lcd_print(char* string) {
-    uint8_t i = 0;
-    while (string[i] != 0 && i < 255) {
-        lcd_write(1, string[i++], 0);
-    }
+void uart_send(uint8_t* buf, uint8_t len) {
+    while (DMA2CON0bits.SIRQEN);
+    if (DMA2SCNTIF) transmitChecksum();
+    DMA2CON0bits.EN = 0;
+    txBuf[0] = 0xAA;
+    txBuf[1] = 0x00;
+    txBuf[2] = len;
+    memcpy(txBuf + 3, buf, len);
+    DMA2SSZH = ((uint16_t)len + 3) >> 8;
+    DMA2SSZL = (len + 3) & 0xff;
+    U1TXCHK = 0;
+    DMA2SCNTIF = 0;
+    DMA2CON0bits.EN = 1;
+    DMA2CON0bits.SIRQEN = 1;
 }

@@ -26704,6 +26704,19 @@ typedef uint32_t uint_fast32_t;
     void lcd_print(char* string);
 # 70 "main.c" 2
 
+# 1 "./uart.h" 1
+# 44 "./uart.h"
+    uint8_t volume_level = 0;
+    _Bool pairing = 0;
+    _Bool streaming = 0;
+    _Bool connected = 0;
+    _Bool on = 0;
+
+    void uart_init();
+    void uart_tasks();
+    void uart_send(uint8_t* buf, uint8_t len);
+# 71 "main.c" 2
+
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -26842,7 +26855,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 71 "main.c" 2
+# 72 "main.c" 2
 
 # 1 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 1 3
 # 15 "F:\\Programme\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\math.h" 3
@@ -27216,55 +27229,121 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 72 "main.c" 2
-# 87 "main.c"
-uint8_t ledBrightness = 255;
+# 73 "main.c" 2
+# 86 "main.c"
+const uint8_t volCheckCmd[3] = { 0x16, 0x00, 0x04 };
+const uint8_t stateCheckCmd[2] = { 0x0D, 0x00 };
+const uint16_t soundAmplify[16] = { 0, 0, 0, 700, 550, 450, 300, 200, 120, 75, 50, 35, 25, 15, 10, 7 };
 
-void setLED(uint32_t r, uint32_t g, uint32_t b) {
-    uint32_t sr = r * ledBrightness / 255;
-    uint32_t sg = g * ledBrightness / 255;
-    uint32_t sb = b * ledBrightness / 255;
+float bat_percent = 100.0f;
+int32_t ledBrightness = 64;
 
-    CCPR3H = (sr < 4095 ? sr : 4095) >> 8;
-    CCPR3L = (sr < 4095 ? sr : 4095) & 0xff;
-    CCPR2H = (sg < 4095 ? sg : 4095) >> 8;
-    CCPR2L = (sg < 4095 ? sg : 4095) & 0xff;
-    CCPR4H = (sb < 4095 ? sb : 4095) >> 8;
-    CCPR4L = (sb < 4095 ? sb : 4095) & 0xff;
+void updateButtonLight(int32_t step) {
+    if (!on) {
+        PWM6DCH = 0;
+        PWM6DCL = 0;
+        PWM8DCH = 255;
+        PWM8DCL = 255;
+    } else if (pairing) {
+        PWM6DCH = 255;
+        PWM6DCL = 255;
+        int32_t dch = 0;
+        if (step % 4096 < 2048) dch = (step % 2048) / 8;
+        else dch = (2048 - step % 2048) / 8;
+        PWM8DCH = dch;
+        PWM8DCL = 255;
+    } else {
+        PWM6DCH = 255;
+        PWM6DCL = 255;
+        PWM8DCH = 255;
+        PWM8DCL = 255;
+    }
+}
+
+void setLED(int32_t mod, int32_t step) {
+    uint16_t trueMod = (mod < 0 ? 0 : (mod > 4095 ? 4095 : mod));
+    int32_t r = trueMod;
+    int32_t g = 2047 - trueMod / 2;
+    int32_t b = 2047 - trueMod / 2;
+
+    int32_t shift;
+    if (step < 25000) shift = step / 50;
+    else if (step < 75000) shift = (50000 - step) / 50;
+    else shift = (step - 100000) / 50;
+    g = (g + shift - 500 < 0 ? 0 : (g + shift - 500 > 4095 ? 4095 : g + shift - 500));
+    b = (b - shift - 500 < 0 ? 0 : (b - shift - 500 > 4095 ? 4095 : b - shift - 500));
+
+    int32_t sr, sg, sb;
+    if (on) {
+        sr = r * ledBrightness / 300;
+        if (sr < 0) sr = 0;
+        else if (sr > 4095) sr = 4095;
+        sg = g * ledBrightness / 300;
+        if (sg < 0) sg = 0;
+        else if (sg > 4095) sr = 4095;
+        sb = b * ledBrightness / 300;
+        if (sb < 0) sb = 0;
+        else if (sb > 4095) sr = 4095;
+    } else {
+        sr = 0;
+        sg = 0;
+        sb = 0;
+    }
+
+    if (pairing && step % 10000 < 1000) {
+        sr = 0;
+        sg = 0;
+        sb = 4095;
+    } else if (bat_percent < 5.0f && step % 10000 >= 5000 && step % 10000 < 6000) {
+        sr = 4095;
+        sg = 0;
+        sb = 0;
+    }
+
+    CCPR3H = sr >> 8;
+    CCPR3L = sr & 0xff;
+    CCPR2H = sg >> 8;
+    CCPR2L = sg & 0xff;
+    CCPR4H = sb >> 8;
+    CCPR4L = sb & 0xff;
 }
 
 void main_loop() {
     static uint32_t counter = 0;
     static uint32_t sum = 0;
-    static uint16_t last[10];
-    static uint32_t lastSum;
+    static uint16_t last[20];
+    static uint32_t lastSum = 0;
     static int16_t pos = 0;
 
     ADPCH = 0b010101;
     ADCON0bits.GO = 1;
     while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
-    int16_t res = ((ADRESH << 8) | ADRESL) - 1522;
-    sum += res < 0 ? -res : res;
+    int16_t res = ((ADRESH << 8) | ADRESL) - 1545;
+    int16_t absRes = res < 0 ? -res : res;
+    sum += absRes;
 
     if (counter % 50 == 50 - 1) {
-        int32_t sample = sum / 50;
-        sample -= 23;
+        int32_t sample = sum * 2 / 50;
+        sample -= 9;
         if (sample < 0) sample = 0;
 
-        uint16_t lastAvg = lastSum / 10 / 2;
+        uint32_t lastAvg = lastSum / 20;
+        int32_t rel = (sample - lastAvg) * soundAmplify[volume_level];
 
 
-        pos = (pos > (sample - lastAvg) * 300 ? pos : (sample - lastAvg) * 300);
+        if (streaming && (volume_level >= 4 || ledBrightness <= 24) && rel > 2000) pos = (4095 < (pos > rel ? pos : rel) ? 4095 : (pos > rel ? pos : rel));
 
-        setLED(pos, 2048 - (pos < 2048 ? pos : 2048), 2048 - (pos < 2048 ? pos : 2048));
+        setLED(pos, counter);
 
-        pos = (pos - (pos / 70 + 1) > 0 ? pos - (pos / 70 + 1) : 0);
+        pos = (pos - (pos / 100 + 1) > 0 ? pos - (pos / 100 + 1) : 0);
 
         sum = 0;
 
-        lastSum -= last[(counter / 50) % 10];
+        lastSum -= last[(counter / 50) % 20];
         lastSum += sample;
-        last[(counter / 50) % 10] = sample;
+        last[(counter / 50) % 20] = sample;
+
+        updateButtonLight(counter);
     }
 
     if (counter % 1000 == 999) {
@@ -27274,26 +27353,51 @@ void main_loop() {
         ADCON0bits.FM = 0;
         ADCON0bits.GO = 1;
         while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
-        ledBrightness = ADRESH;
+        ledBrightness = ADRESH / 4;
         ADCON0bits.FM = 1;
+
+
+
+
+
+    }
+
+    if (counter % 10000 == 9999) {
+        uart_send(volCheckCmd, 3);
+
+        lcd_set_data_addr(0x40);
+        if (pairing) lcd_print("Pairing         ");
+        else if (connected) lcd_print("Connected       ");
+        else if (on) lcd_print("Not connected   ");
+        else lcd_print("Off             ");
+    } else if (counter % 10000 == 4999) {
+        uart_send(stateCheckCmd, 2);
     }
 
     if (++counter >= 100000) {
         ADPCH = 0b011011;
         ADCON0bits.GO = 1;
         while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
-        float bat_percent = (((ADRESH << 8) | ADRESL) - 2082.0f) / (3014.0f - 2082.0f) * 100.0f;
-
-        char batmsg[16];
-        if (!PORTDbits.RD2) sprintf(batmsg, "Chg fault: %3.0f%%", bat_percent);
-        else if (!PORTDbits.RD1) sprintf(batmsg, "Full Chg: %3.0f%%", bat_percent);
-        else if (!PORTDbits.RD0) sprintf(batmsg, "Fast Chg: %3.0f%%", bat_percent);
-        else sprintf(batmsg, "Battery: %3.0f%%", bat_percent);
+        uint16_t batlvl = ((ADRESH << 8) | ADRESL);
+        char batmsg[17];
+        if (batlvl < 2090.0f - 100) {
+            bat_percent = 100.0f;
+            sprintf(batmsg, "No Battery      ");
+        } else {
+            bat_percent = (batlvl - 2090.0f) / (2996.0f - 2090.0f) * 100.0f;
+            bat_percent = (bat_percent < 0.0f ? 0.0f : (bat_percent > 100.0f ? 100.0f : bat_percent));
+            if (!PORTDbits.RD2) sprintf(batmsg, "Chg fault: %3.0f%% ", bat_percent);
+            else if (!PORTDbits.RD1) sprintf(batmsg, "Full Chg: %3.0f%%  ", bat_percent);
+            else if (!PORTDbits.RD0) sprintf(batmsg, "Fast Chg: %3.0f%%  ", bat_percent);
+            else sprintf(batmsg, "Battery: %3.0f%%   ", bat_percent);
+        }
         lcd_set_data_addr(0);
         lcd_print(batmsg);
 
         counter = 0;
     }
+
+    uart_tasks();
 
     __asm("clrwdt");
     _delay((unsigned long)((10)*(64000000/4000000.0)));
@@ -27308,7 +27412,7 @@ void main(void) {
     SLRCONA = 0b11111111;
     ODCONA = 0b00000000;
 
-    TRISB = 0b11001100;
+    TRISB = 0b11001110;
     PORTB = 0b00010000;
     ANSELB = 0b00000000;
     WPUB = 0b11000000;
@@ -27345,9 +27449,9 @@ void main(void) {
     PMD2 = 0b01000111;
     PMD3 = 0b01010001;
     PMD4 = 0b11100000;
-    PMD5 = 0b00110111;
+    PMD5 = 0b00100111;
     PMD6 = 0b00111111;
-    PMD7 = 0b00000011;
+    PMD7 = 0b00000000;
 
     ADCON0 = 0b10000100;
     ADCON1 = 0b00000000;
@@ -27379,18 +27483,20 @@ void main(void) {
     CCPR3H = 0;
     CCPR4L = 0;
     CCPR4H = 0;
-    PWM6DCH = 255;
-    PWM6DCL = 255;
+    PWM6DCH = 0;
+    PWM6DCL = 0;
     PWM8DCH = 255;
     PWM8DCL = 255;
 
-    PORTBbits.RB4 = 0;
+    LATB4 = 0;
     _delay((unsigned long)((50)*(64000000/4000.0)));
-    PORTBbits.RB4 = 1;
+    LATB4 = 1;
 
     _delay((unsigned long)((50)*(64000000/4000.0)));
     lcd_init(1, 0, 0, 0, 1);
     lcd_print("Hello World!");
+
+    uart_init();
 
     while (1) main_loop();
 }

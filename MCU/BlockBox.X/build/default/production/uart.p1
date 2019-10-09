@@ -1,20 +1,153 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"52383 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 52383: extern volatile __bit LATE2 __attribute__((address(0x1FDF2)));
-[v _LATE2 `Vb ~T0 @X0 0 e@130546 ]
-"52380
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 52380: extern volatile __bit LATE1 __attribute__((address(0x1FDF1)));
-[v _LATE1 `Vb ~T0 @X0 0 e@130545 ]
-"52377
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 52377: extern volatile __bit LATE0 __attribute__((address(0x1FDF0)));
-[v _LATE0 `Vb ~T0 @X0 0 e@130544 ]
-[v F15780 `(v ~T0 @X0 1 tf1`ul ]
-"187 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF15780 ~T0 @X0 0 e ]
-[p i __delay ]
-"45869 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
-[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 45869: extern volatile unsigned char PORTA __attribute__((address(0x3FCA)));
-[v _PORTA `Vuc ~T0 @X0 0 e@16330 ]
+"16706 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 16706: extern volatile unsigned char DMA1CON1 __attribute__((address(0x3BFD)));
+[v _DMA1CON1 `Vuc ~T0 @X0 0 e@15357 ]
+"16177
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 16177: extern volatile unsigned char DMA1SSZH __attribute__((address(0x3BF8)));
+[v _DMA1SSZH `Vuc ~T0 @X0 0 e@15352 ]
+"16049
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 16049: extern volatile unsigned char DMA1SSZL __attribute__((address(0x3BF7)));
+[v _DMA1SSZL `Vuc ~T0 @X0 0 e@15351 ]
+"16522
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 16522: extern volatile unsigned char DMA1SSAU __attribute__((address(0x3BFB)));
+[v _DMA1SSAU `Vuc ~T0 @X0 0 e@15355 ]
+"16394
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 16394: extern volatile unsigned char DMA1SSAH __attribute__((address(0x3BFA)));
+[v _DMA1SSAH `Vuc ~T0 @X0 0 e@15354 ]
+"16266
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 16266: extern volatile unsigned char DMA1SSAL __attribute__((address(0x3BF9)));
+[v _DMA1SSAL `Vuc ~T0 @X0 0 e@15353 ]
+"15115
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 15115: extern volatile unsigned char DMA1DSZH __attribute__((address(0x3BEF)));
+[v _DMA1DSZH `Vuc ~T0 @X0 0 e@15343 ]
+"14987
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14987: extern volatile unsigned char DMA1DSZL __attribute__((address(0x3BEE)));
+[v _DMA1DSZL `Vuc ~T0 @X0 0 e@15342 ]
+"15330
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 15330: extern volatile unsigned char DMA1DSAH __attribute__((address(0x3BF1)));
+[v _DMA1DSAH `Vuc ~T0 @X0 0 e@15345 ]
+"15202
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 15202: extern volatile unsigned char DMA1DSAL __attribute__((address(0x3BF0)));
+[v _DMA1DSAL `Vuc ~T0 @X0 0 e@15344 ]
+"16866
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 16866: extern volatile unsigned char DMA1SIRQ __attribute__((address(0x3BFF)));
+[v _DMA1SIRQ `Vuc ~T0 @X0 0 e@15359 ]
+"16750
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 16750: extern volatile unsigned char DMA1AIRQ __attribute__((address(0x3BFE)));
+[v _DMA1AIRQ `Vuc ~T0 @X0 0 e@15358 ]
+"16626
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 16626: extern volatile unsigned char DMA1CON0 __attribute__((address(0x3BFC)));
+[v _DMA1CON0 `Vuc ~T0 @X0 0 e@15356 ]
+"14098
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14098: extern volatile unsigned char DMA2CON1 __attribute__((address(0x3BDD)));
+[v _DMA2CON1 `Vuc ~T0 @X0 0 e@15325 ]
+"13569
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 13569: extern volatile unsigned char DMA2SSZH __attribute__((address(0x3BD8)));
+[v _DMA2SSZH `Vuc ~T0 @X0 0 e@15320 ]
+"13441
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 13441: extern volatile unsigned char DMA2SSZL __attribute__((address(0x3BD7)));
+[v _DMA2SSZL `Vuc ~T0 @X0 0 e@15319 ]
+"13914
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 13914: extern volatile unsigned char DMA2SSAU __attribute__((address(0x3BDB)));
+[v _DMA2SSAU `Vuc ~T0 @X0 0 e@15323 ]
+"13786
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 13786: extern volatile unsigned char DMA2SSAH __attribute__((address(0x3BDA)));
+[v _DMA2SSAH `Vuc ~T0 @X0 0 e@15322 ]
+"13658
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 13658: extern volatile unsigned char DMA2SSAL __attribute__((address(0x3BD9)));
+[v _DMA2SSAL `Vuc ~T0 @X0 0 e@15321 ]
+"12507
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 12507: extern volatile unsigned char DMA2DSZH __attribute__((address(0x3BCF)));
+[v _DMA2DSZH `Vuc ~T0 @X0 0 e@15311 ]
+"12379
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 12379: extern volatile unsigned char DMA2DSZL __attribute__((address(0x3BCE)));
+[v _DMA2DSZL `Vuc ~T0 @X0 0 e@15310 ]
+"12722
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 12722: extern volatile unsigned char DMA2DSAH __attribute__((address(0x3BD1)));
+[v _DMA2DSAH `Vuc ~T0 @X0 0 e@15313 ]
+"12594
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 12594: extern volatile unsigned char DMA2DSAL __attribute__((address(0x3BD0)));
+[v _DMA2DSAL `Vuc ~T0 @X0 0 e@15312 ]
+"14258
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14258: extern volatile unsigned char DMA2SIRQ __attribute__((address(0x3BDF)));
+[v _DMA2SIRQ `Vuc ~T0 @X0 0 e@15327 ]
+"14142
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14142: extern volatile unsigned char DMA2AIRQ __attribute__((address(0x3BDE)));
+[v _DMA2AIRQ `Vuc ~T0 @X0 0 e@15326 ]
+"14018
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14018: extern volatile unsigned char DMA2CON0 __attribute__((address(0x3BDC)));
+[v _DMA2CON0 `Vuc ~T0 @X0 0 e@15324 ]
+"6135
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 6135: extern volatile unsigned char PRLOCK __attribute__((address(0x39EF)));
+[v _PRLOCK `Vuc ~T0 @X0 0 e@14831 ]
+"6141
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 6141:     struct {
+[s S277 :1 `uc 1 ]
+[n S277 . PRLOCKED ]
+"6140
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 6140: typedef union {
+[u S276 `S277 1 ]
+[n S276 . . ]
+"6145
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 6145: extern volatile PRLOCKbits_t PRLOCKbits __attribute__((address(0x39EF)));
+[v _PRLOCKbits `VS276 ~T0 @X0 0 e@14831 ]
+"26743
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 26743: extern volatile unsigned char U1BRGH __attribute__((address(0x3DF6)));
+[v _U1BRGH `Vuc ~T0 @X0 0 e@15862 ]
+"26723
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 26723: extern volatile unsigned char U1BRGL __attribute__((address(0x3DF5)));
+[v _U1BRGL `Vuc ~T0 @X0 0 e@15861 ]
+"11686
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 11686: extern volatile unsigned char U1RXPPS __attribute__((address(0x3AE5)));
+[v _U1RXPPS `Vuc ~T0 @X0 0 e@15077 ]
+"26378
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 26378: extern volatile unsigned char U1CON0 __attribute__((address(0x3DF2)));
+[v _U1CON0 `Vuc ~T0 @X0 0 e@15858 ]
+"26494
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 26494: extern volatile unsigned char U1CON1 __attribute__((address(0x3DF3)));
+[v _U1CON1 `Vuc ~T0 @X0 0 e@15859 ]
+"26574
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 26574: extern volatile unsigned char U1CON2 __attribute__((address(0x3DF4)));
+[v _U1CON2 `Vuc ~T0 @X0 0 e@15860 ]
+"6895
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 6895: extern volatile unsigned char RB0PPS __attribute__((address(0x3A08)));
+[v _RB0PPS `Vuc ~T0 @X0 0 e@14856 ]
+"52 ./uart.h
+[; ;./uart.h: 52:     void uart_send(uint8_t* buf, uint8_t len);
+[v _uart_send `(v ~T0 @X0 0 ef2`*uc`uc ]
+"57750 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 57750: extern volatile __bit U1TXIF __attribute__((address(0x1CD1C)));
+[v _U1TXIF `Vb ~T0 @X0 0 e@118044 ]
+"26179
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 26179: extern volatile unsigned char U1TXB __attribute__((address(0x3DEA)));
+[v _U1TXB `Vuc ~T0 @X0 0 e@15850 ]
+"26217
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 26217: extern volatile unsigned char U1TXCHK __attribute__((address(0x3DEB)));
+[v _U1TXCHK `Vuc ~T0 @X0 0 e@15851 ]
+"51099
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 51099: extern volatile __bit DMA2SCNTIF __attribute__((address(0x1CD2A)));
+[v _DMA2SCNTIF `Vb ~T0 @X0 0 e@118058 ]
+"14724
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14724: extern volatile unsigned char DMA1DPTRL __attribute__((address(0x3BEC)));
+[v _DMA1DPTRL `Vuc ~T0 @X0 0 e@15340 ]
+"14024
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14024:     struct {
+[s S657 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S657 . XIP . AIRQEN . DGO SIRQEN EN ]
+"14033
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14033:     struct {
+[s S658 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S658 . DMA2XIP . DMA2AIRQEN . DMA2DGO DMA2SIRQEN DMA2EN ]
+"14023
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14023: typedef union {
+[u S656 `S657 1 `S658 1 ]
+[n S656 . . . ]
+"14043
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 14043: extern volatile DMA2CON0bits_t DMA2CON0bits __attribute__((address(0x3BDC)));
+[v _DMA2CON0bits `VS656 ~T0 @X0 0 e@15324 ]
+"27 F:\Programme\Microchip\xc8\v2.10\pic\include\c99\string.h
+[; ;F:\Programme\Microchip\xc8\v2.10\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
+[v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
 "250 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
 [; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2211,222 +2344,519 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47677
 [; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 47677: __asm("TOSU equ 03FFFh");
 [; <" TOSU equ 03FFFh ;# ">
-"3 char_lcd.c
-[; ;char_lcd.c: 3: void lcd_write(_Bool rs, uint8_t data, _Bool longdelay) {
-[v _lcd_write `(v ~T0 @X0 1 ef3`a`uc`a ]
-{
-[e :U _lcd_write ]
-[v _rs `a ~T0 @X0 1 r1 ]
-[v _data `uc ~T0 @X0 1 r2 ]
-[v _longdelay `a ~T0 @X0 1 r3 ]
-[f ]
-"4
-[; ;char_lcd.c: 4:     LATE2 = 1;
-[e = _LATE2 -> -> 1 `i `b ]
-"5
-[; ;char_lcd.c: 5:     LATE1 = 0;
-[e = _LATE1 -> -> 0 `i `b ]
-"6
-[; ;char_lcd.c: 6:     LATE0 = rs;
-[e = _LATE0 _rs ]
-"7
-[; ;char_lcd.c: 7:     _delay((unsigned long)((10)*(64000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-"8
-[; ;char_lcd.c: 8:     PORTA = data;
-[e = _PORTA _data ]
-"9
-[; ;char_lcd.c: 9:     _delay((unsigned long)((10)*(64000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-"10
-[; ;char_lcd.c: 10:     LATE2 = 0;
-[e = _LATE2 -> -> 0 `i `b ]
-"11
-[; ;char_lcd.c: 11:     _delay((unsigned long)((10)*(64000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-"12
-[; ;char_lcd.c: 12:     LATE2 = 1;
-[e = _LATE2 -> -> 1 `i `b ]
-"13
-[; ;char_lcd.c: 13:     if (longdelay) _delay((unsigned long)((2)*(64000000/4000.0)));
-[e $ ! != -> _longdelay `i -> 0 `i 2196  ]
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 64000000 `l `d .4000.0 `ul ]
-[e $U 2197  ]
-"14
-[; ;char_lcd.c: 14:     else _delay((unsigned long)((50)*(64000000/4000000.0)));
-[e :U 2196 ]
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 64000000 `l `d .4000000.0 `ul ]
-[e :U 2197 ]
-"15
-[; ;char_lcd.c: 15: }
-[e :UE 2195 ]
-}
-"17
-[; ;char_lcd.c: 17: void lcd_init(_Bool inc, _Bool shift, _Bool cursor, _Bool cursorblink, _Bool on) {
-[v _lcd_init `(v ~T0 @X0 1 ef5`a`a`a`a`a ]
-{
-[e :U _lcd_init ]
-[v _inc `a ~T0 @X0 1 r1 ]
-[v _shift `a ~T0 @X0 1 r2 ]
-[v _cursor `a ~T0 @X0 1 r3 ]
-[v _cursorblink `a ~T0 @X0 1 r4 ]
-[v _on `a ~T0 @X0 1 r5 ]
-[f ]
-"18
-[; ;char_lcd.c: 18:     lcd_write(0, 0b00110011, 0);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 51 `i `uc -> -> 0 `i `a ]
-"19
-[; ;char_lcd.c: 19:     lcd_write(0, 0b00110011, 0);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 51 `i `uc -> -> 0 `i `a ]
-"20
-[; ;char_lcd.c: 20:     lcd_write(0, 0b00110011, 0);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 51 `i `uc -> -> 0 `i `a ]
-"21
-[; ;char_lcd.c: 21:     lcd_write(0, 0b00111011, 0);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 59 `i `uc -> -> 0 `i `a ]
-"22
-[; ;char_lcd.c: 22:     lcd_write(0, 0b00000100 | (inc << 1) | shift, 0);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> | | -> 4 `i << -> _inc `i -> 1 `i -> _shift `i `uc -> -> 0 `i `a ]
-"23
-[; ;char_lcd.c: 23:     lcd_write(0, 0b00001000 | (on << 2) | (cursor << 1) | cursorblink , 0);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> | | | -> 8 `i << -> _on `i -> 2 `i << -> _cursor `i -> 1 `i -> _cursorblink `i `uc -> -> 0 `i `a ]
-"24
-[; ;char_lcd.c: 24:     lcd_write(0, 0b00000001, 1);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 1 `i `uc -> -> 1 `i `a ]
-"25
-[; ;char_lcd.c: 25: }
-[e :UE 2198 ]
-}
-"27
-[; ;char_lcd.c: 27: void lcd_clear() {
-[v _lcd_clear `(v ~T0 @X0 1 ef ]
-{
-[e :U _lcd_clear ]
-[f ]
-"28
-[; ;char_lcd.c: 28:     lcd_write(0, 0b00000001, 1);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 1 `i `uc -> -> 1 `i `a ]
-"29
-[; ;char_lcd.c: 29: }
-[e :UE 2199 ]
-}
-"31
-[; ;char_lcd.c: 31: void lcd_home() {
-[v _lcd_home `(v ~T0 @X0 1 ef ]
-{
-[e :U _lcd_home ]
-[f ]
-"32
-[; ;char_lcd.c: 32:     lcd_write(0, 0b00000010, 1);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> -> 2 `i `uc -> -> 1 `i `a ]
-"33
-[; ;char_lcd.c: 33: }
-[e :UE 2200 ]
-}
-"35
-[; ;char_lcd.c: 35: void lcd_set_char_addr(uint8_t addr) {
-[v _lcd_set_char_addr `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _lcd_set_char_addr ]
-[v _addr `uc ~T0 @X0 1 r1 ]
-[f ]
-"36
-[; ;char_lcd.c: 36:     lcd_write(0, 0b01000000 | (addr & 0b00111111), 0);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> | -> 64 `i & -> _addr `i -> 63 `i `uc -> -> 0 `i `a ]
-"37
-[; ;char_lcd.c: 37: }
-[e :UE 2201 ]
-}
-"39
-[; ;char_lcd.c: 39: void lcd_set_data_addr(uint8_t addr) {
-[v _lcd_set_data_addr `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _lcd_set_data_addr ]
-[v _addr `uc ~T0 @X0 1 r1 ]
-[f ]
-"40
-[; ;char_lcd.c: 40:     lcd_write(0, 0b10000000 | (addr & 0b01111111), 0);
-[e ( _lcd_write (3 , , -> -> 0 `i `a -> | -> 128 `i & -> _addr `i -> 127 `i `uc -> -> 0 `i `a ]
-"41
-[; ;char_lcd.c: 41: }
-[e :UE 2202 ]
-}
-"43
-[; ;char_lcd.c: 43: void lcd_write_byte(uint8_t data) {
-[v _lcd_write_byte `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _lcd_write_byte ]
-[v _data `uc ~T0 @X0 1 r1 ]
-[f ]
-"44
-[; ;char_lcd.c: 44:     lcd_write(1, data, 0);
-[e ( _lcd_write (3 , , -> -> 1 `i `a _data -> -> 0 `i `a ]
+"44 ./uart.h
+[; ;./uart.h: 44:     uint8_t volume_level = 0;
+[v _volume_level `uc ~T0 @X0 1 e ]
+[i _volume_level
+-> -> 0 `i `uc
+]
 "45
-[; ;char_lcd.c: 45: }
-[e :UE 2203 ]
-}
+[; ;./uart.h: 45:     _Bool pairing = 0;
+[v _pairing `a ~T0 @X0 1 e ]
+[i _pairing
+-> -> 0 `i `a
+]
+"46
+[; ;./uart.h: 46:     _Bool streaming = 0;
+[v _streaming `a ~T0 @X0 1 e ]
+[i _streaming
+-> -> 0 `i `a
+]
 "47
-[; ;char_lcd.c: 47: void lcd_write_data(uint8_t* data, uint8_t offset, uint8_t length) {
-[v _lcd_write_data `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
-{
-[e :U _lcd_write_data ]
-[v _data `*uc ~T0 @X0 1 r1 ]
-[v _offset `uc ~T0 @X0 1 r2 ]
-[v _length `uc ~T0 @X0 1 r3 ]
-[f ]
+[; ;./uart.h: 47:     _Bool connected = 0;
+[v _connected `a ~T0 @X0 1 e ]
+[i _connected
+-> -> 0 `i `a
+]
 "48
-[; ;char_lcd.c: 48:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
+[; ;./uart.h: 48:     _Bool on = 0;
+[v _on `a ~T0 @X0 1 e ]
+[i _on
+-> -> 0 `i `a
+]
+"11 uart.c
+[; ;uart.c: 11: uint8_t ackCmd[2] = { 0x14, 0x00 };
+[v _ackCmd `uc ~T0 @X0 -> 2 `i e ]
+[i _ackCmd
+:U ..
+-> -> 20 `i `uc
+-> -> 0 `i `uc
+..
+]
+"13
+[; ;uart.c: 13: uint8_t rxBuf[256] __attribute__((address(0x0100)));
+[v _rxBuf `uc ~T0 @X0 -> 256 `i e@256 ]
+"14
+[; ;uart.c: 14: uint8_t txBuf[256] __attribute__((address(0x0200)));
+[v _txBuf `uc ~T0 @X0 -> 256 `i e@512 ]
+"16
+[; ;uart.c: 16: void uart_init() {
+[v _uart_init `(v ~T0 @X0 1 ef ]
+{
+[e :U _uart_init ]
+[f ]
+"17
+[; ;uart.c: 17:     DMA1CON1 = 0b01000000;
+[e = _DMA1CON1 -> -> 64 `i `uc ]
+"18
+[; ;uart.c: 18:     DMA1SSZH = 0x00;
+[e = _DMA1SSZH -> -> 0 `i `uc ]
+"19
+[; ;uart.c: 19:     DMA1SSZL = 0x01;
+[e = _DMA1SSZL -> -> 1 `i `uc ]
+"20
+[; ;uart.c: 20:     DMA1SSAU = 0x00;
+[e = _DMA1SSAU -> -> 0 `i `uc ]
+"21
+[; ;uart.c: 21:     DMA1SSAH = 0x3d;
+[e = _DMA1SSAH -> -> 61 `i `uc ]
+"22
+[; ;uart.c: 22:     DMA1SSAL = 0xe8;
+[e = _DMA1SSAL -> -> 232 `i `uc ]
+"23
+[; ;uart.c: 23:     DMA1DSZH = 0x01;
+[e = _DMA1DSZH -> -> 1 `i `uc ]
+"24
+[; ;uart.c: 24:     DMA1DSZL = 0x00;
+[e = _DMA1DSZL -> -> 0 `i `uc ]
+"25
+[; ;uart.c: 25:     DMA1DSAH = 0x01;
+[e = _DMA1DSAH -> -> 1 `i `uc ]
+"26
+[; ;uart.c: 26:     DMA1DSAL = 0x00;
+[e = _DMA1DSAL -> -> 0 `i `uc ]
+"27
+[; ;uart.c: 27:     DMA1SIRQ = 0x1b;
+[e = _DMA1SIRQ -> -> 27 `i `uc ]
+"28
+[; ;uart.c: 28:     DMA1AIRQ = 0x1d;
+[e = _DMA1AIRQ -> -> 29 `i `uc ]
+"29
+[; ;uart.c: 29:     DMA1CON0 = 0b11000100;
+[e = _DMA1CON0 -> -> 196 `i `uc ]
+"31
+[; ;uart.c: 31:     DMA2CON1 = 0b00000011;
+[e = _DMA2CON1 -> -> 3 `i `uc ]
+"32
+[; ;uart.c: 32:     DMA2SSZH = 0x00;
+[e = _DMA2SSZH -> -> 0 `i `uc ]
+"33
+[; ;uart.c: 33:     DMA2SSZL = 0x01;
+[e = _DMA2SSZL -> -> 1 `i `uc ]
+"34
+[; ;uart.c: 34:     DMA2SSAU = 0x00;
+[e = _DMA2SSAU -> -> 0 `i `uc ]
+"35
+[; ;uart.c: 35:     DMA2SSAH = 0x02;
+[e = _DMA2SSAH -> -> 2 `i `uc ]
+"36
+[; ;uart.c: 36:     DMA2SSAL = 0x00;
+[e = _DMA2SSAL -> -> 0 `i `uc ]
+"37
+[; ;uart.c: 37:     DMA2DSZH = 0x00;
+[e = _DMA2DSZH -> -> 0 `i `uc ]
+"38
+[; ;uart.c: 38:     DMA2DSZL = 0x01;
+[e = _DMA2DSZL -> -> 1 `i `uc ]
+"39
+[; ;uart.c: 39:     DMA2DSAH = 0x3d;
+[e = _DMA2DSAH -> -> 61 `i `uc ]
+"40
+[; ;uart.c: 40:     DMA2DSAL = 0xea;
+[e = _DMA2DSAL -> -> 234 `i `uc ]
+"41
+[; ;uart.c: 41:     DMA2SIRQ = 0x1c;
+[e = _DMA2SIRQ -> -> 28 `i `uc ]
+"42
+[; ;uart.c: 42:     DMA2AIRQ = 0x1d;
+[e = _DMA2AIRQ -> -> 29 `i `uc ]
+"43
+[; ;uart.c: 43:     DMA2CON0 = 0b00000100;
+[e = _DMA2CON0 -> -> 4 `i `uc ]
+"45
+[; ;uart.c: 45:     PRLOCK = 0x55;
+[e = _PRLOCK -> -> 85 `i `uc ]
+"46
+[; ;uart.c: 46:     PRLOCK = 0xAA;
+[e = _PRLOCK -> -> 170 `i `uc ]
+"47
+[; ;uart.c: 47:     PRLOCKbits.PRLOCKED = 1;
+[e = . . _PRLOCKbits 0 0 -> -> 1 `i `uc ]
 "49
-[; ;char_lcd.c: 49:     for (i = 0; i < length; i++) {
-{
-[e = _i -> -> 0 `i `uc ]
-[e $U 2208  ]
-[e :U 2205 ]
-{
+[; ;uart.c: 49:     U1BRGH = 0;
+[e = _U1BRGH -> -> 0 `i `uc ]
 "50
-[; ;char_lcd.c: 50:         lcd_write(1, data[i + offset], 0);
-[e ( _lcd_write (3 , , -> -> 1 `i `a *U + _data * -> + -> _i `i -> _offset `i `x -> -> # *U _data `i `x -> -> 0 `i `a ]
+[; ;uart.c: 50:     U1BRGL = 34;
+[e = _U1BRGL -> -> 34 `i `uc ]
 "51
-[; ;char_lcd.c: 51:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 2208 ]
-[e $ < -> _i `i -> _length `i 2205  ]
-[e :U 2206 ]
-}
+[; ;uart.c: 51:     U1RXPPS = 0b001001;
+[e = _U1RXPPS -> -> 9 `i `uc ]
 "52
-[; ;char_lcd.c: 52: }
+[; ;uart.c: 52:     U1CON0 = 0b00110000;
+[e = _U1CON0 -> -> 48 `i `uc ]
+"53
+[; ;uart.c: 53:     U1CON1 = 0b10000000;
+[e = _U1CON1 -> -> 128 `i `uc ]
+"54
+[; ;uart.c: 54:     U1CON2 = 0b00001000;
+[e = _U1CON2 -> -> 8 `i `uc ]
+"55
+[; ;uart.c: 55:     RB0PPS = 0b010011;
+[e = _RB0PPS -> -> 19 `i `uc ]
+"56
+[; ;uart.c: 56: }
+[e :UE 2196 ]
+}
+"58
+[; ;uart.c: 58: void handle_message(uint8_t* message, uint8_t len) {
+[v _handle_message `(v ~T0 @X0 1 ef2`*uc`uc ]
+{
+[e :U _handle_message ]
+[v _message `*uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
+[f ]
+"59
+[; ;uart.c: 59:     if (message[0] == 0x17 && message[2] == 0x04 && len == 4) {
+[e $ ! && && == -> *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x `i -> 23 `i == -> *U + _message * -> -> 2 `i `x -> -> # *U _message `i `x `i -> 4 `i == -> _len `i -> 4 `i 2198  ]
+{
+"60
+[; ;uart.c: 60:         volume_level = message[3] & 0x0f;
+[e = _volume_level -> & -> *U + _message * -> -> 3 `i `x -> -> # *U _message `i `x `i -> 15 `i `uc ]
+"61
+[; ;uart.c: 61:     } else if (message[0] == 0x1E && len == 8) {
+}
+[e $U 2199  ]
+[e :U 2198 ]
+[e $ ! && == -> *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x `i -> 30 `i == -> _len `i -> 8 `i 2200  ]
+{
+"62
+[; ;uart.c: 62:         on = message[1] != 0x00;
+[e = _on -> -> != -> *U + _message * -> -> 1 `i `x -> -> # *U _message `i `x `i -> 0 `i `i `a ]
+"63
+[; ;uart.c: 63:         connected = message[2] != 0x00;
+[e = _connected -> -> != -> *U + _message * -> -> 2 `i `x -> -> # *U _message `i `x `i -> 0 `i `i `a ]
+"64
+[; ;uart.c: 64:         pairing = message[1] == 0x01;
+[e = _pairing -> -> == -> *U + _message * -> -> 1 `i `x -> -> # *U _message `i `x `i -> 1 `i `i `a ]
+"65
+[; ;uart.c: 65:         streaming = message[6];
+[e = _streaming -> *U + _message * -> -> 6 `i `x -> -> # *U _message `i `x `a ]
+"66
+[; ;uart.c: 66:     } else if (message[0] == 0x00 && len == 3) {
+}
+[e $U 2201  ]
+[e :U 2200 ]
+[e $ ! && == -> *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x `i -> 0 `i == -> _len `i -> 3 `i 2202  ]
+{
+"68
+[; ;uart.c: 68:     } else return;
+}
+[e $U 2203  ]
+[e :U 2202 ]
+[e $UE 2197  ]
+[e :U 2203 ]
+[e :U 2201 ]
+[e :U 2199 ]
+"70
+[; ;uart.c: 70:     ackCmd[1] = message[0];
+[e = *U + &U _ackCmd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ackCmd `ui `ux *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x ]
+"71
+[; ;uart.c: 71:     uart_send(ackCmd, 2);
+[e ( _uart_send (2 , &U _ackCmd -> -> 2 `i `uc ]
+"72
+[; ;uart.c: 72: }
+[e :UE 2197 ]
+}
+"74
+[; ;uart.c: 74: void transmitChecksum() {
+[v _transmitChecksum `(v ~T0 @X0 1 ef ]
+{
+[e :U _transmitChecksum ]
+[f ]
+"75
+[; ;uart.c: 75:     while (!U1TXIF);
+[e $U 2205  ]
+[e :U 2206 ]
+[e :U 2205 ]
+[e $ ! _U1TXIF 2206  ]
+[e :U 2207 ]
+"76
+[; ;uart.c: 76:     U1TXB = -(U1TXCHK - 0xaa);
+[e = _U1TXB -> -U - -> _U1TXCHK `i -> 170 `i `uc ]
+"77
+[; ;uart.c: 77:     DMA2SCNTIF = 0;
+[e = _DMA2SCNTIF -> -> 0 `i `b ]
+"78
+[; ;uart.c: 78: }
 [e :UE 2204 ]
 }
-"54
-[; ;char_lcd.c: 54: void lcd_print(char* string) {
-[v _lcd_print `(v ~T0 @X0 1 ef1`*uc ]
+"80
+[; ;uart.c: 80: void uart_tasks() {
+[v _uart_tasks `(v ~T0 @X0 1 ef ]
 {
-[e :U _lcd_print ]
-[v _string `*uc ~T0 @X0 1 r1 ]
+[e :U _uart_tasks ]
 [f ]
-"55
-[; ;char_lcd.c: 55:     uint8_t i = 0;
+"81
+[; ;uart.c: 81:     static uint8_t rxPos = 0;
+[v F15974 `uc ~T0 @X0 1 s rxPos ]
+[i F15974
+-> -> 0 `i `uc
+]
+"83
+[; ;uart.c: 83:     if (DMA2SCNTIF) transmitChecksum();
+[e $ ! _DMA2SCNTIF 2209  ]
+[e ( _transmitChecksum ..  ]
+[e :U 2209 ]
+"85
+[; ;uart.c: 85:     if (DMA1DPTRL == rxPos) return;
+[e $ ! == -> _DMA1DPTRL `i -> F15974 `i 2210  ]
+[e $UE 2208  ]
+[e :U 2210 ]
+"86
+[; ;uart.c: 86:     uint8_t rxLen = DMA1DPTRL - rxPos;
+[v _rxLen `uc ~T0 @X0 1 a ]
+[e = _rxLen -> - -> _DMA1DPTRL `i -> F15974 `i `uc ]
+"87
+[; ;uart.c: 87:     uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
+"88
+[; ;uart.c: 88:     _Bool zeroByte = 0;
+[v _zeroByte `a ~T0 @X0 1 a ]
+[e = _zeroByte -> -> 0 `i `a ]
+"89
+[; ;uart.c: 89:     uint8_t msgLen = 0;
+[v _msgLen `uc ~T0 @X0 1 a ]
+[e = _msgLen -> -> 0 `i `uc ]
+"90
+[; ;uart.c: 90:     uint8_t checksum = 0;
+[v _checksum `uc ~T0 @X0 1 a ]
+[e = _checksum -> -> 0 `i `uc ]
+"91
+[; ;uart.c: 91:     uint8_t message[256];
+[v _message `uc ~T0 @X0 -> 256 `i a ]
+"92
+[; ;uart.c: 92:     uint8_t msgOffset = 0;
+[v _msgOffset `uc ~T0 @X0 1 a ]
+[e = _msgOffset -> -> 0 `i `uc ]
+"93
+[; ;uart.c: 93:     uint8_t rawMsgOffset = 0;
+[v _rawMsgOffset `uc ~T0 @X0 1 a ]
+[e = _rawMsgOffset -> -> 0 `i `uc ]
+"94
+[; ;uart.c: 94:     for (i = 0; i < rxLen; i++) {
+{
 [e = _i -> -> 0 `i `uc ]
-"56
-[; ;char_lcd.c: 56:     while (string[i] != 0 && i < 255) {
-[e $U 2210  ]
+[e $U 2214  ]
 [e :U 2211 ]
 {
-"57
-[; ;char_lcd.c: 57:         lcd_write(1, string[i++], 0);
-[e ( _lcd_write (3 , , -> -> 1 `i `a -> *U + _string * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U _string `ui `ux `uc -> -> 0 `i `a ]
-"58
-[; ;char_lcd.c: 58:     }
+"95
+[; ;uart.c: 95:         uint8_t bytePos = i - msgOffset;
+[v _bytePos `uc ~T0 @X0 1 a ]
+[e = _bytePos -> - -> _i `i -> _msgOffset `i `uc ]
+"96
+[; ;uart.c: 96:         uint8_t intPos = rxPos + i;
+[v _intPos `uc ~T0 @X0 1 a ]
+[e = _intPos -> + -> F15974 `i -> _i `i `uc ]
+"97
+[; ;uart.c: 97:         uint8_t val = rxBuf[intPos];
+[v _val `uc ~T0 @X0 1 a ]
+[e = _val *U + &U _rxBuf * -> _intPos `ux -> -> # *U &U _rxBuf `ui `ux ]
+"98
+[; ;uart.c: 98:         uint8_t posInRawMsg = bytePos - (3 + zeroByte);
+[v _posInRawMsg `uc ~T0 @X0 1 a ]
+[e = _posInRawMsg -> - -> _bytePos `i + -> 3 `i -> _zeroByte `i `uc ]
+"99
+[; ;uart.c: 99:         if (bytePos == zeroByte) {
+[e $ ! == -> _bytePos `i -> _zeroByte `i 2215  ]
+{
+"100
+[; ;uart.c: 100:             if (val == 0x00 && !zeroByte) {
+[e $ ! && == -> _val `i -> 0 `i ! != -> _zeroByte `i -> 0 `i 2216  ]
+{
+"101
+[; ;uart.c: 101:                 zeroByte = 1;
+[e = _zeroByte -> -> 1 `i `a ]
+"102
+[; ;uart.c: 102:             } else if (val != 0xaa) {
 }
-[e :U 2210 ]
-"56
-[; ;char_lcd.c: 56:     while (string[i] != 0 && i < 255) {
-[e $ && != -> *U + _string * -> _i `ux -> -> # *U _string `ui `ux `i -> 0 `i < -> _i `i -> 255 `i 2211  ]
+[e $U 2217  ]
+[e :U 2216 ]
+[e $ ! != -> _val `i -> 170 `i 2218  ]
+{
+"103
+[; ;uart.c: 103:                 msgOffset = intPos + 1;
+[e = _msgOffset -> + -> _intPos `i -> 1 `i `uc ]
+"104
+[; ;uart.c: 104:                 zeroByte = 0;
+[e = _zeroByte -> -> 0 `i `a ]
+"105
+[; ;uart.c: 105:             }
+}
+[e :U 2218 ]
+[e :U 2217 ]
+"106
+[; ;uart.c: 106:         } else if (bytePos == 1 + zeroByte) {
+}
+[e $U 2219  ]
+[e :U 2215 ]
+[e $ ! == -> _bytePos `i + -> 1 `i -> _zeroByte `i 2220  ]
+{
+"107
+[; ;uart.c: 107:             checksum += val;
+[e =+ _checksum -> _val `uc ]
+"108
+[; ;uart.c: 108:         } else if (bytePos == 2 + zeroByte) {
+}
+[e $U 2221  ]
+[e :U 2220 ]
+[e $ ! == -> _bytePos `i + -> 2 `i -> _zeroByte `i 2222  ]
+{
+"109
+[; ;uart.c: 109:             msgLen = val;
+[e = _msgLen _val ]
+"110
+[; ;uart.c: 110:             checksum += val;
+[e =+ _checksum -> _val `uc ]
+"111
+[; ;uart.c: 111:             if (msgLen == 0) {
+[e $ ! == -> _msgLen `i -> 0 `i 2223  ]
+{
+"112
+[; ;uart.c: 112:                 msgOffset = intPos + 1;
+[e = _msgOffset -> + -> _intPos `i -> 1 `i `uc ]
+"113
+[; ;uart.c: 113:                 zeroByte = 0;
+[e = _zeroByte -> -> 0 `i `a ]
+"114
+[; ;uart.c: 114:                 checksum = 0;
+[e = _checksum -> -> 0 `i `uc ]
+"115
+[; ;uart.c: 115:             }
+}
+[e :U 2223 ]
+"116
+[; ;uart.c: 116:         } else if (posInRawMsg < msgLen) {
+}
+[e $U 2224  ]
+[e :U 2222 ]
+[e $ ! < -> _posInRawMsg `i -> _msgLen `i 2225  ]
+{
+"117
+[; ;uart.c: 117:             message[rawMsgOffset + posInRawMsg] = val;
+[e = *U + &U _message * -> -> + -> _rawMsgOffset `i -> _posInRawMsg `i `ui `ux -> -> # *U &U _message `ui `ux _val ]
+"118
+[; ;uart.c: 118:             checksum += val;
+[e =+ _checksum -> _val `uc ]
+"119
+[; ;uart.c: 119:         } else if (posInRawMsg == msgLen) {
+}
+[e $U 2226  ]
+[e :U 2225 ]
+[e $ ! == -> _posInRawMsg `i -> _msgLen `i 2227  ]
+{
+"120
+[; ;uart.c: 120:             checksum += val;
+[e =+ _checksum -> _val `uc ]
+"121
+[; ;uart.c: 121:             if (checksum == 0x00) {
+[e $ ! == -> _checksum `i -> 0 `i 2228  ]
+{
+"122
+[; ;uart.c: 122:                 handle_message(message + rawMsgOffset, msgLen);
+[e ( _handle_message (2 , + &U _message * -> -> _rawMsgOffset `i `x -> -> # *U &U _message `i `x _msgLen ]
+"123
+[; ;uart.c: 123:             }
+}
+[e :U 2228 ]
+"124
+[; ;uart.c: 124:             msgOffset = intPos + 1;
+[e = _msgOffset -> + -> _intPos `i -> 1 `i `uc ]
+"125
+[; ;uart.c: 125:             zeroByte = 0;
+[e = _zeroByte -> -> 0 `i `a ]
+"126
+[; ;uart.c: 126:             rawMsgOffset += msgLen;
+[e =+ _rawMsgOffset -> _msgLen `uc ]
+"127
+[; ;uart.c: 127:             checksum = 0;
+[e = _checksum -> -> 0 `i `uc ]
+"128
+[; ;uart.c: 128:         }
+}
+[e :U 2227 ]
+[e :U 2226 ]
+[e :U 2224 ]
+[e :U 2221 ]
+[e :U 2219 ]
+"129
+[; ;uart.c: 129:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 2214 ]
+[e $ < -> _i `i -> _rxLen `i 2211  ]
 [e :U 2212 ]
-"59
-[; ;char_lcd.c: 59: }
-[e :UE 2209 ]
+}
+"130
+[; ;uart.c: 130:     rxPos = msgOffset;
+[e = F15974 _msgOffset ]
+"131
+[; ;uart.c: 131: }
+[e :UE 2208 ]
+}
+"133
+[; ;uart.c: 133: void uart_send(uint8_t* buf, uint8_t len) {
+[v _uart_send `(v ~T0 @X0 1 ef2`*uc`uc ]
+{
+[e :U _uart_send ]
+[v _buf `*uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
+[f ]
+"134
+[; ;uart.c: 134:     while (DMA2CON0bits.SIRQEN);
+[e $U 2230  ]
+[e :U 2231 ]
+[e :U 2230 ]
+[e $ != -> . . _DMA2CON0bits 0 5 `i -> 0 `i 2231  ]
+[e :U 2232 ]
+"135
+[; ;uart.c: 135:     if (DMA2SCNTIF) transmitChecksum();
+[e $ ! _DMA2SCNTIF 2233  ]
+[e ( _transmitChecksum ..  ]
+[e :U 2233 ]
+"136
+[; ;uart.c: 136:     DMA2CON0bits.EN = 0;
+[e = . . _DMA2CON0bits 0 6 -> -> 0 `i `uc ]
+"137
+[; ;uart.c: 137:     txBuf[0] = 0xAA;
+[e = *U + &U _txBuf * -> -> -> 0 `i `ui `ux -> -> # *U &U _txBuf `ui `ux -> -> 170 `i `uc ]
+"138
+[; ;uart.c: 138:     txBuf[1] = 0x00;
+[e = *U + &U _txBuf * -> -> -> 1 `i `ui `ux -> -> # *U &U _txBuf `ui `ux -> -> 0 `i `uc ]
+"139
+[; ;uart.c: 139:     txBuf[2] = len;
+[e = *U + &U _txBuf * -> -> -> 2 `i `ui `ux -> -> # *U &U _txBuf `ui `ux _len ]
+"140
+[; ;uart.c: 140:     memcpy(txBuf + 3, buf, len);
+[e ( _memcpy (3 , , -> + &U _txBuf * -> -> 3 `i `x -> -> # *U &U _txBuf `i `x `*v -> _buf `*Cv -> _len `ui ]
+"141
+[; ;uart.c: 141:     DMA2SSZH = ((uint16_t)len + 3) >> 8;
+[e = _DMA2SSZH -> >> + -> -> _len `us `ui -> -> 3 `i `ui -> 8 `i `uc ]
+"142
+[; ;uart.c: 142:     DMA2SSZL = (len + 3) & 0xff;
+[e = _DMA2SSZL -> & + -> _len `i -> 3 `i -> 255 `i `uc ]
+"143
+[; ;uart.c: 143:     U1TXCHK = 0;
+[e = _U1TXCHK -> -> 0 `i `uc ]
+"144
+[; ;uart.c: 144:     DMA2SCNTIF = 0;
+[e = _DMA2SCNTIF -> -> 0 `i `b ]
+"145
+[; ;uart.c: 145:     DMA2CON0bits.EN = 1;
+[e = . . _DMA2CON0bits 0 6 -> -> 1 `i `uc ]
+"146
+[; ;uart.c: 146:     DMA2CON0bits.SIRQEN = 1;
+[e = . . _DMA2CON0bits 0 5 -> -> 1 `i `uc ]
+"147
+[; ;uart.c: 147: }
+[e :UE 2229 ]
 }

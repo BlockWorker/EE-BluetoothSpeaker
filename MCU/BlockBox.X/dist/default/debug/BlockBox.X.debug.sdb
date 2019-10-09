@@ -15,10 +15,6 @@
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 "7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
-"7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\aldiv.c
-[v ___aldiv __aldiv `(l  1 e 4 0 ]
-"7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\almod.c
-[v ___almod __almod `(l  1 e 4 0 ]
 "4 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\atoi.c
 [v _atoi atoi `(i  1 e 2 0 ]
 "7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\awdiv.c
@@ -96,22 +92,20 @@
 "10 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "93 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
-[v _updateButtonLight updateButtonLight `(v  1 e 1 0 ]
-"115
 [v _setLED setLED `(v  1 e 1 0 ]
-"163
+"106
 [v _main_loop main_loop `(v  1 e 1 0 ]
-"258
+"207
 [v _main main `(v  1 e 1 0 ]
 "16 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
 "58
 [v _handle_message handle_message `(v  1 e 1 0 ]
-"74
+"70
 [v _transmitChecksum transmitChecksum `(v  1 e 1 0 ]
-"80
+"76
 [v _uart_tasks uart_tasks `(v  1 e 1 0 ]
-"133
+"129
 [v _uart_send uart_send `(v  1 e 1 0 ]
 "44 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X/uart.h
 [v _volume_level volume_level `uc  1 e 1 0 ]
@@ -119,10 +113,6 @@
 [v _pairing pairing `a  1 e 1 0 ]
 "46
 [v _streaming streaming `a  1 e 1 0 ]
-"47
-[v _connected connected `a  1 e 1 0 ]
-"48
-[v _on on `a  1 e 1 0 ]
 "4686 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
 [v _PMD0 PMD0 `VEuc  1 e 1 @14784 ]
 "4763
@@ -141,11 +131,11 @@
 [v _PMD7 PMD7 `VEuc  1 e 1 @14791 ]
 "6135
 [v _PRLOCK PRLOCK `VEuc  1 e 1 @14831 ]
-[s S416 . 1 `uc 1 PRLOCKED 1 0 :1:0 
+[s S403 . 1 `uc 1 PRLOCKED 1 0 :1:0 
 ]
 "6145
-[u S418 . 1 `S416 1 . 1 0 ]
-[v _PRLOCKbits PRLOCKbits `VES418  1 e 1 @14831 ]
+[u S405 . 1 `S403 1 . 1 0 ]
+[v _PRLOCKbits PRLOCKbits `VES405  1 e 1 @14831 ]
 "6895
 [v _RB0PPS RB0PPS `VEuc  1 e 1 @14856 ]
 "7645
@@ -230,7 +220,7 @@
 [v _DMA2SSAU DMA2SSAU `VEuc  1 e 1 @15323 ]
 "14018
 [v _DMA2CON0 DMA2CON0 `VEuc  1 e 1 @15324 ]
-[s S436 . 1 `uc 1 XIP 1 0 :1:0 
+[s S423 . 1 `uc 1 XIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 AIRQEN 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -239,7 +229,7 @@
 `uc 1 EN 1 0 :1:7 
 ]
 "14043
-[s S444 . 1 `uc 1 DMA2XIP 1 0 :1:0 
+[s S431 . 1 `uc 1 DMA2XIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 DMA2AIRQEN 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -247,8 +237,8 @@
 `uc 1 DMA2SIRQEN 1 0 :1:6 
 `uc 1 DMA2EN 1 0 :1:7 
 ]
-[u S452 . 1 `S436 1 . 1 0 `S444 1 . 1 0 ]
-[v _DMA2CON0bits DMA2CON0bits `VES452  1 e 1 @15324 ]
+[u S439 . 1 `S423 1 . 1 0 `S431 1 . 1 0 ]
+[v _DMA2CON0bits DMA2CON0bits `VES439  1 e 1 @15324 ]
 "14098
 [v _DMA2CON1 DMA2CON1 `VEuc  1 e 1 @15325 ]
 "14142
@@ -305,7 +295,7 @@
 [v _ADPCH ADPCH `VEuc  1 e 1 @16113 ]
 "31344
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @16120 ]
-[s S35 . 1 `uc 1 GO 1 0 :1:0 
+[s S31 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM 1 0 :2:2 
 `uc 1 CS 1 0 :1:4 
@@ -314,7 +304,7 @@
 `uc 1 ON 1 0 :1:7 
 ]
 "31386
-[s S43 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S39 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :2:2 
 `uc 1 ADCS 1 0 :1:4 
@@ -322,21 +312,21 @@
 `uc 1 ADCONT 1 0 :1:6 
 `uc 1 ADON 1 0 :1:7 
 ]
-[s S51 . 1 `uc 1 DONE 1 0 :1:0 
+[s S47 . 1 `uc 1 DONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM0 1 0 :1:2 
 ]
-[s S55 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+[s S51 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
 ]
-[s S57 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S53 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 ]
-[s S61 . 1 `uc 1 . 1 0 :7:0 
+[s S57 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ADCAL 1 0 :1:7 
 ]
-[u S64 . 1 `S35 1 . 1 0 `S43 1 . 1 0 `S51 1 . 1 0 `S55 1 . 1 0 `S57 1 . 1 0 `S61 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES64  1 e 1 @16120 ]
+[u S60 . 1 `S31 1 . 1 0 `S39 1 . 1 0 `S47 1 . 1 0 `S51 1 . 1 0 `S53 1 . 1 0 `S57 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES60  1 e 1 @16120 ]
 "31471
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @16121 ]
 "31546
@@ -401,7 +391,7 @@
 [v _PORTB PORTB `VEuc  1 e 1 @16331 ]
 "46024
 [v _PORTC PORTC `VEuc  1 e 1 @16332 ]
-[s S109 . 1 `uc 1 RC0 1 0 :1:0 
+[s S105 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -411,22 +401,22 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "46050
-[s S118 . 1 `uc 1 . 1 0 :1:0 
+[s S114 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
 "46050
-[s S122 . 1 `uc 1 . 1 0 :1:0 
+[s S118 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 ]
 "46050
-[u S125 . 1 `S109 1 . 1 0 `S118 1 . 1 0 `S122 1 . 1 0 ]
+[u S121 . 1 `S105 1 . 1 0 `S114 1 . 1 0 `S118 1 . 1 0 ]
 "46050
 "46050
-[v _PORTCbits PORTCbits `VES125  1 e 1 @16332 ]
+[v _PORTCbits PORTCbits `VES121  1 e 1 @16332 ]
 "46110
 [v _PORTD PORTD `VEuc  1 e 1 @16333 ]
-[s S168 . 1 `uc 1 RD0 1 0 :1:0 
+[s S154 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -436,10 +426,10 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "46127
-[u S177 . 1 `S168 1 . 1 0 ]
+[u S163 . 1 `S154 1 . 1 0 ]
 "46127
 "46127
-[v _PORTDbits PORTDbits `VES177  1 e 1 @16333 ]
+[v _PORTDbits PORTDbits `VES163  1 e 1 @16333 ]
 "46172
 [v _PORTE PORTE `VEuc  1 e 1 @16334 ]
 "51099
@@ -462,119 +452,108 @@
 [v _dbuf dbuf `[80]uc  1 s 80 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"86 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
+"89 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
 [v _volCheckCmd volCheckCmd `C[3]uc  1 e 3 0 ]
-"87
-[v _stateCheckCmd stateCheckCmd `C[2]uc  1 e 2 0 ]
-"88
-[v _soundAmplify soundAmplify `C[16]us  1 e 32 0 ]
 "90
-[v _bat_percent bat_percent `f  1 e 4 0 ]
+[v _stateCheckCmd stateCheckCmd `C[2]uc  1 e 2 0 ]
 "91
-[v _ledBrightness ledBrightness `l  1 e 4 0 ]
+[v _soundAmplify soundAmplify `C[16]us  1 e 32 0 ]
 "11 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\uart.c
 [v _ackCmd ackCmd `[2]uc  1 e 2 0 ]
 "13
 [v _rxBuf rxBuf `[256]uc  1 e 256 @256 ]
 "14
 [v _txBuf txBuf `[256]uc  1 e 256 @512 ]
-"258 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
+"207 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"354
+"303
 } 0
 "16 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
 {
 "56
 } 0
-"163 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
+"106 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
 [v _main_loop main_loop `(v  1 e 1 0 ]
 {
-"234
-[v main_loop@batmsg batmsg `[17]uc  1 a 17 109 ]
-"233
-[v main_loop@batlvl batlvl `us  1 a 2 148 ]
-"183
-[v main_loop@rel rel `l  1 a 4 156 ]
-"178
-[v main_loop@sample sample `l  1 a 4 152 ]
 "182
-[v main_loop@lastAvg lastAvg `ul  1 a 4 126 ]
-"173
-[v main_loop@res res `s  1 a 2 150 ]
-"174
-[v main_loop@absRes absRes `s  1 a 2 146 ]
-"164
+[v main_loop@bat_percent bat_percent `f  1 a 4 50 ]
+"179
+[v main_loop@batmsg batmsg `[16]uc  1 a 16 0 ]
+"178
+[v main_loop@batlvl batlvl `us  1 a 2 38 ]
+"134
+[v main_loop@rel rel `l  1 a 4 46 ]
+"123
+[v main_loop@sample sample `l  1 a 4 42 ]
+"131
+[v main_loop@lastAvg lastAvg `ul  1 a 4 16 ]
+"118
+[v main_loop@res res `s  1 a 2 40 ]
+"119
+[v main_loop@absRes absRes `s  1 a 2 36 ]
+"107
 [v main_loop@counter counter `ul  1 s 4 counter ]
-"165
+"108
 [v main_loop@sum sum `ul  1 s 4 sum ]
-"166
+"109
 [v main_loop@last last `[20]us  1 s 40 last ]
-"167
+"110
 [v main_loop@lastSum lastSum `ul  1 s 4 lastSum ]
-"168
-[v main_loop@pos pos `s  1 s 2 pos ]
-"256
-} 0
-"93
-[v _updateButtonLight updateButtonLight `(v  1 e 1 0 ]
-{
-"102
-[v updateButtonLight@dch dch `l  1 a 4 34 ]
-"93
-[v updateButtonLight@step step `l  1 p 4 26 ]
 "113
+[v main_loop@pos pos `s  1 s 2 pos ]
+"205
 } 0
-"80 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\uart.c
+"76 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\uart.c
 [v _uart_tasks uart_tasks `(v  1 e 1 0 ]
 {
-"97
-[v uart_tasks@val val `uc  1 a 1 34 ]
-"96
-[v uart_tasks@intPos intPos `uc  1 a 1 31 ]
-"95
-[v uart_tasks@bytePos bytePos `uc  1 a 1 30 ]
-"98
-[v uart_tasks@posInRawMsg posInRawMsg `uc  1 a 1 28 ]
-"91
-[v uart_tasks@message message `[256]uc  1 a 256 0 ]
-"88
-[v uart_tasks@zeroByte zeroByte `a  1 a 1 33 ]
-"89
-[v uart_tasks@msgLen msgLen `uc  1 a 1 32 ]
-"87
-[v uart_tasks@i i `uc  1 a 1 29 ]
-"92
-[v uart_tasks@msgOffset msgOffset `uc  1 a 1 27 ]
-"90
-[v uart_tasks@checksum checksum `uc  1 a 1 26 ]
 "93
-[v uart_tasks@rawMsgOffset rawMsgOffset `uc  1 a 1 25 ]
+[v uart_tasks@val val `uc  1 a 1 34 ]
+"92
+[v uart_tasks@intPos intPos `uc  1 a 1 31 ]
+"91
+[v uart_tasks@bytePos bytePos `uc  1 a 1 30 ]
+"94
+[v uart_tasks@posInRawMsg posInRawMsg `uc  1 a 1 28 ]
+"87
+[v uart_tasks@message message `[256]uc  1 a 256 0 ]
+"84
+[v uart_tasks@zeroByte zeroByte `a  1 a 1 33 ]
+"85
+[v uart_tasks@msgLen msgLen `uc  1 a 1 32 ]
+"83
+[v uart_tasks@i i `uc  1 a 1 29 ]
+"88
+[v uart_tasks@msgOffset msgOffset `uc  1 a 1 27 ]
 "86
+[v uart_tasks@checksum checksum `uc  1 a 1 26 ]
+"89
+[v uart_tasks@rawMsgOffset rawMsgOffset `uc  1 a 1 25 ]
+"82
 [v uart_tasks@rxLen rxLen `uc  1 a 1 24 ]
-"81
+"77
 [v uart_tasks@rxPos rxPos `uc  1 s 1 rxPos ]
-"131
+"127
 } 0
 "58
 [v _handle_message handle_message `(v  1 e 1 0 ]
 {
 [v handle_message@message message `*.39uc  1 p 2 16 ]
 [v handle_message@len len `uc  1 p 1 18 ]
-"72
+"68
 } 0
-"133
+"129
 [v _uart_send uart_send `(v  1 e 1 0 ]
 {
 [v uart_send@buf buf `*.34uc  1 p 2 11 ]
 [v uart_send@len len `uc  1 p 1 13 ]
-"147
+"143
 } 0
-"74
+"70
 [v _transmitChecksum transmitChecksum `(v  1 e 1 0 ]
 {
-"78
+"74
 } 0
 "4 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\memcpy.c
 [v _memcpy memcpy `(*.39v  1 e 2 0 ]
@@ -594,14 +573,14 @@
 "9 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S1171 _IO_FILE 5 `*.30uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S1156 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S1171  1 a 5 98 ]
+[v sprintf@f f `S1156  1 a 6 99 ]
 "12
-[v sprintf@ap ap `[1]*.30v  1 a 1 97 ]
+[v sprintf@ap ap `[1]*.30v  1 a 1 98 ]
 "9
-[v sprintf@s s `*.30uc  1 p 1 89 ]
-[v sprintf@fmt fmt `*.31Cuc  1 p 1 90 ]
+[v sprintf@s s `*.39uc  1 p 2 89 ]
+[v sprintf@fmt fmt `*.31Cuc  1 p 1 91 ]
 "23
 } 0
 "1368 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
@@ -609,9 +588,9 @@
 {
 "1371
 [v vfprintf@cfmt cfmt `*.31uc  1 a 1 88 ]
-[s S519 _IO_FILE 0 ]
+[s S504 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.30S519  1 p 1 85 ]
+[v vfprintf@fp fp `*.30S504  1 p 1 85 ]
 [v vfprintf@fmt fmt `*.31Cuc  1 p 1 86 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 87 ]
 "1382
@@ -624,9 +603,9 @@
 "672
 [v vfpfcnvrt@ct ct `[3]uc  1 a 3 77 ]
 [v vfpfcnvrt@c c `uc  1 a 1 84 ]
-[s S519 _IO_FILE 0 ]
+[s S504 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.30S519  1 p 1 92 ]
+[v vfpfcnvrt@fp fp `*.30S504  1 p 1 92 ]
 [v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 93 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 94 ]
 "1365
@@ -667,9 +646,9 @@
 "321
 [v efgtoa@mode mode `uc  1 a 1 44 ]
 [v efgtoa@nmode nmode `uc  1 a 1 41 ]
-[s S519 _IO_FILE 0 ]
+[s S504 _IO_FILE 0 ]
 "319
-[v efgtoa@fp fp `*.30S519  1 p 1 0 ]
+[v efgtoa@fp fp `*.30S504  1 p 1 0 ]
 [v efgtoa@f f `d  1 p 4 1 ]
 [v efgtoa@c c `uc  1 p 1 5 ]
 "503
@@ -704,9 +683,9 @@
 "74
 [v pad@w w `i  1 a 2 22 ]
 [v pad@i i `i  1 a 2 20 ]
-[s S519 _IO_FILE 0 ]
+[s S504 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.30S519  1 p 1 14 ]
+[v pad@fp fp `*.30S504  1 p 1 14 ]
 [v pad@buf buf `*.39uc  1 p 2 15 ]
 [v pad@p p `i  1 p 2 17 ]
 "95
@@ -729,16 +708,16 @@
 [v fputs@c c `uc  1 a 1 11 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 8 ]
-[s S1171 _IO_FILE 5 `*.30uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.30S1171  1 p 1 10 ]
+[s S1156 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.30S1156  1 p 1 10 ]
 "19
 } 0
 "8 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S1171 _IO_FILE 5 `*.30uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.30S1171  1 p 1 2 ]
+[s S1156 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.30S1156  1 p 1 2 ]
 "21
 } 0
 "7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\putch.c
@@ -749,9 +728,9 @@
 "3 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\floorf.c
 [v _floorf floorf `(f  1 e 4 0 ]
 {
-[u S1098 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1083 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v floorf@u u `S1098  1 a 4 71 ]
+[v floorf@u u `S1083  1 a 4 71 ]
 "7
 [v floorf@m m `ul  1 a 4 65 ]
 "6
@@ -759,21 +738,21 @@
 "3
 [v floorf@x x `f  1 p 4 55 ]
 "4
-[v floorf@F524 F524 `S1098  1 s 4 F524 ]
+[v floorf@F524 F524 `S1083  1 s 4 F524 ]
 "27
 } 0
 "4 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S1098 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1083 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S1098  1 a 4 10 ]
+[v ___fpclassifyf@u u `S1083  1 a 4 10 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 8 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 0 ]
 "5
-[v ___fpclassifyf@F463 F463 `S1098  1 s 4 F463 ]
+[v ___fpclassifyf@F463 F463 `S1083  1 s 4 F463 ]
 "11
 } 0
 "43 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
@@ -818,17 +797,17 @@
 "8 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S963 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S948 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S968 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S971 . 4 `l 1 i 4 0 `d 1 f 4 0 `S963 1 fAsBytes 4 0 `S968 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S971  1 a 4 74 ]
+[s S953 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S956 . 4 `l 1 i 4 0 `d 1 f 4 0 `S948 1 fAsBytes 4 0 `S953 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S956  1 a 4 74 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 69 ]
-[s S1039 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1024 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1042 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1039 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1042  1 a 2 78 ]
+[u S1027 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1024 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1027  1 a 2 78 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 73 ]
 "11
@@ -839,6 +818,13 @@
 [v ___flmul@b b `d  1 p 4 55 ]
 [v ___flmul@a a `d  1 p 4 59 ]
 "205
+} 0
+"4 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 80 ]
+[v ___flge@ff2 ff2 `d  1 p 4 84 ]
+"19
 } 0
 "4 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -923,27 +909,20 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"115 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
+"93 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
 [v _setLED setLED `(v  1 e 1 0 ]
 {
-"121
-[v setLED@shift shift `l  1 a 4 58 ]
-"128
-[v setLED@sr sr `l  1 a 4 54 ]
-[v setLED@sb sb `l  1 a 4 50 ]
-[v setLED@sg sg `l  1 a 4 46 ]
-"119
-[v setLED@b b `l  1 a 4 42 ]
-"118
-[v setLED@g g `l  1 a 4 38 ]
-"117
-[v setLED@r r `l  1 a 4 16 ]
-"116
-[v setLED@trueMod trueMod `us  1 a 2 36 ]
-"115
-[v setLED@mod mod `l  1 p 4 0 ]
-[v setLED@step step `l  1 p 4 4 ]
-"161
+"96
+[v setLED@sb sb `ul  1 a 4 69 ]
+"95
+[v setLED@sg sg `ul  1 a 4 65 ]
+"94
+[v setLED@sr sr `ul  1 a 4 61 ]
+"93
+[v setLED@r r `ul  1 p 4 25 ]
+[v setLED@g g `ul  1 p 4 29 ]
+[v setLED@b b `ul  1 p 4 33 ]
+"104
 } 0
 "15 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -955,36 +934,17 @@
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
 } 0
-"4 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-{
-[v ___flge@ff1 ff1 `d  1 p 4 80 ]
-[v ___flge@ff2 ff2 `d  1 p 4 84 ]
-"19
-} 0
-"7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\almod.c
-[v ___almod __almod `(l  1 e 4 0 ]
+"7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "10
-[v ___almod@sign sign `uc  1 a 1 9 ]
-[v ___almod@counter counter `uc  1 a 1 8 ]
-"7
-[v ___almod@dividend dividend `l  1 p 4 0 ]
-[v ___almod@divisor divisor `l  1 p 4 4 ]
-"34
-} 0
-"7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\aldiv.c
-[v ___aldiv __aldiv `(l  1 e 4 0 ]
-{
-"10
-[v ___aldiv@quotient quotient `l  1 a 4 22 ]
+[v ___lldiv@quotient quotient `ul  1 a 4 20 ]
 "11
-[v ___aldiv@sign sign `uc  1 a 1 21 ]
-[v ___aldiv@counter counter `uc  1 a 1 20 ]
+[v ___lldiv@counter counter `uc  1 a 1 24 ]
 "7
-[v ___aldiv@dividend dividend `l  1 p 4 12 ]
-[v ___aldiv@divisor divisor `l  1 p 4 16 ]
-"41
+[v ___lldiv@dividend dividend `ul  1 p 4 12 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 16 ]
+"30
 } 0
 "39 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\char_lcd.c
 [v _lcd_set_data_addr lcd_set_data_addr `(v  1 e 1 0 ]
@@ -1022,23 +982,11 @@
 [v ___llmod __llmod `(ul  1 e 4 0 ]
 {
 "10
-[v ___llmod@counter counter `uc  1 a 1 21 ]
+[v ___llmod@counter counter `uc  1 a 1 33 ]
 "7
-[v ___llmod@dividend dividend `ul  1 p 4 13 ]
-[v ___llmod@divisor divisor `ul  1 p 4 17 ]
+[v ___llmod@dividend dividend `ul  1 p 4 25 ]
+[v ___llmod@divisor divisor `ul  1 p 4 29 ]
 "25
-} 0
-"7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\__lldiv.c
-[v ___lldiv __lldiv `(ul  1 e 4 0 ]
-{
-"10
-[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
-"11
-[v ___lldiv@counter counter `uc  1 a 1 12 ]
-"7
-[v ___lldiv@dividend dividend `ul  1 p 4 0 ]
-[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
-"30
 } 0
 "17 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\char_lcd.c
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
