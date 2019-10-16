@@ -26709,6 +26709,8 @@ typedef uint32_t uint_fast32_t;
     uint8_t volume_level = 0;
     _Bool pairing = 0;
     _Bool streaming = 0;
+    _Bool connected = 0;
+    _Bool on = 0;
 
     void uart_init();
     void uart_tasks();
@@ -27228,22 +27230,82 @@ double y0(double);
 double y1(double);
 double yn(int, double);
 # 73 "main.c" 2
-# 89 "main.c"
+# 86 "main.c"
 const uint8_t volCheckCmd[3] = { 0x16, 0x00, 0x04 };
 const uint8_t stateCheckCmd[2] = { 0x0D, 0x00 };
-const uint16_t soundAmplify[16] = { 0, 0, 0, 750, 600, 450, 300, 200, 120, 75, 50, 35, 25, 15, 10, 7 };
+const uint16_t soundAmplify[16] = { 0, 0, 0, 630, 480, 390, 260, 180, 100, 65, 50, 35, 22, 15, 9, 7 };
 
-void setLED(uint32_t r, uint32_t g, uint32_t b) {
-    uint32_t sr = r * 20 / 100;
-    uint32_t sg = g * 20 / 100;
-    uint32_t sb = b * 20 / 100;
+float bat_percent = 100.0f;
+int32_t ledBrightness = 64;
 
-    CCPR3H = (sr < 4095 ? sr : 4095) >> 8;
-    CCPR3L = (sr < 4095 ? sr : 4095) & 0xff;
-    CCPR2H = (sg < 4095 ? sg : 4095) >> 8;
-    CCPR2L = (sg < 4095 ? sg : 4095) & 0xff;
-    CCPR4H = (sb < 4095 ? sb : 4095) >> 8;
-    CCPR4L = (sb < 4095 ? sb : 4095) & 0xff;
+void updateButtonLight(int32_t step) {
+    if (!on) {
+        PWM6DCH = 0;
+        PWM6DCL = 0;
+        PWM8DCH = 255;
+        PWM8DCL = 255;
+    } else if (pairing) {
+        PWM6DCH = 255;
+        PWM6DCL = 255;
+        int32_t dch = 0;
+        if (step % 4096 < 2048) dch = (step % 2048) / 8;
+        else dch = (2048 - step % 2048) / 8;
+        PWM8DCH = dch;
+        PWM8DCL = 255;
+    } else {
+        PWM6DCH = 255;
+        PWM6DCL = 255;
+        PWM8DCH = 255;
+        PWM8DCL = 255;
+    }
+}
+
+void setLED(int32_t mod, int32_t step) {
+    uint16_t trueMod = (mod < 0 ? 0 : (mod > 4095 ? 4095 : mod));
+    int32_t r = trueMod;
+    int32_t g = 2047 - trueMod / 2;
+    int32_t b = 2047 - trueMod / 2;
+
+    int32_t shift;
+    if (step < 25000) shift = step / 50;
+    else if (step < 75000) shift = (50000 - step) / 50;
+    else shift = (step - 100000) / 50;
+    g = (g + shift - 500 < 0 ? 0 : (g + shift - 500 > 4095 ? 4095 : g + shift - 500));
+    b = (b - shift - 500 < 0 ? 0 : (b - shift - 500 > 4095 ? 4095 : b - shift - 500));
+
+    int32_t sr, sg, sb;
+    if (on) {
+        sr = r * ledBrightness / 300;
+        if (sr < 0) sr = 0;
+        else if (sr > 4095) sr = 4095;
+        sg = g * ledBrightness / 300;
+        if (sg < 0) sg = 0;
+        else if (sg > 4095) sr = 4095;
+        sb = b * ledBrightness / 300;
+        if (sb < 0) sb = 0;
+        else if (sb > 4095) sr = 4095;
+    } else {
+        sr = 0;
+        sg = 0;
+        sb = 0;
+    }
+
+    if (pairing && step % 10000 < 1000) {
+        sr = 0;
+        sg = 0;
+        sb = 4095;
+    } else if (bat_percent < 5.0f && step % 10000 >= 5000 && step % 10000 < 6000) {
+        sr = 4095;
+        sg = 0;
+        sb = 0;
+    }
+
+    CCPR3H = sr >> 8;
+    CCPR3L = sr & 0xff;
+    CCPR2H = sg >> 8;
+    CCPR2L = sg & 0xff;
+    CCPR4H = sb >> 8;
+    CCPR4L = sb & 0xff;
 }
 
 void main_loop() {
@@ -27251,8 +27313,6 @@ void main_loop() {
     static uint32_t sum = 0;
     static uint16_t last[20];
     static uint32_t lastSum = 0;
-
-
     static int16_t pos = 0;
 
     ADPCH = 0b010101;
@@ -27264,41 +27324,52 @@ void main_loop() {
 
     if (counter % 50 == 50 - 1) {
         int32_t sample = sum * 2 / 50;
-
-
-
-
         sample -= 9;
         if (sample < 0) sample = 0;
 
         uint32_t lastAvg = lastSum / 20;
-
-
         int32_t rel = (sample - lastAvg) * soundAmplify[volume_level];
-        if (streaming && rel > 2000) pos = (4095 < (pos > rel ? pos : rel) ? 4095 : (pos > rel ? pos : rel));
 
-        setLED(pos, 2047 - pos / 2, 2047 - pos / 2);
 
-        pos = (pos - (pos / 100 + 1) > 0 ? pos - (pos / 100 + 1) : 0);
+        if (streaming && (volume_level >= 4 || ledBrightness <= 24) && rel > 1800) pos = (4095 < (pos > rel ? pos : rel) ? 4095 : (pos > rel ? pos : rel));
+
+        setLED(pos, counter);
+
+        pos = (pos - (pos / 70 + 1) > 0 ? pos - (pos / 70 + 1) : 0);
 
         sum = 0;
-
-
-
-
 
         lastSum -= last[(counter / 50) % 20];
         lastSum += sample;
         last[(counter / 50) % 20] = sample;
+
+        updateButtonLight(counter);
     }
 
     if (counter % 1000 == 999) {
         PORTCbits.RC0 = !PORTCbits.RC1;
-# 166 "main.c"
+
+        ADPCH = 0b010110;
+        ADCON0bits.FM = 0;
+        ADCON0bits.GO = 1;
+        while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
+        ledBrightness = ADRESH / 4;
+        ADCON0bits.FM = 1;
+
+
+
+
+
     }
 
     if (counter % 10000 == 9999) {
         uart_send(volCheckCmd, 3);
+
+        lcd_set_data_addr(0x40);
+        if (pairing) lcd_print("Pairing         ");
+        else if (connected) lcd_print("Connected       ");
+        else if (on) lcd_print("Not connected   ");
+        else lcd_print("Off             ");
     } else if (counter % 10000 == 4999) {
         uart_send(stateCheckCmd, 2);
     }
@@ -27308,24 +27379,20 @@ void main_loop() {
         ADCON0bits.GO = 1;
         while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
         uint16_t batlvl = ((ADRESH << 8) | ADRESL);
-        char batmsg[16];
-        if (batlvl < 2090.0f - 100) sprintf(batmsg, "No Battery");
-        else {
-            float bat_percent = (batlvl - 2090.0f) / (2996.0f - 2090.0f) * 100.0f;
+        char batmsg[17];
+        if (batlvl < 2090.0f - 100) {
+            bat_percent = 100.0f;
+            sprintf(batmsg, "No Battery      ");
+        } else {
+            bat_percent = (batlvl - 2090.0f) / (2996.0f - 2090.0f) * 100.0f;
             bat_percent = (bat_percent < 0.0f ? 0.0f : (bat_percent > 100.0f ? 100.0f : bat_percent));
-            if (!PORTDbits.RD2) sprintf(batmsg, "Chg fault: %3.0f%%", bat_percent);
-            else if (!PORTDbits.RD1) sprintf(batmsg, "Full Chg: %3.0f%%", bat_percent);
-            else if (!PORTDbits.RD0) sprintf(batmsg, "Fast Chg: %3.0f%%", bat_percent);
-            else sprintf(batmsg, "Battery: %3.0f%%", bat_percent);
+            if (!PORTDbits.RD2) sprintf(batmsg, "Chg fault: %3.0f%% ", bat_percent);
+            else if (!PORTDbits.RD1) sprintf(batmsg, "Full Chg: %3.0f%%  ", bat_percent);
+            else if (!PORTDbits.RD0) sprintf(batmsg, "Fast Chg: %3.0f%%  ", bat_percent);
+            else sprintf(batmsg, "Battery: %3.0f%%   ", bat_percent);
         }
         lcd_set_data_addr(0);
         lcd_print(batmsg);
-
-
-
-
-
-
 
         counter = 0;
     }
@@ -27416,8 +27483,8 @@ void main(void) {
     CCPR3H = 0;
     CCPR4L = 0;
     CCPR4H = 0;
-    PWM6DCH = 255;
-    PWM6DCL = 255;
+    PWM6DCH = 0;
+    PWM6DCL = 0;
     PWM8DCH = 255;
     PWM8DCL = 255;
 

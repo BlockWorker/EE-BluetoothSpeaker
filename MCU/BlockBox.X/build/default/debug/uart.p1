@@ -112,8 +112,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6895
 [; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 6895: extern volatile unsigned char RB0PPS __attribute__((address(0x3A08)));
 [v _RB0PPS `Vuc ~T0 @X0 0 e@14856 ]
-"50 ./uart.h
-[; ;./uart.h: 50:     void uart_send(uint8_t* buf, uint8_t len);
+"52 ./uart.h
+[; ;./uart.h: 52:     void uart_send(uint8_t* buf, uint8_t len);
 [v _uart_send `(v ~T0 @X0 0 ef2`*uc`uc ]
 "57750 F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h
 [; ;F:\Programme\Microchip\xc8\v2.10\pic\include\pic18lf47k42.h: 57750: extern volatile __bit U1TXIF __attribute__((address(0x1CD1C)));
@@ -2362,6 +2362,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _streaming
 -> -> 0 `i `a
 ]
+"47
+[; ;./uart.h: 47:     _Bool connected = 0;
+[v _connected `a ~T0 @X0 1 e ]
+[i _connected
+-> -> 0 `i `a
+]
+"48
+[; ;./uart.h: 48:     _Bool on = 0;
+[v _on `a ~T0 @X0 1 e ]
+[i _on
+-> -> 0 `i `a
+]
 "11 uart.c
 [; ;uart.c: 11: uint8_t ackCmd[2] = { 0x14, 0x00 };
 [v _ackCmd `uc ~T0 @X0 -> 2 `i e ]
@@ -2518,316 +2530,333 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! && == -> *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x `i -> 30 `i == -> _len `i -> 8 `i 2200  ]
 {
 "62
-[; ;uart.c: 62:         pairing = message[1] == 0x01;
-[e = _pairing -> -> == -> *U + _message * -> -> 1 `i `x -> -> # *U _message `i `x `i -> 1 `i `i `a ]
+[; ;uart.c: 62:         on = message[1] != 0x00;
+[e = _on -> -> != -> *U + _message * -> -> 1 `i `x -> -> # *U _message `i `x `i -> 0 `i `i `a ]
 "63
-[; ;uart.c: 63:         streaming = message[6];
-[e = _streaming -> *U + _message * -> -> 6 `i `x -> -> # *U _message `i `x `a ]
+[; ;uart.c: 63:         connected = message[2] != 0x00;
+[e = _connected -> -> != -> *U + _message * -> -> 2 `i `x -> -> # *U _message `i `x `i -> 0 `i `i `a ]
 "64
-[; ;uart.c: 64:     }
-}
-[e :U 2200 ]
-[e :U 2199 ]
+[; ;uart.c: 64:         pairing = message[1] == 0x01;
+[e = _pairing -> -> == -> *U + _message * -> -> 1 `i `x -> -> # *U _message `i `x `i -> 1 `i `i `a ]
+"65
+[; ;uart.c: 65:         streaming = message[6];
+[e = _streaming -> *U + _message * -> -> 6 `i `x -> -> # *U _message `i `x `a ]
 "66
-[; ;uart.c: 66:     ackCmd[1] = message[0];
-[e = *U + &U _ackCmd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ackCmd `ui `ux *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x ]
-"67
-[; ;uart.c: 67:     uart_send(ackCmd, 2);
-[e ( _uart_send (2 , &U _ackCmd -> -> 2 `i `uc ]
+[; ;uart.c: 66:     } else if (message[0] == 0x00 && len == 3) {
+}
+[e $U 2201  ]
+[e :U 2200 ]
+[e $ ! && == -> *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x `i -> 0 `i == -> _len `i -> 3 `i 2202  ]
+{
 "68
-[; ;uart.c: 68: }
+[; ;uart.c: 68:     } else return;
+}
+[e $U 2203  ]
+[e :U 2202 ]
+[e $UE 2197  ]
+[e :U 2203 ]
+[e :U 2201 ]
+[e :U 2199 ]
+"70
+[; ;uart.c: 70:     ackCmd[1] = message[0];
+[e = *U + &U _ackCmd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ackCmd `ui `ux *U + _message * -> -> 0 `i `x -> -> # *U _message `i `x ]
+"71
+[; ;uart.c: 71:     uart_send(ackCmd, 2);
+[e ( _uart_send (2 , &U _ackCmd -> -> 2 `i `uc ]
+"72
+[; ;uart.c: 72: }
 [e :UE 2197 ]
 }
-"70
-[; ;uart.c: 70: void transmitChecksum() {
+"74
+[; ;uart.c: 74: void transmitChecksum() {
 [v _transmitChecksum `(v ~T0 @X0 1 ef ]
 {
 [e :U _transmitChecksum ]
 [f ]
-"71
-[; ;uart.c: 71:     while (!U1TXIF);
-[e $U 2202  ]
-[e :U 2203 ]
-[e :U 2202 ]
-[e $ ! _U1TXIF 2203  ]
-[e :U 2204 ]
-"72
-[; ;uart.c: 72:     U1TXB = -(U1TXCHK - 0xaa);
-[e = _U1TXB -> -U - -> _U1TXCHK `i -> 170 `i `uc ]
-"73
-[; ;uart.c: 73:     DMA2SCNTIF = 0;
-[e = _DMA2SCNTIF -> -> 0 `i `b ]
-"74
-[; ;uart.c: 74: }
-[e :UE 2201 ]
-}
+"75
+[; ;uart.c: 75:     while (!U1TXIF);
+[e $U 2205  ]
+[e :U 2206 ]
+[e :U 2205 ]
+[e $ ! _U1TXIF 2206  ]
+[e :U 2207 ]
 "76
-[; ;uart.c: 76: void uart_tasks() {
+[; ;uart.c: 76:     U1TXB = -(U1TXCHK - 0xaa);
+[e = _U1TXB -> -U - -> _U1TXCHK `i -> 170 `i `uc ]
+"77
+[; ;uart.c: 77:     DMA2SCNTIF = 0;
+[e = _DMA2SCNTIF -> -> 0 `i `b ]
+"78
+[; ;uart.c: 78: }
+[e :UE 2204 ]
+}
+"80
+[; ;uart.c: 80: void uart_tasks() {
 [v _uart_tasks `(v ~T0 @X0 1 ef ]
 {
 [e :U _uart_tasks ]
 [f ]
-"77
-[; ;uart.c: 77:     static uint8_t rxPos = 0;
-[v F15972 `uc ~T0 @X0 1 s rxPos ]
-[i F15972
+"81
+[; ;uart.c: 81:     static uint8_t rxPos = 0;
+[v F15974 `uc ~T0 @X0 1 s rxPos ]
+[i F15974
 -> -> 0 `i `uc
 ]
-"79
-[; ;uart.c: 79:     if (DMA2SCNTIF) transmitChecksum();
-[e $ ! _DMA2SCNTIF 2206  ]
-[e ( _transmitChecksum ..  ]
-[e :U 2206 ]
-"81
-[; ;uart.c: 81:     if (DMA1DPTRL == rxPos) return;
-[e $ ! == -> _DMA1DPTRL `i -> F15972 `i 2207  ]
-[e $UE 2205  ]
-[e :U 2207 ]
-"82
-[; ;uart.c: 82:     uint8_t rxLen = DMA1DPTRL - rxPos;
-[v _rxLen `uc ~T0 @X0 1 a ]
-[e = _rxLen -> - -> _DMA1DPTRL `i -> F15972 `i `uc ]
 "83
-[; ;uart.c: 83:     uint8_t i;
+[; ;uart.c: 83:     if (DMA2SCNTIF) transmitChecksum();
+[e $ ! _DMA2SCNTIF 2209  ]
+[e ( _transmitChecksum ..  ]
+[e :U 2209 ]
+"85
+[; ;uart.c: 85:     if (DMA1DPTRL == rxPos) return;
+[e $ ! == -> _DMA1DPTRL `i -> F15974 `i 2210  ]
+[e $UE 2208  ]
+[e :U 2210 ]
+"86
+[; ;uart.c: 86:     uint8_t rxLen = DMA1DPTRL - rxPos;
+[v _rxLen `uc ~T0 @X0 1 a ]
+[e = _rxLen -> - -> _DMA1DPTRL `i -> F15974 `i `uc ]
+"87
+[; ;uart.c: 87:     uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"84
-[; ;uart.c: 84:     _Bool zeroByte = 0;
+"88
+[; ;uart.c: 88:     _Bool zeroByte = 0;
 [v _zeroByte `a ~T0 @X0 1 a ]
 [e = _zeroByte -> -> 0 `i `a ]
-"85
-[; ;uart.c: 85:     uint8_t msgLen = 0;
+"89
+[; ;uart.c: 89:     uint8_t msgLen = 0;
 [v _msgLen `uc ~T0 @X0 1 a ]
 [e = _msgLen -> -> 0 `i `uc ]
-"86
-[; ;uart.c: 86:     uint8_t checksum = 0;
+"90
+[; ;uart.c: 90:     uint8_t checksum = 0;
 [v _checksum `uc ~T0 @X0 1 a ]
 [e = _checksum -> -> 0 `i `uc ]
-"87
-[; ;uart.c: 87:     uint8_t message[256];
+"91
+[; ;uart.c: 91:     uint8_t message[256];
 [v _message `uc ~T0 @X0 -> 256 `i a ]
-"88
-[; ;uart.c: 88:     uint8_t msgOffset = 0;
+"92
+[; ;uart.c: 92:     uint8_t msgOffset = 0;
 [v _msgOffset `uc ~T0 @X0 1 a ]
 [e = _msgOffset -> -> 0 `i `uc ]
-"89
-[; ;uart.c: 89:     uint8_t rawMsgOffset = 0;
+"93
+[; ;uart.c: 93:     uint8_t rawMsgOffset = 0;
 [v _rawMsgOffset `uc ~T0 @X0 1 a ]
 [e = _rawMsgOffset -> -> 0 `i `uc ]
-"90
-[; ;uart.c: 90:     for (i = 0; i < rxLen; i++) {
+"94
+[; ;uart.c: 94:     for (i = 0; i < rxLen; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 2211  ]
-[e :U 2208 ]
+[e $U 2214  ]
+[e :U 2211 ]
 {
-"91
-[; ;uart.c: 91:         uint8_t bytePos = i - msgOffset;
+"95
+[; ;uart.c: 95:         uint8_t bytePos = i - msgOffset;
 [v _bytePos `uc ~T0 @X0 1 a ]
 [e = _bytePos -> - -> _i `i -> _msgOffset `i `uc ]
-"92
-[; ;uart.c: 92:         uint8_t intPos = rxPos + i;
+"96
+[; ;uart.c: 96:         uint8_t intPos = rxPos + i;
 [v _intPos `uc ~T0 @X0 1 a ]
-[e = _intPos -> + -> F15972 `i -> _i `i `uc ]
-"93
-[; ;uart.c: 93:         uint8_t val = rxBuf[intPos];
+[e = _intPos -> + -> F15974 `i -> _i `i `uc ]
+"97
+[; ;uart.c: 97:         uint8_t val = rxBuf[intPos];
 [v _val `uc ~T0 @X0 1 a ]
 [e = _val *U + &U _rxBuf * -> _intPos `ux -> -> # *U &U _rxBuf `ui `ux ]
-"94
-[; ;uart.c: 94:         uint8_t posInRawMsg = bytePos - (3 + zeroByte);
+"98
+[; ;uart.c: 98:         uint8_t posInRawMsg = bytePos - (3 + zeroByte);
 [v _posInRawMsg `uc ~T0 @X0 1 a ]
 [e = _posInRawMsg -> - -> _bytePos `i + -> 3 `i -> _zeroByte `i `uc ]
-"95
-[; ;uart.c: 95:         if (bytePos == zeroByte) {
-[e $ ! == -> _bytePos `i -> _zeroByte `i 2212  ]
-{
-"96
-[; ;uart.c: 96:             if (val == 0x00 && !zeroByte) {
-[e $ ! && == -> _val `i -> 0 `i ! != -> _zeroByte `i -> 0 `i 2213  ]
-{
-"97
-[; ;uart.c: 97:                 zeroByte = 1;
-[e = _zeroByte -> -> 1 `i `a ]
-"98
-[; ;uart.c: 98:             } else if (val != 0xaa) {
-}
-[e $U 2214  ]
-[e :U 2213 ]
-[e $ ! != -> _val `i -> 170 `i 2215  ]
-{
 "99
-[; ;uart.c: 99:                 msgOffset = intPos + 1;
-[e = _msgOffset -> + -> _intPos `i -> 1 `i `uc ]
+[; ;uart.c: 99:         if (bytePos == zeroByte) {
+[e $ ! == -> _bytePos `i -> _zeroByte `i 2215  ]
+{
 "100
-[; ;uart.c: 100:                 zeroByte = 0;
-[e = _zeroByte -> -> 0 `i `a ]
+[; ;uart.c: 100:             if (val == 0x00 && !zeroByte) {
+[e $ ! && == -> _val `i -> 0 `i ! != -> _zeroByte `i -> 0 `i 2216  ]
+{
 "101
-[; ;uart.c: 101:             }
-}
-[e :U 2215 ]
-[e :U 2214 ]
+[; ;uart.c: 101:                 zeroByte = 1;
+[e = _zeroByte -> -> 1 `i `a ]
 "102
-[; ;uart.c: 102:         } else if (bytePos == 1 + zeroByte) {
+[; ;uart.c: 102:             } else if (val != 0xaa) {
 }
-[e $U 2216  ]
-[e :U 2212 ]
-[e $ ! == -> _bytePos `i + -> 1 `i -> _zeroByte `i 2217  ]
+[e $U 2217  ]
+[e :U 2216 ]
+[e $ ! != -> _val `i -> 170 `i 2218  ]
 {
 "103
-[; ;uart.c: 103:             checksum += val;
-[e =+ _checksum -> _val `uc ]
-"104
-[; ;uart.c: 104:         } else if (bytePos == 2 + zeroByte) {
-}
-[e $U 2218  ]
-[e :U 2217 ]
-[e $ ! == -> _bytePos `i + -> 2 `i -> _zeroByte `i 2219  ]
-{
-"105
-[; ;uart.c: 105:             msgLen = val;
-[e = _msgLen _val ]
-"106
-[; ;uart.c: 106:             checksum += val;
-[e =+ _checksum -> _val `uc ]
-"107
-[; ;uart.c: 107:             if (msgLen == 0) {
-[e $ ! == -> _msgLen `i -> 0 `i 2220  ]
-{
-"108
-[; ;uart.c: 108:                 msgOffset = intPos + 1;
+[; ;uart.c: 103:                 msgOffset = intPos + 1;
 [e = _msgOffset -> + -> _intPos `i -> 1 `i `uc ]
-"109
-[; ;uart.c: 109:                 zeroByte = 0;
+"104
+[; ;uart.c: 104:                 zeroByte = 0;
 [e = _zeroByte -> -> 0 `i `a ]
-"110
-[; ;uart.c: 110:                 checksum = 0;
-[e = _checksum -> -> 0 `i `uc ]
-"111
-[; ;uart.c: 111:             }
+"105
+[; ;uart.c: 105:             }
 }
-[e :U 2220 ]
-"112
-[; ;uart.c: 112:         } else if (posInRawMsg < msgLen) {
+[e :U 2218 ]
+[e :U 2217 ]
+"106
+[; ;uart.c: 106:         } else if (bytePos == 1 + zeroByte) {
+}
+[e $U 2219  ]
+[e :U 2215 ]
+[e $ ! == -> _bytePos `i + -> 1 `i -> _zeroByte `i 2220  ]
+{
+"107
+[; ;uart.c: 107:             checksum += val;
+[e =+ _checksum -> _val `uc ]
+"108
+[; ;uart.c: 108:         } else if (bytePos == 2 + zeroByte) {
 }
 [e $U 2221  ]
-[e :U 2219 ]
-[e $ ! < -> _posInRawMsg `i -> _msgLen `i 2222  ]
+[e :U 2220 ]
+[e $ ! == -> _bytePos `i + -> 2 `i -> _zeroByte `i 2222  ]
 {
-"113
-[; ;uart.c: 113:             message[rawMsgOffset + posInRawMsg] = val;
-[e = *U + &U _message * -> -> + -> _rawMsgOffset `i -> _posInRawMsg `i `ui `ux -> -> # *U &U _message `ui `ux _val ]
-"114
-[; ;uart.c: 114:             checksum += val;
+"109
+[; ;uart.c: 109:             msgLen = val;
+[e = _msgLen _val ]
+"110
+[; ;uart.c: 110:             checksum += val;
 [e =+ _checksum -> _val `uc ]
-"115
-[; ;uart.c: 115:         } else if (posInRawMsg == msgLen) {
-}
-[e $U 2223  ]
-[e :U 2222 ]
-[e $ ! == -> _posInRawMsg `i -> _msgLen `i 2224  ]
+"111
+[; ;uart.c: 111:             if (msgLen == 0) {
+[e $ ! == -> _msgLen `i -> 0 `i 2223  ]
 {
-"116
-[; ;uart.c: 116:             checksum += val;
-[e =+ _checksum -> _val `uc ]
-"117
-[; ;uart.c: 117:             if (checksum == 0x00) {
-[e $ ! == -> _checksum `i -> 0 `i 2225  ]
-{
-"118
-[; ;uart.c: 118:                 handle_message(message + rawMsgOffset, msgLen);
-[e ( _handle_message (2 , + &U _message * -> -> _rawMsgOffset `i `x -> -> # *U &U _message `i `x _msgLen ]
-"119
-[; ;uart.c: 119:             }
-}
-[e :U 2225 ]
-"120
-[; ;uart.c: 120:             msgOffset = intPos + 1;
+"112
+[; ;uart.c: 112:                 msgOffset = intPos + 1;
 [e = _msgOffset -> + -> _intPos `i -> 1 `i `uc ]
-"121
-[; ;uart.c: 121:             zeroByte = 0;
+"113
+[; ;uart.c: 113:                 zeroByte = 0;
 [e = _zeroByte -> -> 0 `i `a ]
-"122
-[; ;uart.c: 122:             rawMsgOffset += msgLen;
-[e =+ _rawMsgOffset -> _msgLen `uc ]
-"123
-[; ;uart.c: 123:             checksum = 0;
+"114
+[; ;uart.c: 114:                 checksum = 0;
 [e = _checksum -> -> 0 `i `uc ]
-"124
-[; ;uart.c: 124:         }
+"115
+[; ;uart.c: 115:             }
 }
-[e :U 2224 ]
 [e :U 2223 ]
-[e :U 2221 ]
-[e :U 2218 ]
-[e :U 2216 ]
+"116
+[; ;uart.c: 116:         } else if (posInRawMsg < msgLen) {
+}
+[e $U 2224  ]
+[e :U 2222 ]
+[e $ ! < -> _posInRawMsg `i -> _msgLen `i 2225  ]
+{
+"117
+[; ;uart.c: 117:             message[rawMsgOffset + posInRawMsg] = val;
+[e = *U + &U _message * -> -> + -> _rawMsgOffset `i -> _posInRawMsg `i `ui `ux -> -> # *U &U _message `ui `ux _val ]
+"118
+[; ;uart.c: 118:             checksum += val;
+[e =+ _checksum -> _val `uc ]
+"119
+[; ;uart.c: 119:         } else if (posInRawMsg == msgLen) {
+}
+[e $U 2226  ]
+[e :U 2225 ]
+[e $ ! == -> _posInRawMsg `i -> _msgLen `i 2227  ]
+{
+"120
+[; ;uart.c: 120:             checksum += val;
+[e =+ _checksum -> _val `uc ]
+"121
+[; ;uart.c: 121:             if (checksum == 0x00) {
+[e $ ! == -> _checksum `i -> 0 `i 2228  ]
+{
+"122
+[; ;uart.c: 122:                 handle_message(message + rawMsgOffset, msgLen);
+[e ( _handle_message (2 , + &U _message * -> -> _rawMsgOffset `i `x -> -> # *U &U _message `i `x _msgLen ]
+"123
+[; ;uart.c: 123:             }
+}
+[e :U 2228 ]
+"124
+[; ;uart.c: 124:             msgOffset = intPos + 1;
+[e = _msgOffset -> + -> _intPos `i -> 1 `i `uc ]
 "125
-[; ;uart.c: 125:     }
+[; ;uart.c: 125:             zeroByte = 0;
+[e = _zeroByte -> -> 0 `i `a ]
+"126
+[; ;uart.c: 126:             rawMsgOffset += msgLen;
+[e =+ _rawMsgOffset -> _msgLen `uc ]
+"127
+[; ;uart.c: 127:             checksum = 0;
+[e = _checksum -> -> 0 `i `uc ]
+"128
+[; ;uart.c: 128:         }
+}
+[e :U 2227 ]
+[e :U 2226 ]
+[e :U 2224 ]
+[e :U 2221 ]
+[e :U 2219 ]
+"129
+[; ;uart.c: 129:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 2211 ]
-[e $ < -> _i `i -> _rxLen `i 2208  ]
-[e :U 2209 ]
+[e :U 2214 ]
+[e $ < -> _i `i -> _rxLen `i 2211  ]
+[e :U 2212 ]
 }
-"126
-[; ;uart.c: 126:     rxPos = msgOffset;
-[e = F15972 _msgOffset ]
-"127
-[; ;uart.c: 127: }
-[e :UE 2205 ]
+"130
+[; ;uart.c: 130:     rxPos = msgOffset;
+[e = F15974 _msgOffset ]
+"131
+[; ;uart.c: 131: }
+[e :UE 2208 ]
 }
-"129
-[; ;uart.c: 129: void uart_send(uint8_t* buf, uint8_t len) {
+"133
+[; ;uart.c: 133: void uart_send(uint8_t* buf, uint8_t len) {
 [v _uart_send `(v ~T0 @X0 1 ef2`*uc`uc ]
 {
 [e :U _uart_send ]
 [v _buf `*uc ~T0 @X0 1 r1 ]
 [v _len `uc ~T0 @X0 1 r2 ]
 [f ]
-"130
-[; ;uart.c: 130:     while (DMA2CON0bits.SIRQEN);
-[e $U 2227  ]
-[e :U 2228 ]
-[e :U 2227 ]
-[e $ != -> . . _DMA2CON0bits 0 5 `i -> 0 `i 2228  ]
-[e :U 2229 ]
-"131
-[; ;uart.c: 131:     if (DMA2SCNTIF) transmitChecksum();
-[e $ ! _DMA2SCNTIF 2230  ]
-[e ( _transmitChecksum ..  ]
-[e :U 2230 ]
-"132
-[; ;uart.c: 132:     DMA2CON0bits.EN = 0;
-[e = . . _DMA2CON0bits 0 6 -> -> 0 `i `uc ]
-"133
-[; ;uart.c: 133:     txBuf[0] = 0xAA;
-[e = *U + &U _txBuf * -> -> -> 0 `i `ui `ux -> -> # *U &U _txBuf `ui `ux -> -> 170 `i `uc ]
 "134
-[; ;uart.c: 134:     txBuf[1] = 0x00;
-[e = *U + &U _txBuf * -> -> -> 1 `i `ui `ux -> -> # *U &U _txBuf `ui `ux -> -> 0 `i `uc ]
+[; ;uart.c: 134:     while (DMA2CON0bits.SIRQEN);
+[e $U 2230  ]
+[e :U 2231 ]
+[e :U 2230 ]
+[e $ != -> . . _DMA2CON0bits 0 5 `i -> 0 `i 2231  ]
+[e :U 2232 ]
 "135
-[; ;uart.c: 135:     txBuf[2] = len;
-[e = *U + &U _txBuf * -> -> -> 2 `i `ui `ux -> -> # *U &U _txBuf `ui `ux _len ]
+[; ;uart.c: 135:     if (DMA2SCNTIF) transmitChecksum();
+[e $ ! _DMA2SCNTIF 2233  ]
+[e ( _transmitChecksum ..  ]
+[e :U 2233 ]
 "136
-[; ;uart.c: 136:     memcpy(txBuf + 3, buf, len);
-[e ( _memcpy (3 , , -> + &U _txBuf * -> -> 3 `i `x -> -> # *U &U _txBuf `i `x `*v -> _buf `*Cv -> _len `ui ]
+[; ;uart.c: 136:     DMA2CON0bits.EN = 0;
+[e = . . _DMA2CON0bits 0 6 -> -> 0 `i `uc ]
 "137
-[; ;uart.c: 137:     DMA2SSZH = ((uint16_t)len + 3) >> 8;
-[e = _DMA2SSZH -> >> + -> -> _len `us `ui -> -> 3 `i `ui -> 8 `i `uc ]
+[; ;uart.c: 137:     txBuf[0] = 0xAA;
+[e = *U + &U _txBuf * -> -> -> 0 `i `ui `ux -> -> # *U &U _txBuf `ui `ux -> -> 170 `i `uc ]
 "138
-[; ;uart.c: 138:     DMA2SSZL = (len + 3) & 0xff;
-[e = _DMA2SSZL -> & + -> _len `i -> 3 `i -> 255 `i `uc ]
+[; ;uart.c: 138:     txBuf[1] = 0x00;
+[e = *U + &U _txBuf * -> -> -> 1 `i `ui `ux -> -> # *U &U _txBuf `ui `ux -> -> 0 `i `uc ]
 "139
-[; ;uart.c: 139:     U1TXCHK = 0;
-[e = _U1TXCHK -> -> 0 `i `uc ]
+[; ;uart.c: 139:     txBuf[2] = len;
+[e = *U + &U _txBuf * -> -> -> 2 `i `ui `ux -> -> # *U &U _txBuf `ui `ux _len ]
 "140
-[; ;uart.c: 140:     DMA2SCNTIF = 0;
-[e = _DMA2SCNTIF -> -> 0 `i `b ]
+[; ;uart.c: 140:     memcpy(txBuf + 3, buf, len);
+[e ( _memcpy (3 , , -> + &U _txBuf * -> -> 3 `i `x -> -> # *U &U _txBuf `i `x `*v -> _buf `*Cv -> _len `ui ]
 "141
-[; ;uart.c: 141:     DMA2CON0bits.EN = 1;
-[e = . . _DMA2CON0bits 0 6 -> -> 1 `i `uc ]
+[; ;uart.c: 141:     DMA2SSZH = ((uint16_t)len + 3) >> 8;
+[e = _DMA2SSZH -> >> + -> -> _len `us `ui -> -> 3 `i `ui -> 8 `i `uc ]
 "142
-[; ;uart.c: 142:     DMA2CON0bits.SIRQEN = 1;
-[e = . . _DMA2CON0bits 0 5 -> -> 1 `i `uc ]
+[; ;uart.c: 142:     DMA2SSZL = (len + 3) & 0xff;
+[e = _DMA2SSZL -> & + -> _len `i -> 3 `i -> 255 `i `uc ]
 "143
-[; ;uart.c: 143: }
-[e :UE 2226 ]
+[; ;uart.c: 143:     U1TXCHK = 0;
+[e = _U1TXCHK -> -> 0 `i `uc ]
+"144
+[; ;uart.c: 144:     DMA2SCNTIF = 0;
+[e = _DMA2SCNTIF -> -> 0 `i `b ]
+"145
+[; ;uart.c: 145:     DMA2CON0bits.EN = 1;
+[e = . . _DMA2CON0bits 0 6 -> -> 1 `i `uc ]
+"146
+[; ;uart.c: 146:     DMA2CON0bits.SIRQEN = 1;
+[e = . . _DMA2CON0bits 0 5 -> -> 1 `i `uc ]
+"147
+[; ;uart.c: 147: }
+[e :UE 2229 ]
 }

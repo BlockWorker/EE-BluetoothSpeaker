@@ -26653,6 +26653,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
     uint8_t volume_level = 0;
     _Bool pairing = 0;
     _Bool streaming = 0;
+    _Bool connected = 0;
+    _Bool on = 0;
 
     void uart_init();
     void uart_tasks();
@@ -26767,9 +26769,13 @@ void handle_message(uint8_t* message, uint8_t len) {
     if (message[0] == 0x17 && message[2] == 0x04 && len == 4) {
         volume_level = message[3] & 0x0f;
     } else if (message[0] == 0x1E && len == 8) {
+        on = message[1] != 0x00;
+        connected = message[2] != 0x00;
         pairing = message[1] == 0x01;
         streaming = message[6];
-    }
+    } else if (message[0] == 0x00 && len == 3) {
+
+    } else return;
 
     ackCmd[1] = message[0];
     uart_send(ackCmd, 2);

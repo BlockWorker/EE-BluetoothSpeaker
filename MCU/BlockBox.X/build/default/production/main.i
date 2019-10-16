@@ -27233,7 +27233,7 @@ double yn(int, double);
 # 86 "main.c"
 const uint8_t volCheckCmd[3] = { 0x16, 0x00, 0x04 };
 const uint8_t stateCheckCmd[2] = { 0x0D, 0x00 };
-const uint16_t soundAmplify[16] = { 0, 0, 0, 700, 550, 450, 300, 200, 120, 75, 50, 35, 25, 15, 10, 7 };
+const uint16_t soundAmplify[16] = { 0, 0, 0, 630, 480, 390, 260, 180, 100, 65, 50, 35, 22, 15, 9, 7 };
 
 float bat_percent = 100.0f;
 int32_t ledBrightness = 64;
@@ -27290,11 +27290,7 @@ void setLED(int32_t mod, int32_t step) {
         sb = 0;
     }
 
-    if (pairing && step % 10000 < 1000) {
-        sr = 0;
-        sg = 0;
-        sb = 4095;
-    } else if (bat_percent < 5.0f && step % 10000 >= 5000 && step % 10000 < 6000) {
+    if (bat_percent < 5.0f && step % 10000 < 1000) {
         sr = 4095;
         sg = 0;
         sb = 0;
@@ -27331,11 +27327,11 @@ void main_loop() {
         int32_t rel = (sample - lastAvg) * soundAmplify[volume_level];
 
 
-        if (streaming && (volume_level >= 4 || ledBrightness <= 24) && rel > 2000) pos = (4095 < (pos > rel ? pos : rel) ? 4095 : (pos > rel ? pos : rel));
+        if (streaming && (volume_level >= 4 || ledBrightness <= 24) && rel > 1800) pos = (4095 < (pos > rel ? pos : rel) ? 4095 : (pos > rel ? pos : rel));
 
         setLED(pos, counter);
 
-        pos = (pos - (pos / 100 + 1) > 0 ? pos - (pos / 100 + 1) : 0);
+        pos = (pos - (pos / 70 + 1) > 0 ? pos - (pos / 70 + 1) : 0);
 
         sum = 0;
 
@@ -27356,6 +27352,8 @@ void main_loop() {
         ledBrightness = ADRESH / 4;
         ADCON0bits.FM = 1;
 
+        if (!PORTCbits.RC2 || !PORTCbits.RC3) LATC4 = 1;
+
 
 
 
@@ -27366,7 +27364,8 @@ void main_loop() {
         uart_send(volCheckCmd, 3);
 
         lcd_set_data_addr(0x40);
-        if (pairing) lcd_print("Pairing         ");
+        if (LATC4) lcd_print("AMPLIFIER FAULT!");
+        else if (pairing) lcd_print("Pairing         ");
         else if (connected) lcd_print("Connected       ");
         else if (on) lcd_print("Not connected   ");
         else lcd_print("Off             ");
