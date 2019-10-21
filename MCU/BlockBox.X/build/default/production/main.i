@@ -27230,7 +27230,7 @@ double y0(double);
 double y1(double);
 double yn(int, double);
 # 73 "main.c" 2
-# 86 "main.c"
+# 87 "main.c"
 const uint8_t volCheckCmd[3] = { 0x16, 0x00, 0x04 };
 const uint8_t stateCheckCmd[2] = { 0x0D, 0x00 };
 const uint16_t soundAmplify[16] = { 0, 0, 0, 630, 480, 390, 260, 180, 100, 65, 50, 35, 22, 15, 9, 7 };
@@ -27305,11 +27305,16 @@ void setLED(int32_t mod, int32_t step) {
 }
 
 void main_loop() {
-    static uint32_t counter = 0;
+    static uint32_t counter = 100000;
     static uint32_t sum = 0;
     static uint16_t last[20];
     static uint32_t lastSum = 0;
     static int16_t pos = 0;
+
+    static uint16_t clipCount = 0;
+    static _Bool ampFault = 0;
+
+    static _Bool batCutoff = 0;
 
     ADPCH = 0b010101;
     ADCON0bits.GO = 1;
@@ -27331,7 +27336,7 @@ void main_loop() {
 
         setLED(pos, counter);
 
-        pos = (pos - (pos / 70 + 1) > 0 ? pos - (pos / 70 + 1) : 0);
+        pos = (pos - (pos / 50 + 10) > 0 ? pos - (pos / 50 + 10) : 0);
 
         sum = 0;
 
@@ -27352,7 +27357,10 @@ void main_loop() {
         ledBrightness = ADRESH / 4;
         ADCON0bits.FM = 1;
 
-        if (!PORTCbits.RC2 || !PORTCbits.RC3) LATC4 = 1;
+        if (!PORTCbits.RC2) ampFault = 1;
+        if (!PORTCbits.RC3) clipCount++;
+        if (clipCount > 20) ampFault = 1;
+        if (ampFault) LATC4 = 1;
 
 
 
@@ -27364,7 +27372,8 @@ void main_loop() {
         uart_send(volCheckCmd, 3);
 
         lcd_set_data_addr(0x40);
-        if (LATC4) lcd_print("AMPLIFIER FAULT!");
+        if (ampFault) lcd_print("AMPLIFIER FAULT!");
+        else if (batCutoff) lcd_print("Low Battery: Off");
         else if (pairing) lcd_print("Pairing         ");
         else if (connected) lcd_print("Connected       ");
         else if (on) lcd_print("Not connected   ");
@@ -27379,19 +27388,34 @@ void main_loop() {
         while (ADCON0bits.GO) _delay((unsigned long)((1)*(64000000/4000000.0)));
         uint16_t batlvl = ((ADRESH << 8) | ADRESL);
         char batmsg[17];
-        if (batlvl < 2090.0f - 100) {
+        if (batlvl < 2000.0f) {
             bat_percent = 100.0f;
             sprintf(batmsg, "No Battery      ");
-        } else {
-            bat_percent = (batlvl - 2090.0f) / (2996.0f - 2090.0f) * 100.0f;
+            batCutoff = 0;
+            LATC4 = ampFault;
+        } else if (batlvl < 2180.0f - 50) {
+            bat_percent = 0.0f;
+            sprintf(batmsg, "Battery critical");
+            batCutoff = 1;
+            LATC4 = 1;
+        } else if (!batCutoff) {
+            bat_percent = (batlvl - 2180.0f) / (2996.0f - 2180.0f) * 100.0f;
             bat_percent = (bat_percent < 0.0f ? 0.0f : (bat_percent > 100.0f ? 100.0f : bat_percent));
             if (!PORTDbits.RD2) sprintf(batmsg, "Chg fault: %3.0f%% ", bat_percent);
             else if (!PORTDbits.RD1) sprintf(batmsg, "Full Chg: %3.0f%%  ", bat_percent);
             else if (!PORTDbits.RD0) sprintf(batmsg, "Fast Chg: %3.0f%%  ", bat_percent);
             else sprintf(batmsg, "Battery: %3.0f%%   ", bat_percent);
+        } else {
+            if (batlvl > 2180.0f + 50) {
+                batCutoff = 0;
+                LATC4 = ampFault;
+            }
+            bat_percent = 0.0f;
+            sprintf(batmsg, "Battery critical");
         }
         lcd_set_data_addr(0);
         lcd_print(batmsg);
+        clipCount = 0;
 
         counter = 0;
     }

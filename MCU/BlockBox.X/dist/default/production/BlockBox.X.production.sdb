@@ -95,13 +95,13 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"93 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
+"94 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
 [v _updateButtonLight updateButtonLight `(v  1 e 1 0 ]
-"115
+"116
 [v _setLED setLED `(v  1 e 1 0 ]
-"159
+"160
 [v _main_loop main_loop `(v  1 e 1 0 ]
-"257
+"282
 [v _main main `(v  1 e 1 0 ]
 "16 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
@@ -141,11 +141,11 @@
 [v _PMD7 PMD7 `VEuc  1 e 1 @14791 ]
 "6135
 [v _PRLOCK PRLOCK `VEuc  1 e 1 @14831 ]
-[s S418 . 1 `uc 1 PRLOCKED 1 0 :1:0 
+[s S424 . 1 `uc 1 PRLOCKED 1 0 :1:0 
 ]
 "6145
-[u S420 . 1 `S418 1 . 1 0 ]
-[v _PRLOCKbits PRLOCKbits `VES420  1 e 1 @14831 ]
+[u S426 . 1 `S424 1 . 1 0 ]
+[v _PRLOCKbits PRLOCKbits `VES426  1 e 1 @14831 ]
 "6895
 [v _RB0PPS RB0PPS `VEuc  1 e 1 @14856 ]
 "7645
@@ -230,7 +230,7 @@
 [v _DMA2SSAU DMA2SSAU `VEuc  1 e 1 @15323 ]
 "14018
 [v _DMA2CON0 DMA2CON0 `VEuc  1 e 1 @15324 ]
-[s S438 . 1 `uc 1 XIP 1 0 :1:0 
+[s S444 . 1 `uc 1 XIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 AIRQEN 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -239,7 +239,7 @@
 `uc 1 EN 1 0 :1:7 
 ]
 "14043
-[s S446 . 1 `uc 1 DMA2XIP 1 0 :1:0 
+[s S452 . 1 `uc 1 DMA2XIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 DMA2AIRQEN 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -247,8 +247,8 @@
 `uc 1 DMA2SIRQEN 1 0 :1:6 
 `uc 1 DMA2EN 1 0 :1:7 
 ]
-[u S454 . 1 `S438 1 . 1 0 `S446 1 . 1 0 ]
-[v _DMA2CON0bits DMA2CON0bits `VES454  1 e 1 @15324 ]
+[u S460 . 1 `S444 1 . 1 0 `S452 1 . 1 0 ]
+[v _DMA2CON0bits DMA2CON0bits `VES460  1 e 1 @15324 ]
 "14098
 [v _DMA2CON1 DMA2CON1 `VEuc  1 e 1 @15325 ]
 "14142
@@ -464,15 +464,15 @@
 [v _dbuf dbuf `[80]uc  1 s 80 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"86 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
+"87 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
 [v _volCheckCmd volCheckCmd `C[3]uc  1 e 3 0 ]
-"87
-[v _stateCheckCmd stateCheckCmd `C[2]uc  1 e 2 0 ]
 "88
+[v _stateCheckCmd stateCheckCmd `C[2]uc  1 e 2 0 ]
+"89
 [v _soundAmplify soundAmplify `C[16]us  1 e 32 0 ]
-"90
-[v _bat_percent bat_percent `f  1 e 4 0 ]
 "91
+[v _bat_percent bat_percent `f  1 e 4 0 ]
+"92
 [v _ledBrightness ledBrightness `l  1 e 4 0 ]
 "11 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\uart.c
 [v _ackCmd ackCmd `[2]uc  1 e 2 0 ]
@@ -480,53 +480,59 @@
 [v _rxBuf rxBuf `[256]uc  1 e 256 @256 ]
 "14
 [v _txBuf txBuf `[256]uc  1 e 256 @512 ]
-"257 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
+"282 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"353
+"378
 } 0
 "16 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
 {
 "56
 } 0
-"159 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
+"160 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
 [v _main_loop main_loop `(v  1 e 1 0 ]
 {
-"233
-[v main_loop@batmsg batmsg `[17]uc  1 a 17 109 ]
-"232
-[v main_loop@batlvl batlvl `us  1 a 2 148 ]
-"179
-[v main_loop@rel rel `l  1 a 4 156 ]
-"174
-[v main_loop@sample sample `l  1 a 4 152 ]
-"178
-[v main_loop@lastAvg lastAvg `ul  1 a 4 126 ]
-"169
-[v main_loop@res res `s  1 a 2 150 ]
-"170
-[v main_loop@absRes absRes `s  1 a 2 146 ]
-"160
-[v main_loop@counter counter `ul  1 s 4 counter ]
+"243
+[v main_loop@batmsg batmsg `[17]uc  1 a 17 0 ]
+"242
+[v main_loop@batlvl batlvl `us  1 a 2 41 ]
+"185
+[v main_loop@rel rel `l  1 a 4 47 ]
+"180
+[v main_loop@sample sample `l  1 a 4 43 ]
+"184
+[v main_loop@lastAvg lastAvg `ul  1 a 4 17 ]
+"175
+[v main_loop@res res `s  1 a 2 39 ]
+"176
+[v main_loop@absRes absRes `s  1 a 2 37 ]
 "161
-[v main_loop@sum sum `ul  1 s 4 sum ]
+[v main_loop@counter counter `ul  1 s 4 counter ]
 "162
-[v main_loop@last last `[20]us  1 s 40 last ]
+[v main_loop@sum sum `ul  1 s 4 sum ]
 "163
-[v main_loop@lastSum lastSum `ul  1 s 4 lastSum ]
+[v main_loop@last last `[20]us  1 s 40 last ]
 "164
+[v main_loop@lastSum lastSum `ul  1 s 4 lastSum ]
+"165
 [v main_loop@pos pos `s  1 s 2 pos ]
-"255
+"167
+[v main_loop@clipCount clipCount `us  1 s 2 clipCount ]
+"168
+[v main_loop@ampFault ampFault `a  1 s 1 ampFault ]
+"170
+[v main_loop@batCutoff batCutoff `a  1 s 1 batCutoff ]
+"280
 } 0
-"93
+"94
 [v _updateButtonLight updateButtonLight `(v  1 e 1 0 ]
 {
-"102
+"103
 [v updateButtonLight@dch dch `l  1 a 4 34 ]
-"93
+"94
 [v updateButtonLight@step step `l  1 p 4 26 ]
-"113
+"114
 } 0
 "80 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\uart.c
 [v _uart_tasks uart_tasks `(v  1 e 1 0 ]
@@ -596,26 +602,26 @@
 "9 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[s S1173 _IO_FILE 5 `*.30uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S1179 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
 "13
-[v sprintf@f f `S1173  1 a 5 98 ]
+[v sprintf@f f `S1179  1 a 6 102 ]
 "12
-[v sprintf@ap ap `[1]*.30v  1 a 1 97 ]
+[v sprintf@ap ap `[1]*.30v  1 a 1 101 ]
 "9
-[v sprintf@s s `*.30uc  1 p 1 89 ]
-[v sprintf@fmt fmt `*.31Cuc  1 p 1 90 ]
+[v sprintf@s s `*.39uc  1 p 2 91 ]
+[v sprintf@fmt fmt `*.32Cuc  1 p 2 93 ]
 "23
 } 0
 "1368 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1371
-[v vfprintf@cfmt cfmt `*.31uc  1 a 1 88 ]
-[s S521 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.32uc  1 a 2 89 ]
+[s S527 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.30S521  1 p 1 85 ]
-[v vfprintf@fmt fmt `*.31Cuc  1 p 1 86 ]
-[v vfprintf@ap ap `*.30*.30v  1 p 1 87 ]
+[v vfprintf@fp fp `*.30S527  1 p 1 85 ]
+[v vfprintf@fmt fmt `*.32Cuc  1 p 2 86 ]
+[v vfprintf@ap ap `*.30*.30v  1 p 1 88 ]
 "1382
 } 0
 "670
@@ -626,10 +632,10 @@
 "672
 [v vfpfcnvrt@ct ct `[3]uc  1 a 3 77 ]
 [v vfpfcnvrt@c c `uc  1 a 1 84 ]
-[s S521 _IO_FILE 0 ]
+[s S527 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.30S521  1 p 1 92 ]
-[v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 93 ]
+[v vfpfcnvrt@fp fp `*.30S527  1 p 1 92 ]
+[v vfpfcnvrt@fmt fmt `*.30*.32uc  1 p 1 93 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 94 ]
 "1365
 } 0
@@ -637,12 +643,12 @@
 [v _strncmp strncmp `(i  1 e 2 0 ]
 {
 "5
-[v strncmp@r r `*.31Cuc  1 a 1 6 ]
-[v strncmp@l l `*.30Cuc  1 a 1 5 ]
+[v strncmp@r r `*.32Cuc  1 a 2 6 ]
+[v strncmp@l l `*.30Cuc  1 a 1 8 ]
 "3
 [v strncmp@_l _l `*.30Cuc  1 p 1 0 ]
-[v strncmp@_r _r `*.31Cuc  1 p 1 1 ]
-[v strncmp@n n `ui  1 p 2 2 ]
+[v strncmp@_r _r `*.32Cuc  1 p 2 1 ]
+[v strncmp@n n `ui  1 p 2 3 ]
 "9
 } 0
 "319 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
@@ -669,9 +675,9 @@
 "321
 [v efgtoa@mode mode `uc  1 a 1 44 ]
 [v efgtoa@nmode nmode `uc  1 a 1 41 ]
-[s S521 _IO_FILE 0 ]
+[s S527 _IO_FILE 0 ]
 "319
-[v efgtoa@fp fp `*.30S521  1 p 1 0 ]
+[v efgtoa@fp fp `*.30S527  1 p 1 0 ]
 [v efgtoa@f f `d  1 p 4 1 ]
 [v efgtoa@c c `uc  1 p 1 5 ]
 "503
@@ -706,9 +712,9 @@
 "74
 [v pad@w w `i  1 a 2 22 ]
 [v pad@i i `i  1 a 2 20 ]
-[s S521 _IO_FILE 0 ]
+[s S527 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.30S521  1 p 1 14 ]
+[v pad@fp fp `*.30S527  1 p 1 14 ]
 [v pad@buf buf `*.39uc  1 p 2 15 ]
 [v pad@p p `i  1 p 2 17 ]
 "95
@@ -731,16 +737,16 @@
 [v fputs@c c `uc  1 a 1 11 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 8 ]
-[s S1173 _IO_FILE 5 `*.30uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.30S1173  1 p 1 10 ]
+[s S1179 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.30S1179  1 p 1 10 ]
 "19
 } 0
 "8 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S1173 _IO_FILE 5 `*.30uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.30S1173  1 p 1 2 ]
+[s S1179 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.30S1179  1 p 1 2 ]
 "21
 } 0
 "7 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\putch.c
@@ -751,9 +757,9 @@
 "3 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\floorf.c
 [v _floorf floorf `(f  1 e 4 0 ]
 {
-[u S1100 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1106 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v floorf@u u `S1100  1 a 4 71 ]
+[v floorf@u u `S1106  1 a 4 71 ]
 "7
 [v floorf@m m `ul  1 a 4 65 ]
 "6
@@ -761,21 +767,21 @@
 "3
 [v floorf@x x `f  1 p 4 55 ]
 "4
-[v floorf@F524 F524 `S1100  1 s 4 F524 ]
+[v floorf@F524 F524 `S1106  1 s 4 F524 ]
 "27
 } 0
 "4 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S1100 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1106 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S1100  1 a 4 10 ]
+[v ___fpclassifyf@u u `S1106  1 a 4 10 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 8 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 0 ]
 "5
-[v ___fpclassifyf@F463 F463 `S1100  1 s 4 F463 ]
+[v ___fpclassifyf@F463 F463 `S1106  1 s 4 F463 ]
 "11
 } 0
 "43 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
@@ -820,17 +826,17 @@
 "8 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S965 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S971 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S970 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S973 . 4 `l 1 i 4 0 `d 1 f 4 0 `S965 1 fAsBytes 4 0 `S970 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S973  1 a 4 74 ]
+[s S976 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S979 . 4 `l 1 i 4 0 `d 1 f 4 0 `S971 1 fAsBytes 4 0 `S976 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S979  1 a 4 74 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 69 ]
-[s S1041 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1047 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1044 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1041 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1044  1 a 2 78 ]
+[u S1050 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1047 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1050  1 a 2 78 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 73 ]
 "11
@@ -900,7 +906,7 @@
 [v atoi@n n `i  1 a 2 20 ]
 [v atoi@neg neg `i  1 a 2 13 ]
 "4
-[v atoi@s s `*.31Cuc  1 p 1 7 ]
+[v atoi@s s `*.32Cuc  1 p 2 7 ]
 "16
 } 0
 "5 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\isspace.c
@@ -925,27 +931,27 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"115 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
+"116 E:\Users\Alex\Documents\eagle\projects\Bluetooth Speaker\MCU\BlockBox.X\main.c
 [v _setLED setLED `(v  1 e 1 0 ]
 {
-"121
+"122
 [v setLED@shift shift `l  1 a 4 58 ]
-"128
+"129
 [v setLED@sr sr `l  1 a 4 54 ]
 [v setLED@sb sb `l  1 a 4 50 ]
 [v setLED@sg sg `l  1 a 4 46 ]
-"119
+"120
 [v setLED@b b `l  1 a 4 42 ]
-"118
+"119
 [v setLED@g g `l  1 a 4 38 ]
-"117
+"118
 [v setLED@r r `l  1 a 4 16 ]
-"116
+"117
 [v setLED@trueMod trueMod `us  1 a 2 36 ]
-"115
+"116
 [v setLED@mod mod `l  1 p 4 0 ]
 [v setLED@step step `l  1 p 4 4 ]
-"157
+"158
 } 0
 "15 F:\Programme\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
