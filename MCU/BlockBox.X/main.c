@@ -86,10 +86,11 @@
 
 const uint8_t volCheckCmd[3] = { 0x16, 0x00, 0x04 };
 const uint8_t stateCheckCmd[2] = { 0x0D, 0x00 };
-const uint16_t soundAmplify[16] = { 0, 0, 0, 630, 480, 390, 260, 180, 100, 65, 50, 35, 22, 15, 9, 7 };
+const uint16_t soundAmplify[16] = { 0, 0, 0, 630, 480, 390, 260, 180, 100, 65, 50, 35, 22, 16, 11, 8 };
 
 float bat_percent = 100.0f;
 int32_t ledBrightness = 64;
+uint8_t lightMode = 0;
 
 void updateButtonLight(int32_t step) {
     if (!on) {
@@ -120,11 +121,11 @@ void setLED(int32_t mod, int32_t step) {
     int32_t b = 2047 - trueMod / 2;
     
     int32_t shift;
-    if (step < 25000) shift = step / 50;
-    else if (step < 75000) shift = (50000 - step) / 50;
-    else shift = (step - 100000) / 50;
-    g = clamp(g + shift - 500, 0, 4095);
-    b = clamp(b - shift - 500, 0, 4095);
+    if (step < 25000) shift = step / 40;
+    else if (step < 75000) shift = (50000 - step) / 40;
+    else shift = (step - 100000) / 40;
+    g = clamp(g + shift - 625, 0, 4095);
+    b = clamp(b - shift - 625, 0, 4095);
     
     int32_t sr, sg, sb;
     if (on) {
@@ -158,13 +159,13 @@ void setLED(int32_t mod, int32_t step) {
 }
 
 void main_loop() {
-    static uint32_t counter = 100000;
+    static uint32_t counter = 0;
     static uint32_t sum = 0;
     static uint16_t last[SOUND_LAST_LEN];
     static uint32_t lastSum = 0;
     static int16_t pos = 0;
     
-    static uint16_t clipCount = 0;
+    //static uint16_t clipCount = 0;
     static bool ampFault = false;
     
     static bool batCutoff = false;
@@ -184,8 +185,10 @@ void main_loop() {
         uint32_t lastAvg = lastSum / SOUND_LAST_LEN;
         int32_t rel = (sample - lastAvg) * soundAmplify[volume_level];
         
-        //only inc pos when streaming, change is large enough and LED is dim enough at low volume levels
-        if (streaming && (volume_level >= 4 || ledBrightness <= 24) && rel > 1800) pos = min(4095, max(pos, rel));
+        //only inc pos when effect is on, streaming, change is large enough and LED is dim enough at low volume levels
+        bool update = lightMode == 1 && streaming &&
+                (volume_level >= 4 || ledBrightness <= 24) && rel > 1800;
+        if (update) pos = min(4095, max(pos, rel));
         
         setLED(pos, counter);
         
@@ -202,6 +205,8 @@ void main_loop() {
     
     if (counter % 1000 == 999) {
         PORTCbits.RC0 = !PORTCbits.RC1; //LCD backlight switch
+        
+        lightMode = (PORTB & 0b00001100) >> 2;
 
         ADPCH = 0b010110; //analog input: C6
         ADCON0bits.FM = 0; //left justify
@@ -211,8 +216,8 @@ void main_loop() {
         ADCON0bits.FM = 1; //right justify
         
         if (!PORTCbits.RC2) ampFault = 1; //lock amplifier in case of fault/warning
-        if (!PORTCbits.RC3) clipCount++;
-        if (clipCount > 20) ampFault = 1;
+        //if (!PORTCbits.RC3) clipCount++;
+        //if (clipCount > 40) ampFault = 1;
         if (ampFault) LATC4 = 1;
         
         /*lcd_set_data_addr(0x40);
@@ -268,7 +273,7 @@ void main_loop() {
         }
         lcd_set_data_addr(0);
         lcd_print(batmsg);
-        clipCount = 0;
+        //clipCount = 0;
         
         counter = 0;
     }

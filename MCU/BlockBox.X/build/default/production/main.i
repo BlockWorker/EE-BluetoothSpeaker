@@ -27233,10 +27233,11 @@ double yn(int, double);
 # 87 "main.c"
 const uint8_t volCheckCmd[3] = { 0x16, 0x00, 0x04 };
 const uint8_t stateCheckCmd[2] = { 0x0D, 0x00 };
-const uint16_t soundAmplify[16] = { 0, 0, 0, 630, 480, 390, 260, 180, 100, 65, 50, 35, 22, 15, 9, 7 };
+const uint16_t soundAmplify[16] = { 0, 0, 0, 630, 480, 390, 260, 180, 100, 65, 50, 35, 22, 16, 11, 8 };
 
 float bat_percent = 100.0f;
 int32_t ledBrightness = 64;
+uint8_t lightMode = 0;
 
 void updateButtonLight(int32_t step) {
     if (!on) {
@@ -27267,11 +27268,11 @@ void setLED(int32_t mod, int32_t step) {
     int32_t b = 2047 - trueMod / 2;
 
     int32_t shift;
-    if (step < 25000) shift = step / 50;
-    else if (step < 75000) shift = (50000 - step) / 50;
-    else shift = (step - 100000) / 50;
-    g = (g + shift - 500 < 0 ? 0 : (g + shift - 500 > 4095 ? 4095 : g + shift - 500));
-    b = (b - shift - 500 < 0 ? 0 : (b - shift - 500 > 4095 ? 4095 : b - shift - 500));
+    if (step < 25000) shift = step / 40;
+    else if (step < 75000) shift = (50000 - step) / 40;
+    else shift = (step - 100000) / 40;
+    g = (g + shift - 625 < 0 ? 0 : (g + shift - 625 > 4095 ? 4095 : g + shift - 625));
+    b = (b - shift - 625 < 0 ? 0 : (b - shift - 625 > 4095 ? 4095 : b - shift - 625));
 
     int32_t sr, sg, sb;
     if (on) {
@@ -27305,13 +27306,13 @@ void setLED(int32_t mod, int32_t step) {
 }
 
 void main_loop() {
-    static uint32_t counter = 100000;
+    static uint32_t counter = 0;
     static uint32_t sum = 0;
     static uint16_t last[20];
     static uint32_t lastSum = 0;
     static int16_t pos = 0;
 
-    static uint16_t clipCount = 0;
+
     static _Bool ampFault = 0;
 
     static _Bool batCutoff = 0;
@@ -27332,7 +27333,9 @@ void main_loop() {
         int32_t rel = (sample - lastAvg) * soundAmplify[volume_level];
 
 
-        if (streaming && (volume_level >= 4 || ledBrightness <= 24) && rel > 1800) pos = (4095 < (pos > rel ? pos : rel) ? 4095 : (pos > rel ? pos : rel));
+        _Bool update = lightMode == 1 && streaming &&
+                (volume_level >= 4 || ledBrightness <= 24) && rel > 1800;
+        if (update) pos = (4095 < (pos > rel ? pos : rel) ? 4095 : (pos > rel ? pos : rel));
 
         setLED(pos, counter);
 
@@ -27350,6 +27353,8 @@ void main_loop() {
     if (counter % 1000 == 999) {
         PORTCbits.RC0 = !PORTCbits.RC1;
 
+        lightMode = (PORTB & 0b00001100) >> 2;
+
         ADPCH = 0b010110;
         ADCON0bits.FM = 0;
         ADCON0bits.GO = 1;
@@ -27358,8 +27363,8 @@ void main_loop() {
         ADCON0bits.FM = 1;
 
         if (!PORTCbits.RC2) ampFault = 1;
-        if (!PORTCbits.RC3) clipCount++;
-        if (clipCount > 20) ampFault = 1;
+
+
         if (ampFault) LATC4 = 1;
 
 
@@ -27415,7 +27420,7 @@ void main_loop() {
         }
         lcd_set_data_addr(0);
         lcd_print(batmsg);
-        clipCount = 0;
+
 
         counter = 0;
     }

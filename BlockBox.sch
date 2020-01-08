@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.2">
+<eagle version="9.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -5470,35 +5470,6 @@ package type TQ</description>
 <rectangle x1="-3.4" y1="4.95" x2="-3" y2="6.1001" layer="51"/>
 <rectangle x1="-4.1999" y1="4.95" x2="-3.8001" y2="6.1001" layer="51"/>
 </package>
-<package name="HD44780_LCD">
-<wire x1="-40" y1="18" x2="40" y2="18" width="0.127" layer="21"/>
-<wire x1="40" y1="18" x2="40" y2="-18" width="0.127" layer="21"/>
-<wire x1="40" y1="-18" x2="-40" y2="-18" width="0.127" layer="21"/>
-<wire x1="-40" y1="-18" x2="-40" y2="18" width="0.127" layer="21"/>
-<pad name="1" x="-32" y="15" drill="1" shape="square"/>
-<pad name="2" x="-29.46" y="15" drill="1"/>
-<pad name="3" x="-26.92" y="15" drill="1"/>
-<pad name="4" x="-24.38" y="15" drill="1"/>
-<pad name="5" x="-21.84" y="15" drill="1"/>
-<pad name="6" x="-19.3" y="15" drill="1"/>
-<pad name="7" x="-16.76" y="15" drill="1"/>
-<pad name="8" x="-14.22" y="15" drill="1"/>
-<pad name="9" x="-11.68" y="15" drill="1"/>
-<pad name="10" x="-9.14" y="15" drill="1"/>
-<pad name="11" x="-6.6" y="15" drill="1"/>
-<pad name="12" x="-4.06" y="15" drill="1"/>
-<pad name="13" x="-1.52" y="15" drill="1"/>
-<pad name="14" x="1.02" y="15" drill="1"/>
-<pad name="15" x="3.56" y="15" drill="1"/>
-<pad name="16" x="6.1" y="15" drill="1"/>
-<hole x="-37.5" y="15.2" drill="3"/>
-<hole x="37.5" y="15.2" drill="3"/>
-<hole x="37.5" y="-15.2" drill="3"/>
-<hole x="-37.5" y="-15.2" drill="3"/>
-<rectangle x1="-35.56" y1="-11.43" x2="35.56" y2="10.16" layer="51"/>
-<text x="-35.56" y="11.43" size="1.27" layer="25">&gt;NAME</text>
-<text x="-24.13" y="11.43" size="1.27" layer="27">&gt;VALUE</text>
-</package>
 <package name="2X8PIN">
 <pad name="1" x="-8.89" y="1.27" drill="1" shape="square"/>
 <pad name="2" x="-8.89" y="-1.27" drill="1"/>
@@ -5580,6 +5551,35 @@ package type TQ</description>
 <wire x1="1.1" y1="0.97" x2="1.1" y2="1.57" width="0.127" layer="21"/>
 <text x="-3.048" y="2.921" size="1.27" layer="25">&gt;NAME</text>
 <text x="-3.302" y="-4.191" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="HD44780_LCD">
+<wire x1="-40" y1="18" x2="40" y2="18" width="0.127" layer="21"/>
+<wire x1="40" y1="18" x2="40" y2="-18" width="0.127" layer="21"/>
+<wire x1="40" y1="-18" x2="-40" y2="-18" width="0.127" layer="21"/>
+<wire x1="-40" y1="-18" x2="-40" y2="18" width="0.127" layer="21"/>
+<pad name="1" x="-32" y="15.5" drill="1" shape="square"/>
+<pad name="2" x="-29.46" y="15.5" drill="1"/>
+<pad name="3" x="-26.92" y="15.5" drill="1"/>
+<pad name="4" x="-24.38" y="15.5" drill="1"/>
+<pad name="5" x="-21.84" y="15.5" drill="1"/>
+<pad name="6" x="-19.3" y="15.5" drill="1"/>
+<pad name="7" x="-16.76" y="15.5" drill="1"/>
+<pad name="8" x="-14.22" y="15.5" drill="1"/>
+<pad name="9" x="-11.68" y="15.5" drill="1"/>
+<pad name="10" x="-9.14" y="15.5" drill="1"/>
+<pad name="11" x="-6.6" y="15.5" drill="1"/>
+<pad name="12" x="-4.06" y="15.5" drill="1"/>
+<pad name="13" x="-1.52" y="15.5" drill="1"/>
+<pad name="14" x="1.02" y="15.5" drill="1"/>
+<pad name="15" x="3.56" y="15.5" drill="1"/>
+<pad name="16" x="6.1" y="15.5" drill="1"/>
+<hole x="-37.5" y="15.5" drill="3.5"/>
+<hole x="37.5" y="15.5" drill="3.5"/>
+<hole x="37.5" y="-15.5" drill="3.5"/>
+<hole x="-37.5" y="-15.5" drill="3.5"/>
+<rectangle x1="-35.56" y1="-11.43" x2="35.56" y2="10.16" layer="51"/>
+<text x="-35.56" y="11.43" size="1.27" layer="25">&gt;NAME</text>
+<text x="-24.13" y="11.43" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -6654,7 +6654,7 @@ up to 600W into PBTL Mono</description>
 <gate name="G$1" symbol="HD44780_LCD" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="HD44780_LCD">
+<device name="-CON" package="2X8PIN">
 <connects>
 <connect gate="G$1" pin="!E" pad="6"/>
 <connect gate="G$1" pin="A" pad="15"/>
@@ -6677,7 +6677,7 @@ up to 600W into PBTL Mono</description>
 <technology name=""/>
 </technologies>
 </device>
-<device name="-CON" package="2X8PIN">
+<device name="" package="HD44780_LCD">
 <connects>
 <connect gate="G$1" pin="!E" pad="6"/>
 <connect gate="G$1" pin="A" pad="15"/>
@@ -7368,6 +7368,7 @@ up to 600W into PBTL Mono</description>
 </devices>
 </deviceset>
 <deviceset name="WIRED-POTENTIOMETER" prefix="RV" uservalue="yes">
+<description>Potentiometer with wire/header connections</description>
 <gates>
 <gate name="G$1" symbol="POT_US-" x="0" y="0"/>
 </gates>
